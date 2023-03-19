@@ -25,22 +25,22 @@
 
   --menu_background_color: #1d1e24;
   --menu_text_color: #fff;
-  --menu_active_text_color: #AD00FF;
+  --menu_active_text_color: #00ff88;
 
 
   --button_background_color: #1d1e24;
   --button_text_color: #fff;
-  --button_text_hover_color: #AD00FF;
+  --button_text_hover_color: #00ff88;
 
 
   --textarea_background_color: #1d1e24;
   --textarea_text_color: #fff;
-  --textarea_link_text_color: #AD00FF;
+  --textarea_link_text_color: #00ff88;
 
 
   --footer_background_color: #1d1e24;
   --footer_text_color: #fff;
-  --footer_link_text_color: #AD00FF;
+  --footer_link_text_color: #00ff88;
 }
 
 
