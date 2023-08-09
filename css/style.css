@@ -30,17 +30,17 @@
 
   --button_background_color: #6a293a;
   --button_text_color: #fff;
-  --button_text_hover_color: #ad3958;
+  --button_text_hover_color: #ffffff;
 
 
   --textarea_background_color: #6a293a;
   --textarea_text_color: #fff;
-  --textarea_link_text_color: #ad3958;
+  --textarea_link_text_color: #ffffff;
 
 
   --footer_background_color: #6a293a;
   --footer_text_color: #fff;
-  --footer_link_text_color: #ad3958;
+  --footer_link_text_color: #ffffff;
 }
 
 
