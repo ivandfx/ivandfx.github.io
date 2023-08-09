@@ -25,22 +25,22 @@
 
   --menu_background_color: #1d1e24;
   --menu_text_color: #fff;
-  --menu_active_text_color: #f5e400;
+  --menu_active_text_color: #ad3958;
 
 
-  --button_background_color: #002430;
+  --button_background_color: #6a293a;
   --button_text_color: #fff;
-  --button_text_hover_color: #f5e400;
+  --button_text_hover_color: #ad3958;
 
 
-  --textarea_background_color: #002430;
+  --textarea_background_color: #6a293a;
   --textarea_text_color: #fff;
-  --textarea_link_text_color: #f5e400;
+  --textarea_link_text_color: #ad3958;
 
 
-  --footer_background_color: #002430;
+  --footer_background_color: #6a293a;
   --footer_text_color: #fff;
-  --footer_link_text_color: #f5e400;
+  --footer_link_text_color: #ad3958;
 }
 
 
