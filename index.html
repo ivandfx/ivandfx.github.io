@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="See my social media pages">
+    <meta name="keywords" content="ivandfx, ivandfx social, ivandfx redes, ivandfx github, ivandfx página">
+    <meta name="theme-color" content="#66ddcc">
+    <meta property="og:site_name" content="ivandfx | Social">
+    <meta name="og:title" content="social-page">
+    <meta name="og:image" itemprop="image" content="images/profile.png">
+    <link rel="shortcut icon" href="images/profile.png" sizes="32x32">
+    <link rel="bookmark" href="images/profile.png">
+    <link href="common.css" rel="stylesheet" type="text/css">
+    <title>ivandfx | Social</title>
+    <style>
+        a:hover{
+            color: #73bdfa;
+        }
+        body {
+            background-image: url('images/bg1080p.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        #social-page{
+            padding: 3% 10% 0 10%;
+            box-sizing: border-box;
+            text-align: center;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: "Poppins";
+        }
+        #columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+
+        }
+        .column-title{
+            margin-top: 48px;
+            font-size: 18px;
+        }
+        .yt{
+            transition: 0.3s ease;
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            outline: none;
+            border: 0px solid transparent;
+            border-radius: 20px;
+            background-image: linear-gradient(-30deg, #e35959, #f02424);
+            color: #ffffff;
+            font-size: 18px;
+            font-family: "Poppins";
+            cursor: pointer;
+        }
+        .tc{
+            transition: 0.3s ease;
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            outline: none;
+            border: 0px solid transparent;
+            border-radius: 20px;
+            background-image: linear-gradient(-30deg, #c359e3, #ca24ca);
+            color: #ffffff;
+            font-size: 18px;
+            font-family: "Poppins";
+            cursor: pointer;
+        }
+        .tw{
+            transition: 0.3s ease;
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            outline: none;
+            border: 0px solid transparent;
+            border-radius: 20px;
+            background-image: linear-gradient(-30deg, #59a3e3, #298be0);
+            color: #ffffff;
+            font-size: 18px;
+            font-family: "Poppins";
+            cursor: pointer;
+        }
+        .ig{
+            transition: 0.3s ease;
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            outline: none;
+            border: 0px solid transparent;
+            border-radius: 20px;
+            background-image: linear-gradient(-30deg, #e39059, rgb(221, 102, 181));
+            color: #ffffff;
+            font-size: 18px;
+            font-family: "Poppins";
+            cursor: pointer;
+        }
+        .wt{
+            transition: 0.3s ease;
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            outline: none;
+            border: 0px solid transparent;
+            border-radius: 20px;
+            background-image: linear-gradient(-30deg, #315c83, #0b5494);
+            color: #ffffff;
+            font-size: 18px;
+            font-family: "Poppins";
+            cursor: pointer;
+        }
+        .gh{
+            transition: 0.3s ease;
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            outline: none;
+            border: 0px solid transparent;
+            border-radius: 20px;
+            background-image: linear-gradient(-30deg, #213547, #202224);
+            color: #ffffff;
+            font-size: 18px;
+            font-family: "Poppins";
+            cursor: pointer;
+        }
+        .ody{
+            transition: 0.3s ease;
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            outline: none;
+            border: 0px solid transparent;
+            border-radius: 20px;
+            background-image: linear-gradient(-30deg, #fba11f, #f13162);
+            color: #ffffff;
+            font-size: 18px;
+            font-family: "Poppins";
+            cursor: pointer;
+        }
+        .yt:hover{
+            box-shadow: 0px 0px 12px #e35959;
+        }
+        .tc:hover{
+            box-shadow: 0px 0px 12px #c359e3;
+        }
+        .tw:hover{
+            box-shadow: 0px 0px 12px #59a3e3;
+        }
+        .ig:hover{
+            box-shadow: 0px 0px 12px #e39059;
+        }
+        .wt:hover{
+            box-shadow: 0px 0px 12px #0c84ee;
+        }
+        .gh:hover{
+            box-shadow: 0px 0px 12px #1d1d1d;
+        }
+        .ody:hover{
+            box-shadow: 0px 0px 12px #f13162;
+        }
+        #show{
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+</style>
+</head>
+<body>
+    <div id="main-container">
+        <header>
+        <nav>
+            <ul id="bar">
+                <li><a id="nav-legacy" href=""></a></li>
+                <li><a id="nav-home" href="index.html">Main</a></li>
+                <li><a id="nav-home" href="player.html">Latest video</a></li>
+            </ul>
+        </nav>
+        </header>
+        <div id="logo-container">
+        <div id="social-page">
+            <noscript><p style="font-size: 26px;">This page requires JavaScript.<hr></p></noscript>
+		<br>
+		<br>
+	    <p style="font-size: 56px;">ivandfx | Social</p>
+	    <p style="font-size: 16px;">All my social networks are here</p>
+            <br/>
+            <br/>
+            <br/>
+            <div id="columns">
+                <div class="columns">
+                  <img src="images/profile.png" alt="Standard" width="300px">
+                  <div>
+                    <br/>
+                  </div>
+                </div>
+                <div class="columns">
+                  <div>
+            <button onclick="button('https://youtube.com/ivandfx', false)"  class="yt downloadButtons">YouTube</button>
+            <button onclick="button('https://odysee.com/@ivandfx', false)"  class="ody downloadButtons">Odysee</button>
+			<button onclick="button('https://twitch.com/ivandfx', false)"  class="tc downloadButtons">Twitch</button>
+            <button onclick="button('https://twitter.com/ivandfx', false)"  class="tw downloadButtons">Twitter | X</button>
+            <button onclick="button('https://instagram.com/ivandfx', false)"  class="ig downloadButtons">Instagram</button>
+            <button onclick="button('https://ivandfx.github.io/DFXWinTweaks/', false)"  class="wt downloadButtons">DFX WinTweaks</button>
+            <button onclick="button('https://github.com/ivandfx/', false)"  class="gh downloadButtons">GitHub</button>
+			<br>
+                  </div>
+                </div>
+              </div>
+            <br/>
+		<br>
+		<h2></h2>
+        </div>
+        <footer>
+            <p id="footertext">Updated on November 20, 2023 | Hosted on GitHub <a href="https://github.com/ivandfx/ivandfx.github.io">(Available source)</a></p>
+        </footer>
+    </div>
+    <div id="show">
+    </div>
+    </div>
+    <script>
+        function button(link, warn){
+            window.location.href = link;
+            setTimeout(function(){
+                window.onclick = function(){
+                    document.getElementById;
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
