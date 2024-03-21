@@ -4,7 +4,9 @@
 }
 body{
     width: 100%;
-    background-color: #6d4656;
+  background-image: url("/images/bg1080p");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
     font-family: "Poppins";
     color: #ffffff;
     /*overflow-x: hidden;*/
@@ -24,7 +26,7 @@ a:hover{
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+
 }
 #main-container{
     width:125vw;
