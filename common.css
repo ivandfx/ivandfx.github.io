@@ -27,7 +27,7 @@ a:hover{
     background-position: center center;
 }
 #main-container{
-    width: 100vw;
+    width:125vw;
 }
 #nav-logo{
     transition: 0.3s ease;
@@ -148,6 +148,9 @@ img {
   
     .buttons {
       max-width: 150px;
+	display: flex;
+	display: ms-flex;
+	display: -webkit-flex;
     }
   }
   @media (max-width: 480px) {
@@ -156,6 +159,8 @@ img {
     }
   
     .buttons {
-      max-width: 100%;
+	max-width: 100%;
     }
+	.container > button {
+    float: left;
   }

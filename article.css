@@ -51,4 +51,15 @@ span{
         margin-bottom: 4vh;
         font-size: 16px;
     }
+#container
+{
+    width:100%
+}         
+#button1
+{
+    width:50%;
+}
+#button2
+{
+    width:50% 100%;
 }
