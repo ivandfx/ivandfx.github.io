@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DFX WinTweaks.">
+    <meta name="keywords" content="ivandfx, twitch, ivandfx twitch">
+    <meta name="theme-color" content="#66ddcc">
+    <meta property="og:site_name" content="ivandfx | DFXWT">
+    <meta name="og:title" content="DFXWT">
+    <meta name="og:image" itemprop="image" content="icons/dfx_favicon.png">
+    <link rel="shortcut icon" href="icons/dfx_favicon.png" sizes="32x32">
+    <link rel="bookmark" href="icons/dfx_favicon.png">
+    <link href="common.css" rel="stylesheet" type="text/css">
+    <link href="article.css" rel="stylesheet" type="text/css">
+    <title>Farewell, DFX WinTweaks</title>
+    <style>
+        a:hover{
+            color: #66ddcc;
+        }
+        body {
+            background-image: url('../images/bg1080p.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        #downloads{
+            padding: 3% 10% 0 10%;
+            box-sizing: border-box;
+            text-align: center;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: "Poppins";
+        }
+        #columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+
+        }
+        .column-title{
+            margin-top: 48px;
+            font-size: 18px;
+        }
+        .buttons{
+            transition: 0.3s ease;
+            display: block;
+            width: 200px;
+            height: 70px;
+            margin: 10px;
+            outline: none;
+            border: 0px solid transparent;
+            border-radius: 20px;
+            background-color: linear-gradient(-30deg, #0D1117, #161B22);
+            color: #000000;
+            font-size: 18px;
+            font-family: "Poppins";
+            cursor: pointer;
+        }
+        .buttons:hover{
+            box-shadow: 0px 0px 12px #888888;
+        }
+        #show{
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+</style>
+</head>
+<body>
+    <div id="main-container">
+        <header>
+            <nav>
+                <ul id="bar">
+                    <li></li>
+                    <li><a id="nav-home" href="../index.html">Back to Main</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="downloads">
+        <div id="text-area">
+	<h1>Farewell, DFX WinTweaks</h1>
+	<h2>Thanks to everyone for the continued support - March 21, 2024</h2>
+	<p>A while ago, I announced that the development for DFX WinTweaks (previously DFX Tweaker) would cease.</p>
+	<p>DFX WinTweaks was just a mini script based on AikonCWD's Win10 Script originally, and over the time, it changed so much that nowadays, 99% of the code it's not what AikonCWD originally did, and was mostly mine. And that is what made me go nuts and release updates way less often.</p>
+	<p>During development, I was getting my free time (also study time) cut out due to me being unable to sleep properly while knowing all the bugs that I needed to fix even when a new version was just released.</p>
+	<p>And I'm not a good programmer, heck, I don't really like writing that much if I have to hurt my brain THAT hard finding ways to fix stuff.</p>
+	<p>To say it quicker, DFX WinTweaks is no longer in development, thanks to everyone who believed in the project since 2022 <3</p>
+	<p>I have provided new downloads for the latest versions that were released (and the latest development build)</p>
+            <br/>
+            <div id="columns">
+                <div class="columns">
+	<button onclick="button('https://github.com/ivandfx/ivandfx.github.io/releases/download/dfxwt-lr/DFXWT_3.6.1.VBS', false)"  class="buttons downloadButtons">Windows 10</button>
+                    <p>Last version released</p>
+                    <br/>
+            </div>
+			        <div class="columns">
+	<button onclick="button('https://github.com/ivandfx/ivandfx.github.io/releases/download/dfxwt-lr/DFXWT_3.3.4_LTS.VBS', false)"  class="buttons downloadButtons">Windows 7 to 8.1</button>
+                    <p>LTS Release</p>
+                    <br/>
+            </div>
+				<div class="columns">
+	<button onclick="button('https://github.com/ivandfx/ivandfx.github.io/releases/download/dfxwt-lr/DFXWT_4.0.VBS', false)"  class="buttons downloadButtons">Unreleased</button>
+                    <p>4.0 DEV build</p>
+                    <br/>
+            </div>
+		</div>
+    </div>
+    <div id="show">
+    </div>
+    </div>
+    <script>
+        function button(link, warn){
+            window.location.href = link;
+            setTimeout(function(){
+                window.onclick = function(){
+                    document.getElementById;
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
