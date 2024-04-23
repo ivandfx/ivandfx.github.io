@@ -14,119 +14,125 @@
     <link rel="bookmark" href="icons/dfx_favicon.png">
     <link href="common.css" rel="stylesheet" type="text/css">
     <link href="article.css" rel="stylesheet" type="text/css">
-    <title>Farewell, DFX WinTweaks</title>
-    <style>
-        a:hover{
-            color: #66ddcc;
-        }
-        body {
-            background-image: url('../images/bg1080p.png');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-        }
-        #downloads{
-            padding: 3% 10% 0 10%;
-            box-sizing: border-box;
-            text-align: center;
-            color: #ffffff;
-            font-size: 16px;
-            font-family: "Poppins";
-        }
-        #columns {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 60px;
-
-        }
-        .column-title{
-            margin-top: 48px;
-            font-size: 18px;
-        }
-        .buttons{
-            transition: 0.3s ease;
-            display: block;
-            width: 200px;
-            height: 70px;
-            margin: 10px;
-            outline: none;
-            border: 0px solid transparent;
-            border-radius: 20px;
-            background-color: linear-gradient(-30deg, #0D1117, #161B22);
-            color: #000000;
-            font-size: 18px;
-            font-family: "Poppins";
-            cursor: pointer;
-        }
-        .buttons:hover{
-            box-shadow: 0px 0px 12px #888888;
-        }
-        #show{
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 3;
-        }
+    <title>DFX WinTweaks is BACK!</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script>
+	
+</script>
+<style type="text/css">
+	:root {
+		--bs-body-line-height: 1.2;
+	}
+	body {
+	background: #3e3e3e;
+		font-family: Helvetica, Arial, FreeSans, san-serif !important;
+		color: #ffffff;
+		body{ margin:0 auto; }
+	}
+	#right_column {
+		float: right;
+		margin: 0 auto;
+		margin-top: 10px;
+		margin-right: 10px;
+		width: 250px;
+		font-size: 0.8em;
+	}
+	#container {
+		margin: 0 auto;
+		width: 900px;
+		overflow: auto;
+	}
+	#notice {
+		border:4px solid #ffa520;
+		color:#ffffff;
+		padding:1em;
+		width:94%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	table.reference {
+		color: #000030;
+		background-color:#ffffff;
+		border:1px solid #c3c3c3;
+		border-collapse:collapse;
+		width:100%;
+	}
+	table.reference th {
+		background-color:#e5eecc;
+		border:1px solid #c3c3c3;
+		padding:3px;
+		vertical-align:top;
+	}
+	table.reference td {
+		border:1px solid #c3c3c3;
+		padding:3px;
+		vertical-align:top;
+	}
+	li { line-height: 1.3em; }
+	h1, h2, h3, h4, h5 , h6 { font-weight: bold; }
+	h1 { font-size: 3.8em; color: #c239b3; margin-bottom: 3px; margin-top: 10px; }
+	h1 .small { font-size: 0.4em; }
+	h1 a { text-decoration: none }
+	h2 { padding: 0px; font-size: 1.5em; color: #ffb900; line-height: 1.3em; border }
+	h3 { text-align: center; color: #ffb900; }
+	h4 { font-size: 1.0em; margin-top: 24px; margin-bottom: 10px; }
+	h5 { padding: 0px; font-size: 1.5em; color: #f3e900; line-height: 1.3em; border }
+	h6 { padding: 0px; font-size: 1.5em; color: #ffb900; line-height: 1.3em; border }
+	a { color: #ffb900; }
+	.tagline { font-size: 1.6em; margin-bottom: 30px; margin-top: 30px; font-style: bold; }
+	.download { float: right; }
+	pre { background: #000; color: #fff; padding: 15px; margin-top: 15px; }
+	code { display: inline-block; padding: 3px 3px 4px 1px; color: #ececec; font-family: monospace, monospace; line-height: 10px; font-size: 16px; vertical-align: middle; }
+	hr { border: 0; width: 80%; border-bottom: 1px solid #aaa; }
+	.kbd{
+		display:inline-block;
+		padding:3px 5px;
+		font-family:monospace, monospace;
+		font-size:11px;
+		line-height:10px;
+		color:#555;
+		vertical-align:middle;
+		background-color:#848482;
+		border:solid 1px #ccc;
+		border-bottom-color:#bbb;
+		border-radius:3px;
+		box-shadow:inset 0 -1px 0 #bbb;
+	}
+	.footer { font-size: 0.9em; text-align:center; padding-top: 30px; font-style: italic; }
+	.treeView{ -moz-user-select: none; position: relative; }
+	.treeView ul { margin: 0 0 0 -1.5em; padding: 0 0 0 1.5em; }
+	.treeView li { margin: 0; padding: 0; list-style-position: inside; list-style-image: none; cursor: auto; }
+	.treeView li li { padding-left: 1.5em; }
+	@media screen and ( max-width: 1002px; ) {
+		.hide_on_small_screens { display: none; }
+	}
+	.carousel-indicators { bottom: -45px; }
+	.carousel-indicators li {
+		width: 10px;
+		height: 10px;
+		border-radius: 80%;
+	}
 </style>
 </head>
-<body>
-    <div id="main-container">
-        <header>
-            <nav>
-                <ul id="bar">
-                    <li></li>
-                    <li><a id="nav-home" href="../index.html">Back to Main</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div id="downloads">
-        <div id="text-area">
-	<h1>Farewell, DFX WinTweaks</h1>
-	<h2>Thanks to everyone for the continued support - March 21, 2024</h2>
-	<p>A while ago, I announced that the development for DFX WinTweaks (previously DFX Tweaker) would cease.</p>
-	<p>DFX WinTweaks was just a mini script based on AikonCWD's Win10 Script originally, and over the time, it changed so much that nowadays, 99% of the code it's not what AikonCWD originally did, and was mostly mine. And that is what made me go nuts and release updates way less often.</p>
-	<p>During development, I was getting my free time (also study time) cut out due to me being unable to sleep properly while knowing all the bugs that I needed to fix even when a new version was just released.</p>
-	<p>And I'm not a good programmer, heck, I don't really like writing that much if I have to hurt my brain THAT hard finding ways to fix stuff.</p>
-	<p>To say it quicker, DFX WinTweaks is no longer in development, thanks to everyone who believed in the project since 2022 <3</p>
-	<p>The original repo has been archived, but I have provided new downloads for the latest versions that were released (and the latest development build)</p>
-            <br/>
-            <div id="columns">
-                <div class="columns">
-	<button onclick="button('https://github.com/ivandfx/ivandfx.github.io/releases/download/dfxwt-lr/DFXWT_3.6.1.VBS', false)"  class="buttons downloadButtons">Windows 10/11</button>
-                    <p>Last version released</p>
-                    <br/>
-            </div>
-			        <div class="columns">
-	<button onclick="button('https://github.com/ivandfx/ivandfx.github.io/releases/download/dfxwt-lr/DFXWT_3.3.4_LTS.VBS', false)"  class="buttons downloadButtons">Windows 7 to 8.1</button>
-                    <p>LTS Release</p>
-                    <br/>
-            </div>
-				<div class="columns">
-	<button onclick="button('https://github.com/ivandfx/ivandfx.github.io/releases/download/dfxwt-lr/DFXWT_4.0.VBS', false)"  class="buttons downloadButtons">Unreleased</button>
-                    <p>4.0 DEV build</p>
-                    <br/>
-            </div>
-		</div>
-    </div>
-    <div id="show">
-    </div>
-    </div>
-    <script>
-        function button(link, warn){
-            window.location.href = link;
-            setTimeout(function(){
-                window.onclick = function(){
-                    document.getElementById;
-                }
-            }, 100);
-        }
-    </script>
-</body>
-</html>
+<div id="container">
+	<hr style="width:0px;">
+	<hr style="width:0px;">
+	<h1><a target="_blank" href="https://ivandfx.github.io/DFXWinTweaks">DFX WinTweaks</a></h1>
+	<div class="tagline">DFX WinTweaks is BACK!</div>
+	<hr style="width:0px;">
+	<p>After 2 months of reconsideration, I finally decided that DFX WinTweaks is now on development again!</p>
+	<p>However, some stuff (including but not limited to) like the website, release schedules, original logo renders and information sites are unfortunately gone.</p>
+	<p>So, please take in consideration that restarting this project will take a while.</p>
+	<hr style="width:0px;">
+	<a name="download"></a>
+	<h2><span style="font-size: 133%">Downloads</span></h2>
+	<p>Downloads cannot be provided on this older version of the website anymore, but you can visit the repo <span style="font-size: 133%"><b><a href="https://github.com/ivandfx/DFXWinTweaks">here</a></b></p>
+		<hr style="width:0px;">
+		<hr style="width:0px;">
+		<hr style="width:0px;">
+		<hr style="width:0px;">
+		<footer>
+	<h4><center>DFX WinTweaks is licensed under a GNU General Public License v3.0</center></a></h4> 
+	<h4><center>This website is temporarily based on the original DFX Tweaker website</center></a></h4>
+	<h4><center>2022 - 2024 <a href="https://ivandfx.github.io" target="_blank">ivandfx</center></a></h4>
+		</footer>
