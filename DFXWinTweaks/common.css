@@ -60,6 +60,7 @@ header{
 }
 .unavail{
         color: #e7370b;
+        cursor: not-allowed;
 }
 #copyright{
     position: fixed;
