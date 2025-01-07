@@ -18,11 +18,11 @@ body {
 h1 {
   font-size: 64px;
   letter-spacing: -3px;
-  color:#ffffff
+  color: #ffffff;
 }
 
 p {
-  color:rgb(255, 255, 255)
+  color: rgb(255, 255, 255);
 }
 
 a {
@@ -34,7 +34,7 @@ b {
   color: #4b66ff;
 }
 
-::selection{
+::selection {
     color: #ffa24b;
 }
 
@@ -42,9 +42,8 @@ span {
   color: white;
   padding: 0px 20px;
   text-align: center;
-  border-radius: 5px;
-  font-size: 64px;
   border-radius: 50px;
+  font-size: 64px;
   background-image: linear-gradient(90deg, #ff3300, #ffa600, #ff3300);
   background-size: 300% 100%;
   animation: span 10s linear infinite;
@@ -65,26 +64,29 @@ span {
 }
 
 .topnav {
-  overflow: hidden;
-  background-color: #252525;
-  box-shadow: #00000033 0px 2px 8px 0px;
-  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
+  width: 100%;
+  background-color: #252525;
+  box-shadow: #00000033 0px 2px 8px 0px;
   background: transparent;
   backdrop-filter: blur(10px);
 }
 
 .topnav a {
-  float: left;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
   font-size: 17px;
-  margin: 8px;
+  margin: 0 10px;
   cursor: pointer;
   transition: 0.2s;
   font-weight: 600;
+  display: inline-block;
 }
 
 .topnav .a {
@@ -97,6 +99,104 @@ span {
   color: rgb(0, 0, 0);
   border-radius: 50px;
   transition: 0.3s ease;
+}
+
+.topnav .icon {
+  display: none;
+  font-size: 30px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.topnav.responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #252525;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.topnav.responsive a {
+  display: block;
+  text-align: left;
+  padding: 10px 15px;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .topnav .icon {
+    display: block;
+  }
+
+  .topnav a {
+    display: none;
+  }
+
+  .topnav.responsive a {
+    display: block;
+    text-align: left;
+    padding: 10px 15px;
+  }
+
+  .download-btn {
+    display: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.screen {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 601px) {
+  .topnav a {
+    display: inline-block;
+  }
+
+  .topnav .icon {
+    display: none;
+  }
+
+  .topnav-content {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+
+  .download-btn {
+    margin-left: auto;
+  }
+}
+
+.download-btn {
+  background-color: #ff3300;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.download-btn:hover {
+  transition: 0.3s ease;
+  background-color: #ffa600;
+  box-shadow: 0px 0px 12px #ffa600;
 }
 
 button {
@@ -134,8 +234,8 @@ tr:hover {
   backdrop-filter: blur(2px);
 }
 
-tr{
-  color: #ffffff
+tr {
+  color: #ffffff;
 }
 
 .mini {
@@ -166,4 +266,76 @@ footer {
   backdrop-filter: blur(10px);
   position: fixed;
   bottom: 0;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .topnav a {
+    font-size: 14px;
+    margin: 4px;
+  }
+
+  .topnav .a {
+    padding: 10px 8px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  footer {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  .topnav a {
+    font-size: 16px;
+    margin: 6px;
+  }
+
+  .topnav .a {
+    padding: 12px 10px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 28px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  footer {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 72px;
+  }
+
+  .topnav a {
+    font-size: 18px;
+    margin: 0 10px;
+  }
+
+  button {
+    font-size: 22px;
+    padding: 18px 36px;
+  }
 }
