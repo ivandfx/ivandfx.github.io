@@ -1,98 +1,75 @@
----
-permalink: /404.html
----
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ivandfx - 404</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #3f3f3f;
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    header {
-      background-color: #8dcaca;
-      color: #3f3f3f;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    .container {
-      flex: 1;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .intro {
-      font-size: 1.5rem;
-      margin-bottom: 40px;
-    }
-
-    .cta-button {
-      background-color: #007bff;
-      color: white;
-      padding: 15px 25px;
-      font-size: 1.2rem;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #8dcaca;
-      color: #3f3f3f;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    footer a {
-      color: #8dcaca;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-..." 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="background-blur"></div>
 
   <header>
-    <h1>ivandfx - 404 Error</h1>
+    <img src="img/logoshadow.png" alt="Logo" />
+
+    <nav id="nav-menu">
+      <button id="toggle-dark">🌙</button>
+    </nav>
+
+    <button id="hamburger" aria-label="Menu">&#9776;</button>
   </header>
 
-  <div class="container">
-    <p class="intro">Sorry, but this URL does not exist.</p>
-    <p class="intro">Maybe it got deleted, never existed or you typed it wrong.</p>
-    <a href="index.html" class="cta-button">Home</a>
-  </div>
+  <main>
+    <section id="about-me" class="fade-in">
+      <div class="intro-container">
+        <div class="intro-text">
+          <h1>Sorry, but this URL does not exist.</h1>
+          <p>Maybe it got deleted, never existed or you typed it wrong.</p>
+		      <h2><a href="index.html" class="cta-button" target="_blank"><i class="fa-solid fa-house"></i>Home</a></h2>
+        </div>
+    </section>
 
   <footer>
-    <p>2025 <strong>ivandfx</strong><br></p>
+    <p>&copy; 2025 ivandfx</p>
   </footer>
 
+  <script>
+    const toggle = document.getElementById('toggle-dark');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      toggle.textContent = '🌙';
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        body.classList.add('dark-mode');
+        toggle.textContent = '🌙';
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      toggle.textContent = isDark ? '🌙' : '☀️';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
