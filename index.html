@@ -1,3 +1,40 @@
+Skip to content
+Navigation Menu
+ivandfx
+ivandfx.github.io
+
+Type / to search
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Files
+Go to file
+t
+DFXWinTweaks
+images
+img
+404.html
+index.html
+style.css
+ivandfx.github.io
+/index.html
+ivandfx
+ivandfx
+Actualizar index.html
+c751885
+ · 
+2 days ago
+
+Code
+
+Blame
+98 lines (86 loc) · 3.31 KB
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +89,7 @@
         <a href="https://github.com/ivandfx" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://www.youtube.com/@ivandfx" target="_blank"><i class="fab fa-youtube"></i></a>
         <a href="https://www.twitch.tv/ivandfx" target="_blank"><i class="fab fa-twitch"></i></a>
-        <a href="https://twitter.com/ivandfx" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://twitter.com/ivandfx" target="_blank"><i class="fab fa-x-twitter"></i></a>
         <a href="https://www.instagram.com/ivandfx" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.tiktok.com/@ivandfx" target="_blank"><i class="fab fa-tiktok"></i></a>
         <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank"><i class="fab fa-bluesky"></i></a>
@@ -60,9 +97,9 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 ivandfx</p>
-  </footer>
+<footer>
+<p>&copy; <span id="year"></span> ivandfx</p>
+</footer>
 
   <script>
     const toggle = document.getElementById('toggle-dark');
@@ -94,5 +131,9 @@
       navMenu.classList.toggle('show');
     });
   </script>
+	<script>
+	document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
