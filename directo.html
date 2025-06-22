@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ivandfx | EN DIRECTO</title>
+  <link rel="icon" href="img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: url('img/bglive.png') center center / cover no-repeat fixed;
+      color: white;
+    }
+
+    .page-wrapper {
+      padding: 1rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .twitch-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* redim container */
+    .twitch-section {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      max-width: 100%;
+      height: 500px;
+      border-radius: 12px;
+      background-color: #00000056;
+      border: 2px solid #8dcaca;
+      box-shadow: 0 4px 12px #00000066;
+      resize: both;
+      overflow: auto;
+      box-sizing: border-box;
+      margin: 0 auto;
+      min-width: 400px;
+      max-width: 1200px;
+    }
+
+    .twitch-player {
+      flex: 4 1 0;
+      border-radius: 10px;
+      background-color: black;
+      width: auto;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+      max-width: 100%;
+      object-fit: cover;
+      min-width: 0;
+    }
+
+    .twitch-chat {
+      flex: 1.2 1 0;
+      border-radius: 10px;
+      background-color: black;
+      height: 100%;
+      min-width: 250px;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      overflow: auto;
+      min-width: 0;
+    }
+
+    .hidden {
+      opacity: 0;
+      visibility: hidden;
+      height: 0 !important;
+      overflow: hidden;
+      flex: 0 0 0 !important;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .twitch-section {
+        flex-direction: column;
+        height: auto;
+        resize: none;
+      }
+
+      .twitch-player,
+      .twitch-chat {
+        width: 100%;
+        height: 400px;
+        aspect-ratio: auto;
+      }
+
+      .twitch-chat {
+        min-width: auto;
+      }
+    }
+
+    .chat-toggle-btn {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #8dcaca;
+      border: none;
+      border-radius: 6px;
+      color: black;
+      transition: background-color 0.3s ease;
+    }
+
+    .chat-toggle-btn:hover {
+      background-color: #6aa7a7;
+    }
+
+    #cookies-warning {
+      max-width: 800px;
+      margin: 1rem auto;
+      padding: 1rem;
+      background-color: #111;
+      color: #eee;
+      border: 1px solid #8dcaca;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 0.95rem;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none;
+    }
+
+    #cookies-warning.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    #cookies-warning a {
+      color: #8dcaca;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="topnav-container"></div>
+  <a class="msg-button">Actualmente, el navegador Brave no es compatible, se recomienda usar Edge, Firefox, Chrome, u otros</a>
+  <div class="page-wrapper">
+    <main>
+      <br>
+      <h1>EN DIRECTO (BETA)</h1>
+      <div class="twitch-wrapper">
+        <section class="twitch-section">
+          <iframe
+            class="twitch-player"
+            src="https://player.twitch.tv/?channel=ivandfx&parent=ivandfx.github.io"
+            allowfullscreen
+          ></iframe>
+
+          <iframe
+            id="twitch-chat"
+            class="twitch-chat hidden"
+            src="https://www.twitch.tv/embed/ivandfx/chat?darkpopout&parent=ivandfx.github.io"
+            allowfullscreen
+          ></iframe>
+        </section>
+      </div>
+
+      <button class="chat-toggle-btn" onclick="toggleChat()">Mostrar chat</button>
+
+      <div id="cookies-warning" class="cookies-warning">
+        Este chat está integrado desde Twitch. <br />
+        <strong>Twitch puede utilizar cookies propias con fines técnicos, de seguridad o análisis.</strong
+        ><br />
+        Nosotros no accedemos ni gestionamos esas cookies.<br />
+        Más información en la
+        <a href="https://www.twitch.tv/p/en/legal/privacy-notice/" target="_blank" rel="noopener noreferrer">Política de privacidad de Twitch</a>
+      </div>
+    </main>
+  </div>
+
+<script src="loader.js"></script>
+  <script>
+    const chatFrame = document.getElementById("twitch-chat");
+    const btn = document.querySelector(".chat-toggle-btn");
+    const cookiesWarning = document.getElementById("cookies-warning");
+
+    function toggleChat() {
+      const isHidden = chatFrame.classList.contains("hidden");
+      chatFrame.classList.toggle("hidden");
+      btn.textContent = isHidden ? "Ocultar chat" : "Mostrar chat";
+
+      if (isHidden) {
+        cookiesWarning.classList.add("visible");
+      } else {
+        cookiesWarning.classList.remove("visible");
+      }
+    }
+  </script>
+</body>
+</html>

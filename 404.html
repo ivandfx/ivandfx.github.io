@@ -1,74 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ivandfx - 404</title>
-  <link rel="stylesheet" href="style.css" />
-  <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
-    integrity="sha512-..." 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer" 
-  />
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="background-blur"></div>
-
-  <header>
-    <img src="img/logoShadow.png" alt="Logo" />
-
-    <nav id="nav-menu">
-      <button id="toggle-dark">🌙</button>
-    </nav>
-
-    <button id="hamburger" aria-label="Menu">&#9776;</button>
-  </header>
-
-  <main>
-    <section id="about-me" class="fade-in">
-      <div class="intro-container">
-        <div class="intro-text">
-          <h1>This website is undergoing maintenance</h1>
-          <p>Will be back soon</p>
-        </div>
-    </section>
-
-  <footer>
-    <p>&copy; 2025 ivandfx</p>
-  </footer>
-
-  <script>
-    const toggle = document.getElementById('toggle-dark');
-    const body = document.body;
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      toggle.textContent = '🌙';
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        body.classList.add('dark-mode');
-        toggle.textContent = '🌙';
-      }
+  <title>ivandfx | 404</title>
+  <link rel="icon" href="img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #game-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      height: 400px;
+      margin: 20px auto;
+      border: 2px solid #8dcaca;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #222;
     }
 
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      const isDark = body.classList.contains('dark-mode');
-      toggle.textContent = isDark ? '🌙' : '☀️';
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
+    .target {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: crimson;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
+    #score {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 10px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="topnav-container"></div>
 
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-    });
+  <div class="page-wrapper">
+    <main>
+    <h1>Error 404. Este enlace no existe.</h1>
+      <h2>¡Haz clic en el cuadrado!</h2>
+      <div id="game-container"></div>
+      <div id="score">Puntuación: 0</div>
+    </main>
+  </div>
+
+  <script>
+    const container = document.getElementById('game-container');
+    const scoreDisplay = document.getElementById('score');
+    let score = 0;
+
+    function createTarget() {
+      const target = document.createElement('div');
+      target.classList.add('target');
+
+      const maxX = container.clientWidth - 40;
+      const maxY = container.clientHeight - 40;
+
+      const x = Math.floor(Math.random() * maxX);
+      const y = Math.floor(Math.random() * maxY);
+
+      target.style.left = x + 'px';
+      target.style.top = y + 'px';
+
+      target.onclick = () => {
+        score++;
+        scoreDisplay.textContent = 'Puntuación: ' + score;
+        container.removeChild(target);
+        createTarget();
+      };
+
+      container.appendChild(target);
+    }
+
+    createTarget();
   </script>
+  <script src="loader.js"></script>
 </body>
 </html>
