@@ -1,5 +1,5 @@
 // load topnav
-fetch('../topnav.html')
+fetch('topnav.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('topnav-container').innerHTML = html;
@@ -96,3 +96,11 @@ function toggleChat() {
   chat.classList.toggle('hidden');
   player.classList.toggle('fullwidth', chat.classList.contains('hidden'));
 }
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
