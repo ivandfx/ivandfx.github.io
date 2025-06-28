@@ -42,6 +42,18 @@ body {
   }
 }
 
+.text-url {
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  padding: 1px;
+}
+
+.text-url:hover {
+  background-color: #8dcaca;
+  color: #000000;
+}
+
 .promo-banner {
   position: fixed;
   top: 54px;
