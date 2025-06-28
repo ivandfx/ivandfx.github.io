@@ -27,8 +27,8 @@ body {
 }
 
 ::selection {
-  background-color: #b371bd;
-  color: #ffffff;
+  background-color: #98e695;
+  color: #1e1e1e;
 }
 
 @keyframes slideDown {
@@ -42,7 +42,24 @@ body {
   }
 }
 
-.msg-button {
+.promo-banner {
+  position: fixed;
+  top: 54px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  color: #ffffff;
+  background-color: #b371bd;
+  padding: 4px 10px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.msg-banner {
   position: fixed;
   top: 54px;
   left: 0;
@@ -59,7 +76,7 @@ body {
   animation: slideDown 0.5s ease-out forwards;
 }
 
-.rel-button {
+.rel-banner {
   color: #000000;
   background-color: #ff8800;
   padding: 4px 10px;
@@ -70,9 +87,27 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.rel-button:hover {
+.rel-banner:hover {
   background-color: #8dcaca;
   color: #000;
+}
+
+.pb-button {
+  color: #1e1e1e;
+  background-color: #8dcaca;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  width: 150px;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pb-button:hover {
+  background-color: #ff80c0;
+  color: #ffffff;
 }
 
 .dl-button {

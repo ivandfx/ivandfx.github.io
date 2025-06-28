@@ -1,5 +1,5 @@
 // load topnav
-fetch('topnav.html')
+fetch('/topnav.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('topnav-container').innerHTML = html;
@@ -104,3 +104,12 @@ function toggleChat() {
     navLinks.classList.toggle('show');
   });
 
+let viewport = document.querySelector('meta[name="viewport"]');
+if (viewport) {
+  viewport.setAttribute('content', 'width=1024');
+} else {
+  let meta = document.createElement('meta');
+  meta.name = 'viewport';
+  meta.content = 'width=1024';
+  document.head.appendChild(meta);
+}
