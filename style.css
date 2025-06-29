@@ -214,7 +214,7 @@ body {
   transform: translateX(-50%);
   background-color: var(--dropdown-bg);
   margin-top: 5px;
-  border-radius: 8px;
+  border-radius: 14px;
   min-width: 200px;
   z-index: 1001;
   opacity: 0;
