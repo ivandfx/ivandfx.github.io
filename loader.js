@@ -96,20 +96,3 @@ function toggleChat() {
   chat.classList.toggle('hidden');
   player.classList.toggle('fullwidth', chat.classList.contains('hidden'));
 }
-
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-
-let viewport = document.querySelector('meta[name="viewport"]');
-if (viewport) {
-  viewport.setAttribute('content', 'width=1024');
-} else {
-  let meta = document.createElement('meta');
-  meta.name = 'viewport';
-  meta.content = 'width=1024';
-  document.head.appendChild(meta);
-}
