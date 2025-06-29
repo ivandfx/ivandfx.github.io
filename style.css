@@ -288,13 +288,6 @@ body {
   opacity: 1;
 }
 
-.hamburger {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  align-content: center;
-}
-
 main {
   padding: 0 50px;
   width: 100%;
@@ -552,58 +545,20 @@ button:hover {
   color: #000;
 }
 
-@media (max-width: 768px) {
-  .middle-section {
-    justify-content: flex-end;
-  }
-
+@media (min-width: 769px) {
   .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 54px;
-    left: 0;
-    width: 100%;
-    background-color: var(--bg-color);
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links .dropdown-menu {
-    position: static;
-    padding: 5px 0;
-    background-color: transparent;
-    border-radius: 0;
-    max-height: none;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .dropdown-menu a {
-    padding: 6px 12px;
-  }
-
-  .dropdown-wrapper {
-    width: 100%;
-    text-align: center;
+    display: none !important;
   }
 }
+
 @media (max-width: 768px) {
   .middle-section {
     justify-content: flex-end;
   }
 
   .hamburger {
+    font-size: 1.2rem;
+    cursor: pointer;
     display: block;
   }
 
@@ -615,28 +570,23 @@ button:hover {
     background-color: var(--bg-color);
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    gap: 15px;
     padding: 15px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
     display: none;
+  }
+
+    .nav-links:hover {
+      color: #8dcaca;
   }
 
   .nav-links.active {
     display: flex;
   }
-
-  .nav-links .dropdown-menu {
-    position: static;
-    padding: 5px 0;
-    background-color: transparent;
-    border-radius: 0;
-    max-height: none;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
   .dropdown-menu a {
     padding: 6px 12px;
+    align-items: right;
   }
 
   .dropdown-wrapper {
