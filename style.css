@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background: linear-gradient(#00000049, #00000049), url('img/bgdl.png') center center / cover no-repeat fixed;
+  background: linear-gradient(#000000a9, #000000a9), url('img/bgpm.jpg') center center / cover no-repeat fixed;
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
