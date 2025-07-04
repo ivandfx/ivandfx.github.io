@@ -55,7 +55,7 @@ body {
   left: 0;
   right: 0;
   z-index: 999;
-  max-width: 1099px;
+  max-width: 1100px;
   margin: 0 auto;
   background-color: #b371bd;
   color: #ffffff;
@@ -75,7 +75,7 @@ body {
   left: 0;
   right: 0;
   z-index: 999;
-  max-width: 1099px;
+  max-width: 1100px;
   margin: 0 auto;
   background-color: #8dcaca;
   color: #000000;
@@ -165,6 +165,7 @@ body {
   gap: 20px;
   font-size: 0.95rem;
   flex-wrap: nowrap;
+  animation: slideDown 0.2s ease-out forwards;
 }
 
 .nav-links a {
@@ -209,6 +210,7 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  
   padding: 0 20px;
 }
 
@@ -242,7 +244,7 @@ body {
 
 .social-icons a {
   color: var(--text-color);
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   transition: color 0.2s ease;
 }
 
@@ -401,9 +403,9 @@ main {
 
 @media (max-width: 768px) {
   .page-live .twitch-section {
-    flex-direction: column;
-    width: 100% !important;
-    height: auto !important;
+        flex-direction: column;
+        width: 100% !important;
+        height: auto !important;
   }
   .page-live .twitch-player,
   .page-live .twitch-chat {
@@ -562,6 +564,8 @@ button:hover {
     gap: 15px;
     padding: 15px 0;
     display: none;
+    box-shadow: 0 6px 10px #00000054;
+    z-index: -1;
   }
 
     .nav-links:hover {
