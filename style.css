@@ -13,13 +13,13 @@ html {
 }
 
 body {
-  background: linear-gradient(#000000a9, #000000a9), url('img/bgpm.jpg') center center / cover no-repeat fixed;
+  background: url('img/bgdl.png') center center / cover no-repeat fixed;
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.4s ease, color 0.4s ease;
-  padding-top: 54px;
+  padding-top: 70px;
   overflow-x: hidden;
 }
 
@@ -57,52 +57,38 @@ body {
 
 .promo-banner {
   position: fixed;
-  top: 54px;
+  top: 45px;
   left: 0;
-  width: 100%;
+  right: 0;
   z-index: 999;
-  color: #ffffff;
+  max-width: 999px;
+  margin: 0 auto;
   background-color: #b371bd;
-  padding: 4px 10px;
+  color: #ffffff;
+  padding: 28px 40px 8px;  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   display: flex;
   justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  animation: slideDown 0.5s ease-out forwards;
+  align-items:center
 }
 
 .msg-banner {
   position: fixed;
-  top: 54px;
+  top: 45px;
   left: 0;
-  width: 100%;
+  right: 0;
   z-index: 999;
-  color: #000000;
+  max-width: 999px;
+  margin: 0 auto;
   background-color: #8dcaca;
-  padding: 4px 10px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #000000;
+  padding: 28px 40px 8px;  border-radius: 0 0 12px 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  animation: slideDown 0.5s ease-out forwards;
-}
-
-.rel-banner {
-  color: #000000;
-  background-color: #ff8800;
-  padding: 4px 10px;
   text-decoration: none;
-  font-weight: bold;
   display: flex;
   justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.rel-banner:hover {
-  background-color: #8dcaca;
-  color: #000;
+  align-items:center
 }
 
 .pb-button {
@@ -143,22 +129,25 @@ body {
 
 .topnav {
   position: fixed;
-  height: 54px;
-  top: 0;
+  top: 12px;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: var(--bg-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  pointer-events: none;
 }
 
 .topnav .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 12px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  pointer-events: auto;
 }
 
 .logo img {
@@ -613,5 +602,36 @@ button:hover {
     justify-content: center;
     gap: 12px;
     padding-top: 10px;
+  }
+}
+
+@media (max-width: 1060px) {
+  .topnav {
+    top: 0;
+  }
+
+  .topnav .container {
+    border-radius: 0px 0px 12px 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 1060px) {
+  .msg-banner {
+    top: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 1060px) {
+  .promo-banner {
+    top: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: none;
   }
 }
