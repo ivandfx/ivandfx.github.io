@@ -60,7 +60,7 @@ body {
   left: 0;
   right: 0;
   z-index: 999;
-  max-width: 1199px;
+  max-width: 1099px;
   margin: 0 auto;
   background-color: #b371bd;
   color: #ffffff;
@@ -80,7 +80,7 @@ body {
   left: 0;
   right: 0;
   z-index: 999;
-  max-width: 1199px;
+  max-width: 1099px;
   margin: 0 auto;
   background-color: #8dcaca;
   color: #000000;
@@ -141,7 +141,7 @@ body {
 }
 
 .topnav .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 12px 40px;
   display: flex;
@@ -608,7 +608,7 @@ button:hover {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1100px) {
   .topnav {
     top: 0;
   }
@@ -621,7 +621,7 @@ button:hover {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1100px) {
   .msg-banner {
     top: 35px;
     padding-left: 20px;
@@ -630,7 +630,7 @@ button:hover {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1100px) {
   .promo-banner {
     top: 35px;
     padding-left: 20px;
