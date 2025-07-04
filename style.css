@@ -609,7 +609,7 @@ button:hover {
   }
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1300px) {
   .topnav {
     top: 0;
   }
@@ -622,7 +622,7 @@ button:hover {
   }
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1300px) {
   .msg-banner {
     top: 35px;
     padding-left: 20px;
@@ -631,7 +631,7 @@ button:hover {
   }
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1300px) {
   .promo-banner {
     top: 35px;
     padding-left: 20px;
