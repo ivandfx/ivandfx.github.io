@@ -26,11 +26,6 @@ body {
   display: none !important;
 }
 
-::selection {
-  background-color: #98e695;
-  color: #1e1e1e;
-}
-
 @keyframes slideDown {
   from {
     transform: translateY(-60%);
