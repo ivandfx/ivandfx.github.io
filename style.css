@@ -34,7 +34,7 @@ body {
 
 @keyframes slideDown {
   from {
-    transform: translateY(-100%);
+    transform: translateY(-60%);
     opacity: 0;
   }
   to {
@@ -71,6 +71,8 @@ body {
   display: flex;
   justify-content: center;
   align-items:center
+  transition: background-color 0.3s ease, color 0.3s ease;
+  animation: slideDown 0.5s ease-out forwards;
 }
 
 .msg-banner {
@@ -89,6 +91,8 @@ body {
   display: flex;
   justify-content: center;
   align-items:center
+  transition: background-color 0.3s ease, color 0.3s ease;
+  animation: slideDown 0.5s ease-out forwards;
 }
 
 .pb-button {
