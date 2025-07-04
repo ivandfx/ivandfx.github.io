@@ -144,11 +144,42 @@
       color: #8dcaca;
       text-decoration: underline;
     }
+
+  .no-mobile-message {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .page-wrapper {
+      display: none;
+    }
+
+  @media (max-width: 768px) {
+    .msg-banner {
+      display: none;
+    }
+
+    .no-mobile-message {
+      display: block;
+    }
+  }
+
   </style>
 </head>
 <body>
   <div id="topnav-container"></div>
   <a class="msg-banner">El navegador Brave en Windows/Mac/Linux no es compatible.</a>
+
+<div class="no-mobile-message">
+  No se puede reproducir el directo web en este dispositivo.
+  <br>
+  <br>
+  Para verlo, pulsa el botón ☰ en la parte superior, y a continuación, pulsa el icono de <i class="fab fa-twitch"></i>
+  </div>
+
   <div class="page-wrapper">
     <main>
       <br>
