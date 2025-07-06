@@ -2,16 +2,277 @@
   <div class="container">
     <a href="/index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
       <img src="/img/logo.png" alt="Logo" />
-      <span id="desarrollo" style="font-size: 0.85rem; font-weight: bold; color: #000000; background-color: #8dcaca; padding: 2px 6px; border-radius: 4px;">BETA</span>
+      <span id="desarrollo"style="font-size: 0.85rem; font-weight: bold; color: #000000; background-color: #8dcaca; padding: 2px 6px; border-radius: 6px;">BETA</span>
     </a>
+<style>
+.topnav {
+  position: fixed;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  pointer-events: none;
+}
+
+.topnav .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  pointer-events: auto;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.middle-section {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-size: 0.95rem;
+  flex-wrap: nowrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  padding: 6px;
+}
+
+.nav-links a:hover {
+  color: var(--link-hover);
+}
+
+.nav-links a.dropdown::after {
+  content: " \f107";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.75rem;
+  position: relative;
+  top: -1px;
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dropdown-bg);
+  margin-top: 5px;
+  border-radius: 14px;
+  min-width: 200px;
+  z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.dropdown-menu.show {
+  max-height: 500px;
+  opacity: 1;
+  padding: 10px 20px;
+  pointer-events: auto;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.dropdown-menu a:hover {
+  color: var(--link-hover);
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.social-icons a {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: var(--link-hover);
+}
+
+.search-icon {
+  border-left: 1px solid #ccc;
+  padding-left: 15px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.search-input {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  opacity: 0;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.search-icon:hover .search-input,
+.search-input:focus {
+  width: 180px;
+  opacity: 1;
+}
+
+button:hover {
+  background-color: #8dcaca;
+  color: #000;
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .topnav {
+    top: auto !important;
+    bottom: 0 !important;
+    pointer-events: auto;
+    background: transparent;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .middle-section {
+    justify-content: flex-end;
+    padding: 10px 20px;
+  }
+
+  .hamburger {
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: block;
+  }
+
+  .hamburger.active {
+    color: #8dcaca;
+  }
+
+  .nav-links {
+    position: absolute;
+    bottom: 66px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    border-radius: 16px;
+    gap: 15px;
+    padding: 0 0; /* empezar sin padding */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+    max-height: 1000px;
+    opacity: 1;
+    padding: 15px 0;
+  }
+
+
+  .nav-links:hover {
+    color: #8dcaca;
+  }
+
+  .dropdown-menu a {
+    padding: 6px 12px;
+    align-items: center;
+  }
+
+  .dropdown-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1100px) {
+  .topnav {
+    top: 0;
+  }
+
+  .topnav .container {
+    border-radius: 12px 12px 0 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: none;
+  }
+}
+
+.social-icons.desktop {
+  display: flex;
+}
+
+.social-icons.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .social-icons.desktop {
+    display: none;
+  }
+
+  .social-icons.mobile {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 10px;
+  }
+}
+</style>
 
     <div class="middle-section">
       <nav class="nav-links" id="navLinks">
         <div class="dropdown-wrapper">
-          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'recent-dropdown')">PÁGINAS</a>
-          <div class="dropdown-menu" id="recent-dropdown">
-            <a href="/pc.html">¿Qué lleva mi PC?</a>
-          </div>
+            <a href="#">BLOG (Pronto)</a>
         </div>
 
         <div class="dropdown-wrapper">

@@ -11,9 +11,31 @@ fetch('/topnav.html')
     });
   });
 
+// toggle main nav menu
 function toggleMenu() {
   const navLinks = document.getElementById("navLinks");
+  const footer = document.getElementById("dynamic-footer");
+
   navLinks.classList.toggle("active");
+
+  // Solo en móvil
+  if (window.innerWidth <= 768) {
+    const isOpen = navLinks.classList.contains("active");
+
+    if (isOpen) {
+      // Insertar footer dentro del menú si no está ya ahí
+      if (footer && !navLinks.contains(footer)) {
+        navLinks.insertBefore(footer, navLinks.firstChild);
+        footer.classList.remove("hidden-mobile"); // mostrarlo
+      }
+    } else {
+      // Recolocar footer fuera y volver a ocultarlo
+      if (footer && document.body.contains(footer)) {
+        document.body.appendChild(footer);
+        footer.classList.add("hidden-mobile"); // ocultarlo de nuevo
+      }
+    }
+  }
 }
 
 // show/hide dropdowns with anims
@@ -32,7 +54,7 @@ function toggleDropdown(event, el, dropdownId) {
   }
 }
 
-// close dropdowns when click outside
+// close dropdowns when clicking outside
 window.addEventListener('click', e => {
   if (!e.target.closest('.dropdown-wrapper')) {
     document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
@@ -55,7 +77,7 @@ function loadComponent(id, url) {
 loadComponent("sidebar-container", "sidebar.html");
 
 const footerHTML = `
-<footer style="
+<footer id="dynamic-footer" class="hidden-mobile" style="
   position: fixed;
   bottom: 20px;
   left: 50%;
@@ -66,12 +88,13 @@ const footerHTML = `
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   font-size: 0.9rem;
-  z-index: 9999;
-">© 2025 ivandfx
-</footer>`;
+  z-index: 9999;">
+  © 2025 ivandfx
+  </footer>`;
 
 document.body.insertAdjacentHTML('beforeend', footerHTML);
 
+// visibilidad de "desarrollo"
 function checkDesarrolloVisibility() {
   const logo = document.querySelector(".logo");
   const desarrollo = document.getElementById("desarrollo");
@@ -90,9 +113,17 @@ function checkDesarrolloVisibility() {
 window.addEventListener('resize', checkDesarrolloVisibility);
 window.addEventListener('load', checkDesarrolloVisibility);
 
+// twitch chat toggle
 function toggleChat() {
   const chat = document.querySelector('.twitch-chat');
   const player = document.querySelector('.twitch-player');
   chat.classList.toggle('hidden');
   player.classList.toggle('fullwidth', chat.classList.contains('hidden'));
+}
+
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.querySelector('.hamburger');
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
 }
