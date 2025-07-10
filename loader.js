@@ -4,10 +4,37 @@ fetch('/topnav.html')
   .then(html => {
     document.getElementById('topnav-container').innerHTML = html;
 
-    // assign after loading topnav
+    // Dropdown listeners
     document.querySelectorAll('.dropdown').forEach(el => {
       const targetId = el.getAttribute('data-target');
       el.addEventListener('click', (e) => toggleDropdown(e, el, targetId));
+    });
+
+    const htmlElement = document.documentElement;
+
+    function updateModeToggleIcons(isLight) {
+      document.querySelectorAll('.mode-toggle').forEach(btn => {
+        btn.innerHTML = isLight
+          ? '<i class="fas fa-sun"></i>'
+          : '<i class="fas fa-moon"></i>';
+      });
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      htmlElement.classList.add('light-mode');
+      updateModeToggleIcons(true);
+    } else {
+      updateModeToggleIcons(false);
+    }
+
+    document.querySelectorAll('.mode-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        htmlElement.classList.toggle('light-mode');
+        const isLight = htmlElement.classList.contains('light-mode');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        updateModeToggleIcons(isLight);
+      });
     });
   });
 
@@ -18,21 +45,18 @@ function toggleMenu() {
 
   navLinks.classList.toggle("active");
 
-  // Solo en móvil
   if (window.innerWidth <= 768) {
     const isOpen = navLinks.classList.contains("active");
 
     if (isOpen) {
-      // Insertar footer dentro del menú si no está ya ahí
       if (footer && !navLinks.contains(footer)) {
         navLinks.insertBefore(footer, navLinks.firstChild);
-        footer.classList.remove("hidden-mobile"); // mostrarlo
+        footer.classList.remove("hidden-mobile");
       }
     } else {
-      // Recolocar footer fuera y volver a ocultarlo
       if (footer && document.body.contains(footer)) {
         document.body.appendChild(footer);
-        footer.classList.add("hidden-mobile"); // ocultarlo de nuevo
+        footer.classList.add("hidden-mobile");
       }
     }
   }
@@ -94,7 +118,6 @@ const footerHTML = `
 
 document.body.insertAdjacentHTML('beforeend', footerHTML);
 
-// visibilidad de "desarrollo"
 function checkDesarrolloVisibility() {
   const logo = document.querySelector(".logo");
   const desarrollo = document.getElementById("desarrollo");
