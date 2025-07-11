@@ -118,6 +118,48 @@ const footerHTML = `
 
 document.body.insertAdjacentHTML('beforeend', footerHTML);
 
+const credit = document.createElement('div');
+credit.id = 'credit-label';
+credit.textContent = 'Diseño Web: ivandfx';
+
+Object.assign(credit.style, {
+  position: 'fixed',
+  bottom: '0px',
+  right: '0px',
+  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+  color: '#fff',
+  padding: '4px 10px',
+  borderRadius: '8px 0 0 0',
+  fontSize: '14px',
+  fontFamily: 'sans-serif',
+  zIndex: '0',
+  transition: 'all 0.3s ease'
+});
+
+document.body.appendChild(credit);
+
+function updateCreditPosition() {
+  const topnav = document.getElementById('topnav');
+  const credit = document.getElementById('credit-label');
+
+  if (!topnav || !credit) return;
+
+  const isMobileLayout = topnav.offsetHeight > 100;
+
+  if (isMobileLayout) {
+    credit.classList.add('vertical');
+    credit.style.top = '10px';
+    credit.style.bottom = 'auto';
+  } else {
+    credit.classList.remove('vertical');
+    credit.style.bottom = '10px';
+    credit.style.top = 'auto';
+  }
+}
+
+window.addEventListener('load', updateCreditPosition);
+window.addEventListener('resize', updateCreditPosition);
+
 function checkDesarrolloVisibility() {
   const logo = document.querySelector(".logo");
   const desarrollo = document.getElementById("desarrollo");
