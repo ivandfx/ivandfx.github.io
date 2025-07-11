@@ -37,30 +37,158 @@
             </p>
         </div>
   </div>
-<div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
-  <div style="
-    background: #ca8d9c6c;
-    border: 1px solid #ffffff33;
-    border-radius: 16px;
-    padding: 0px 30px;
-    padding-bottom: 20px;
-    box-shadow: 0 8px 24px #00000040;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-  ">
-    <h3 style="color: #ffffff; margin-bottom: 15px;">Escúchalo en la web</em></h3>
-    <audio controls style="
-      width: 100%;
-      border-radius: 12px;
-      background-color: #ca8da4;
-      outline: none;
-    ">
-      <source src="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/GritosRotos.mp3" type="audio/mpeg">
-      Este navegador no es compatible.
-    </audio>
+<div class="fx-player">
+  <audio id="fx-audio" preload="metadata">
+    <source src="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/GritosRotos.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="fx-controls">
+    <button id="fx-play" class="fx-play">
+      <i class="fas fa-play"></i>
+    </button>
+
+    <div class="fx-progress-container" id="fx-progress-container">
+      <div id="fx-progress" class="fx-progress"></div>
+    </div>
+
+    <div class="fx-time">
+      <span id="fx-current">0:00</span> / <span id="fx-duration">0:00</span>
+    </div>
+
+    <div class="fx-volume-container">
+      <i class="fas fa-volume-up fx-volume-icon"></i>
+      <input id="fx-volume" type="range" min="0" max="1" step="0.01" value="1">
+    </div>
   </div>
 </div>
+
+<style>
+  .fx-player {
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 12px;
+    border: 1px solid #ffffff33;
+    border-radius: 14px;
+    background: #ffffff34;
+    color: white;
+    font-family: sans-serif;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .fx-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .fx-play {
+    width: 32px;
+    height: 32px;
+    background: #8dcaca;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .fx-play i {
+    font-size: 14px;
+  }
+
+  .fx-progress-container {
+    flex: 1;
+    background: #111;
+    border: 1px solid #ffffff33;
+    height: 8px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .fx-progress {
+    height: 100%;
+    background: white;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  .fx-time {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .fx-volume-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .fx-volume-container input[type="range"] {
+    width: 80px;
+    height: 8px;
+    accent-color: white;
+    cursor: pointer;
+  }
+
+  .fx-volume-icon {
+    font-size: 14px;
+  }
+</style>
+
+<script>
+  const audio = document.getElementById("fx-audio");
+  const playBtn = document.getElementById("fx-play");
+  const progress = document.getElementById("fx-progress");
+  const progressContainer = document.getElementById("fx-progress-container");
+  const currentTime = document.getElementById("fx-current");
+  const duration = document.getElementById("fx-duration");
+  const volumeSlider = document.getElementById("fx-volume");
+
+  const playIcon = '<i class="fas fa-play"></i>';
+  const pauseIcon = '<i class="fas fa-pause"></i>';
+
+  function formatTime(t) {
+    const min = Math.floor(t / 60);
+    const sec = Math.floor(t % 60).toString().padStart(2, "0");
+    return `${min}:${sec}`;
+  }
+
+  audio.addEventListener("loadedmetadata", () => {
+    duration.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    progress.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+    currentTime.textContent = formatTime(audio.currentTime);
+  });
+
+  progressContainer.addEventListener("click", (e) => {
+    const width = progressContainer.offsetWidth;
+    const clickX = e.offsetX;
+    audio.currentTime = (clickX / width) * audio.duration;
+  });
+
+  playBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.innerHTML = pauseIcon;
+    } else {
+      audio.pause();
+      playBtn.innerHTML = playIcon;
+    }
+  });
+
+  volumeSlider.addEventListener("input", () => {
+    audio.volume = volumeSlider.value;
+  });
+</script>
             <div>
               <p>Disponible en:</p>
               <img src="/img/sdlogo.png" ondragstart="return false;" draggable="false" alt="SoundCloud" style="height:30px; vertical-align:middle; margin-right:10px;">
