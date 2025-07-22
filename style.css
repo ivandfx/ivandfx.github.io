@@ -772,7 +772,7 @@ input[type="text"]:focus, textarea:focus {
     background: #8dcaca;
     border: none;
     border-radius: 8px;
-    color: white;
+    color: var(--text-color);
     font-size: 16px;
     display: flex;
     align-items: center;
