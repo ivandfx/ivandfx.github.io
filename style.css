@@ -6,7 +6,7 @@
   --link-hover: #8dcaca;
   --dropdown-bg: #2e2e2e;
   --side-text: #fff;
-  --sidebar-bg: #222222b4;
+  --sidebar-bg: #00000065;
   --post-notif: #fffa45;
   --post-hover: #000000;
   --post-link: #f1f1f1f1;
@@ -386,7 +386,7 @@ hr.separator {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  background-color: #00000065;
+  background-color: var(--sidebar-bg);
   color: var(--side-text);
   border: 1px solid #ffffff1e;
   padding: 10px;
@@ -399,7 +399,7 @@ hr.separator {
 
 .side-button:hover {
   color: var(--text-color);
-  background-color: var(--sidebar-bg);
+  background-color: #1b1b1bc9;
 }
 
 .side-button img {
@@ -754,7 +754,7 @@ input[type="text"]:focus, textarea:focus {
     padding: 12px;
     border: 1px solid #ffffff1e;
     border-radius: 14px;
-    background: #0000008a;
+    background: var(--sidebar-bg);
     color: white;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   }
