@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="date" content="22-07-2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Post</title>
+  <link rel="icon" href="/img/favicon/main.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+<a class="click-banner" href="/blog/posts/uso-de-ia.html">Para el post en Español, haz click aquí</a>
+  <div id="sidebar-container"></div>
+    <main>
+      <div class="post-header">
+        <div class="title-row">
+          <h1 class="post-title">Regarding use of AI</h1>
+          <h2 class="post-date">22-07-2025</h2>
+        </div>
+      </div>
+    <p>Let’s be honest, I didn’t make this website 100% by myself — but it’s probably not as bad as you think...</p>
+    <p>I used artificial intelligence to create pretty much all the JavaScript on the site, which, in short, is the part responsible for the site’s advanced functionality — like sharing posts to Twitter or Bluesky, the music player for ‘Amor Loco’ and ‘Gritos Rotos’, and other internal features.</p>
+    <p>And why? Very simple: because I don’t know much JavaScript, and yet I absolutely needed it.</p>
+    <p>At the very least, as I manually tweaked and handled it to some extent, I was gradually learning.</p>
+    <br>
+    <p>In addition, AI helped clean up and restructure the CSS (the design part) when it started turning into spaghetti code, with lots of duplicated or conflicting rules — in short, things that were making it hard for me to keep working on the site.</p>
+    <p>And that’s really what it’s about: using AI to make things "easier," and if you put in the effort, you can learn along the way.</p>
+    <p>I’m one of those who firmly believes that AI should be used to speed up processes — not replace them.</p>
+    <br>
+    <p>And with that said, this is the end of the first post on the new website. So — what do you think? Do you like it?</p>
+    <p>And now you can share the post too!</p>
+    <div id="share-container"></div>
+
+</main>
+<script src="/loader.js"></script>
+<script>
+fetch('/blog/share.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('share-container').innerHTML = html;
+  });
+</script>
+
+</body>
+</html>

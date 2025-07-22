@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="date" content="22-07-2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Post</title>
+  <link rel="icon" href="/img/favicon/main.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+<a class="click-banner" href="/blog/posts/en/use-of-ai.html">For the English post, click here</a>
+  <div id="sidebar-container"></div>
+    <main>
+      <div class="post-header">
+        <div class="title-row">
+          <h1 class="post-title">Sobre el uso de la IA + EN</h1>
+          <h2 class="post-date">22-07-2025</h2>
+        </div>
+      </div>
+    <p>Seamos honestos, no he hecho esta web al 100%, pero probablemente no sea tan malo como piensas...</p>
+    <p>He usado inteligencia artificial para hacer prácticamente todo el JavaScript de la web, que resumiendo, es la parte que se encarga de la funcionalidad avanzada de la web, como compartir posts a Twitter o Bluesky, el reproductor de música de 'Amor Loco' y 'Gritos Rotos', entre otras cosas internas.</p>
+    <p>Y, ¿por qué? Muy fácil, porque no tengo mucha idea de JS, y sin embargo requería de él sí o sí.</p>
+    <p>Al menos, a medida que lo modificaba manualmente y lo manejaba en cierta medida, poco a poco estaba aprendiendo.</p>
+    <br>
+    <p>Además, la IA ayudó a ordenar y reestructurar el CSS (la parte del diseño) cuando empezaba a ser demasiado espagueti y muchas cosas empezaban a estar duplicadas o hacían conflicto entre sí, en resumen, cosas que me empezaban a dificultar el seguir trabajando en la web.</p>
+    <p>Y básicamente se trata de eso, de utilizar la IA para hacer las cosas más "fáciles" y si le pones empeño, puedes aprender por el camino.</p></p>
+    <p>Soy de los que piensan firmemente que la IA debe utilizarse para agilizar los procesos, no sustituirlos.</p>
+    <br>
+    <p>Y sin más que decir, aquí termina el primer post de la nueva web ¿Qué, os gusta?</p>
+    <p>¡Y ahora también puedes compartir el post!</p>
+    <div id="share-container"></div>
+
+</main>
+<script src="/loader.js"></script>
+<script>
+fetch('/blog/share.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('share-container').innerHTML = html;
+  });
+</script>
+
+</body>
+</html>
