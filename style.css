@@ -302,7 +302,7 @@ hr.separator {
 }
 
 .github-icon {
-  color: white;
+  color: var(--text-color);
   font-size: 32px;
   transition: color 0.2s ease;
   text-decoration: none;
