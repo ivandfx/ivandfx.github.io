@@ -87,7 +87,6 @@ main {
   object-fit: contain;
   object-position: center center;
   display: block;
-  border-radius: 30px;
 }
 
 html.light-mode body {
