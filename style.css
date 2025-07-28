@@ -83,12 +83,12 @@ main {
 .img-full {
   width: 100%;
   height: auto;
-  display: block;
   max-width: 100%;
   object-fit: contain;
+  object-position: center center;
+  display: block;
   border-radius: 30px;
 }
-
 
 html.light-mode body {
   background: linear-gradient(#ffffff7a, #ffffff7a), url('/img/bgdl.png') center center / cover no-repeat fixed !important;
