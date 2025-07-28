@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700&display=swap');
 
 :root {
   --bg-color: #1e1e1e;
@@ -42,7 +42,7 @@ body {
   background: linear-gradient(#0000003f, #0000003f), url('/img/bgdl.png') center center / cover no-repeat fixed;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Inter', sans-serif;
+ font-family: 'Gabarito', sans-serif;
   margin: 0;
   overflow-x: hidden;
 }
@@ -229,7 +229,7 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
 
 button {
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gabarito', sans-serif;
   font-weight: 700;
   border: none;
   border-radius: 8px;
@@ -318,7 +318,7 @@ hr.separator {
   color: var(--bg-color);
   border: none;
   padding: 4px 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gabarito', sans-serif;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
@@ -428,7 +428,7 @@ hr.separator {
 }
 
 input[type="text"], textarea {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gabarito', sans-serif;
   border: 2px solid var(--link-hover);
   border-radius: 8px;
   padding: 8px 12px;
