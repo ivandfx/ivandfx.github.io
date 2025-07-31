@@ -17,7 +17,7 @@ html.light-mode {
   --text-color: #1e1e1e;
   --dropdown-bg: #f0f0f0;
   --post-notif: #ff4a4a;
-  --post-link: #000000;
+  --post-link: #1e1e1e;
 }
 
 html, body {
@@ -35,6 +35,7 @@ body > * {
 }
 
 html {
+  font-size: 1.10rem;
   overflow-y: scroll;
 }
 
@@ -90,7 +91,7 @@ main {
 }
 
 html.light-mode body {
-  background: linear-gradient(#ffffff7a, #ffffff7a), url('/img/bgdl.png') center center / cover no-repeat fixed !important;
+  background: linear-gradient(#ffffff50, #ffffff50), url('/img/bgdl.png') center center / cover no-repeat fixed !important;
 }
 
 html.light-mode .side-button:hover {
@@ -171,11 +172,11 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
 
 .promo-banner, .msg-banner, .issue-banner, .click-banner {
   position: fixed;
-  top: 54px;
+  top: 58px;
   left: 0;
   right: 0;
   z-index: 999;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 18px 40px 8px;
   border-radius: 0 0 12px 12px;
@@ -365,7 +366,7 @@ hr.separator {
 .page-wrapper {
   align-items: flex-start;
   display: flex;
-  max-width: 1024px;
+  max-width: 1080px;
   margin: 64px auto 40px;
   padding: 0 10px;
   gap: 10px;
@@ -455,7 +456,7 @@ input[type="text"]:focus, textarea:focus {
 }
 
 .topnav .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 12px 40px;
   display: flex;
@@ -559,7 +560,6 @@ input[type="text"]:focus, textarea:focus {
   text-decoration: none;
   display: block;
   padding: 5px 0;
-  font-size: 0.9rem;
   text-align: center;
 }
 .dropdown-menu a:hover { color: var(--link-hover); }
@@ -567,7 +567,7 @@ input[type="text"]:focus, textarea:focus {
 #post-list a {
   display: block;
   margin: 0.5rem 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -717,12 +717,24 @@ input[type="text"]:focus, textarea:focus {
 }
 
 @media (max-width: 1080px) {
+  .promo-banner, .msg-banner, .issue-banner, .click-banner {
+    top: 46px;
+  }
+}
+
+@media (max-width: 768px) {
+  .promo-banner, .msg-banner, .issue-banner, .click-banner {
+    top: 0px;
+  }
+}
+
+@media (max-width: 1080px) {
   .topnav { top: 0; }
   .topnav .container {
     border-radius: 0 0 12px 12px;
     padding-left: 20px;
     padding-right: 20px;
-    box-shadow: none;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -732,7 +744,7 @@ input[type="text"]:focus, textarea:focus {
     border-radius: 12px 12px 0 0;
     padding-left: 20px;
     padding-right: 20px;
-    box-shadow: none;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
   }
 }
 
