@@ -10,6 +10,7 @@
   --post-notif: #fffa45;
   --post-hover: #000000;
   --post-link: #f1f1f1f1;
+  --separator: #808080;
 }
 
 html.light-mode {
@@ -17,7 +18,7 @@ html.light-mode {
   --text-color: #1e1e1e;
   --dropdown-bg: #f0f0f0;
   --post-notif: #ff4a4a;
-  --post-link: #1e1e1e;
+  --post-link: #000000;
 }
 
 html, body {
@@ -91,7 +92,7 @@ main {
 }
 
 html.light-mode body {
-  background: linear-gradient(#ffffff50, #ffffff50), url('/img/bgdl.png') center center / cover no-repeat fixed !important;
+  background: linear-gradient(#ffffffb0, #ffffffb0), url('/img/bgdl.png') center center / cover no-repeat fixed !important;
 }
 
 html.light-mode .side-button:hover {
@@ -151,35 +152,16 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
   }
 }
 
-.light-banner {
-  position: fixed;
-  top: 120px;
-  left: 0;
-  transform: rotate(-90deg) translateX(-100%);
-  transform-origin: left top;
-  background-color: #7242cc;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 6px 14px;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
 .promo-banner, .msg-banner, .issue-banner, .click-banner {
   position: fixed;
-  top: 58px;
+  top: 52px;
   left: 0;
   right: 0;
   z-index: 999;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 18px 40px 8px;
-  border-radius: 0 0 12px 12px;
+  padding: 22px 40px 8px;
+  border-radius: 0 0 20px 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   display: flex;
@@ -198,8 +180,8 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
 }
 
 .pb-button, .dl-button {
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 10px 10px;
+  border-radius: 16px;
   text-decoration: none;
   font-weight: bold;
   display: flex;
@@ -229,7 +211,6 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
 
 button {
   cursor: pointer;
-  font-family: 'Gabarito', sans-serif;
   font-weight: 700;
   border: none;
   border-radius: 8px;
@@ -241,8 +222,14 @@ button {
 
 hr.separator {
   border: none;
-  border-top: 1px solid var(--border-color, #cccccc70);
+  border-top: 1px solid var(--separator);
   margin: 1rem 1rem 1rem;
+}
+
+.posts-separator {
+  height: 1px;
+  border-top: 1px solid var(--separator);
+  width: 50%;
 }
 
 .share-btn {
@@ -349,7 +336,7 @@ hr.separator {
   max-width: 1100px;
   margin: 0 auto;
   padding: 18px 40px 8px;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 20px 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   display: flex;
@@ -391,7 +378,7 @@ hr.separator {
   border: 1px solid #ffffff1e;
   padding: 10px;
   width: 160px;
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
@@ -464,7 +451,7 @@ input[type="text"]:focus, textarea:focus {
   align-items: center;
   background-color: var(--bg-color);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
+  border-radius: 20px;
   pointer-events: auto;
 }
 
@@ -475,15 +462,6 @@ input[type="text"]:focus, textarea:focus {
   text-decoration: none;
 }
 .logo img { height: 30px; }
-
-#desarrollo {
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: var(--bg-color);
-  background-color: #8dcaca;
-  padding: 2px 6px;
-  border-radius: 6px;
-}
 
 .middle-section {
   display: flex;
@@ -539,7 +517,7 @@ input[type="text"]:focus, textarea:focus {
   transform: translateX(-50%);
   background-color: var(--dropdown-bg);
   margin-top: 5px;
-  border-radius: 14px;
+  border-radius: 20px;
   min-width: 200px;
   z-index: 1001;
   opacity: 0;
@@ -675,7 +653,7 @@ input[type="text"]:focus, textarea:focus {
     bottom: 0 !important;
     pointer-events: auto;
     background: transparent;
-    border-radius: 12px 12px 0 0;
+    border-radius: 20px 20px 0 0;
   }
 
   .middle-section {
@@ -687,14 +665,14 @@ input[type="text"]:focus, textarea:focus {
 
   .nav-links {
     position: absolute;
-    bottom: 66px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
     background-color: var(--bg-color);
     flex-direction: column;
     align-items: center;
-    border-radius: 16px;
+    border-radius: 20px;
     gap: 15px;
     padding: 0;
     max-height: 0;
@@ -718,20 +696,21 @@ input[type="text"]:focus, textarea:focus {
 
 @media (max-width: 1080px) {
   .promo-banner, .msg-banner, .issue-banner, .click-banner {
-    top: 46px;
+    top: 40px;
   }
 }
 
 @media (max-width: 768px) {
   .promo-banner, .msg-banner, .issue-banner, .click-banner {
     top: 0px;
+    padding: 6px 40px 8px;
   }
 }
 
 @media (max-width: 1080px) {
   .topnav { top: 0; }
   .topnav .container {
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 20px 20px;
     padding-left: 20px;
     padding-right: 20px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
@@ -741,7 +720,7 @@ input[type="text"]:focus, textarea:focus {
 @media (max-width: 768px) {
   .topnav { top: 0; }
   .topnav .container {
-    border-radius: 12px 12px 0 0;
+    border-radius: 20px 20px 0 0;
     padding-left: 20px;
     padding-right: 20px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
@@ -764,7 +743,7 @@ input[type="text"]:focus, textarea:focus {
     margin: 20px auto;
     padding: 12px;
     border: 1px solid #ffffff1e;
-    border-radius: 14px;
+    border-radius: 20px;
     background: var(--sidebar-bg);
     color: white;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -782,7 +761,7 @@ input[type="text"]:focus, textarea:focus {
     height: 32px;
     background: #8dcaca;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     color: var(--text-color);
     font-size: 16px;
     display: flex;
