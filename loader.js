@@ -179,12 +179,18 @@ fetch('/blog/posts.json')
       })
     );
 
-    posts.forEach(post => {
+    posts.forEach((post, index) => {
       const a = document.createElement("a");
       a.href = post.url;
       a.className = "post-link";
       a.innerHTML = `<i class="fa-solid fa-file-lines"></i> ${post.dateStr || "Sin fecha"} - ${post.title}`;
       container.appendChild(a);
+
+      if (index < posts.length - 1) {
+        const separator = document.createElement("div");
+        separator.className = "posts-separator";
+        container.appendChild(separator);
+      }
     });
 
     if (posts.length > 0 && posts[0].dateStr) {
@@ -212,7 +218,7 @@ const currentURL = encodeURIComponent(
 function handleTwitterShare(event) {
   event.preventDefault();
 
-  const twitterUrl = `https://twitter.com/intent/tweet?url=${currentURL}&text=${encodeURIComponent(shareText)}`;
+  const twitterUrl = `https://x.com/intent/tweet?url=${currentURL}&text=${encodeURIComponent(shareText)}`;
   window.open(twitterUrl, '_blank');
 }
 
