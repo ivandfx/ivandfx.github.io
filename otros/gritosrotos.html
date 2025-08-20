@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Gritos Rotos</title>
+  <link rel="icon" href="/img/otros/GritosRotosCover-RND.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body oncontextmenu="return false;" style="background: url('/img/otros/bg-gritosrotos.png') center center / cover no-repeat fixed;">
+  <div id="topnav-container"></div>
+  <a class="promo-banner">Esta página promocional estará disponible por tiempo limitado.</a>
+  <div class="page-wrapper">
+    <main>
+      <div style="max-width:1000px; padding:20px;">
+        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:30px; justify-content:center;">
+                    <div style="flex:1 1 300px; max-width:400px;">
+            <img src="/img/otros/GritosRotosCover-RND.png" ondragstart="return false;" draggable="false" style="width:100%;">
+          </div>
+          <div style="flex:1 1 300px; max-width:500px;">
+            <h1 style="font-size:2.5em; margin-top:0;">Gritos Rotos</h1>
+            <h2 style="font-size:1.5em;">¡Ya disponible!</h2>
+            
+            <p><strong>Sinopsis:</strong><br>
+            Una pareja deberá superar sus roturas emocionales para luchar contra el ente maligno que les impide estar juntos.</p>
+
+            <p style="margin-top:20px;">
+            <p>
+                <a href="https://soundcloud.com/ivandfx/gritosrotos" target="_blank" class="pb-button">SoundCloud</a>
+                <span style="font-size: 0.8rem; color: var(--post-link)">¡Escúchalo desde la app de SoundCloud!</span>
+            </p>
+            </p>
+            <p>
+              <a href="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/GritosRotos.mp3" class="pb-button">Descargar MP3</a>
+              <span style="font-size: 0.8rem; color: var(--post-link)">¡Escúchalo desde tu dispositivo!</span>
+            </p>
+        </div>
+  </div>
+<div class="fx-player">
+  <audio id="fx-audio" preload="metadata">
+    <source src="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/GritosRotos.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="fx-controls">
+    <button id="fx-play" class="fx-play">
+      <i class="fas fa-play"></i>
+    </button>
+
+    <div class="fx-progress-container" id="fx-progress-container">
+      <div id="fx-progress" class="fx-progress"></div>
+    </div>
+
+    <div class="fx-time">
+      <span id="fx-current">0:00</span> / <span id="fx-duration">0:00</span>
+    </div>
+
+    <div class="fx-volume-container">
+      <i class="fas fa-volume-up fx-volume-icon"></i>
+      <input id="fx-volume" type="range" min="0" max="1" step="0.01" value="1">
+    </div>
+  </div>
+</div>
+
+<script>
+  const audio = document.getElementById("fx-audio");
+  const playBtn = document.getElementById("fx-play");
+  const progress = document.getElementById("fx-progress");
+  const progressContainer = document.getElementById("fx-progress-container");
+  const currentTime = document.getElementById("fx-current");
+  const duration = document.getElementById("fx-duration");
+  const volumeSlider = document.getElementById("fx-volume");
+
+  const playIcon = '<i class="fas fa-play"></i>';
+  const pauseIcon = '<i class="fas fa-pause"></i>';
+
+  function formatTime(t) {
+    const min = Math.floor(t / 60);
+    const sec = Math.floor(t % 60).toString().padStart(2, "0");
+    return `${min}:${sec}`;
+  }
+
+  audio.addEventListener("loadedmetadata", () => {
+    duration.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    progress.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+    currentTime.textContent = formatTime(audio.currentTime);
+  });
+
+  progressContainer.addEventListener("click", (e) => {
+    const width = progressContainer.offsetWidth;
+    const clickX = e.offsetX;
+    audio.currentTime = (clickX / width) * audio.duration;
+  });
+
+  playBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.innerHTML = pauseIcon;
+    } else {
+      audio.pause();
+      playBtn.innerHTML = playIcon;
+    }
+  });
+
+  volumeSlider.addEventListener("input", () => {
+    audio.volume = volumeSlider.value;
+  });
+</script>
+            <div>
+              <p>Disponible en:</p>
+              <img src="/img/sdlogo.png" ondragstart="return false;" draggable="false" alt="SoundCloud" style="height:30px; vertical-align:middle; margin-right:10px;">
+              <img src="/img/logo.png" ondragstart="return false;" draggable="false" alt="ivandfx web" style="height:30px; vertical-align:middle; margin-right:10px;">
+        </div>
+</div>
+  <script src="/loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<header class="topnav">
+  <div class="container">
+    <a href="/index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+      <img src="/img/logo.png" alt="Logo" />
+      <span id="desarrollo"style="font-weight: bold; color: #000000; background-color: var(--link-hover); padding: 2px 6px; border-radius: 6px;">V1.0</span>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    </a>
+
+    <div class="middle-section">
+      <nav class="nav-links" id="navLinks">
+        <div class="dropdown-wrapper">
+          <a href="/blog" id="blog-link" class="blog-alert">
+            BLOG
+            <span class="blog-dot-hover-area"></span>
+          </a>
+        </div>
+
+        <div class="dropdown-wrapper">
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'archive-dropdown')">PROYECTOS</a>
+          <div class="dropdown-menu" id="archive-dropdown">
+            <a href="/fnkeys.html">fnKeys</a>
+            <a href="/DFXWinTweaks.html">DFX WinTweaks</a>
+          </div>
+        </div>
+
+        <div class="dropdown-wrapper">
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'other-dropdown')">OTROS</a>
+          <div class="dropdown-menu" id="other-dropdown">
+            <a href="/otros/gritosrotos.html">Gritos Rotos - PROMO</a>
+            <a href="/otros/amorloco.html">Amor Loco - PROMO</a>
+            <a href="/otros/pc.html">¿Qué lleva mi PC?</a>
+          </div>
+        </div>
+
+        <div class="social-icons mobile">
+          <a href="https://x.com/ivandfx" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Twitch"><i class="fa-brands fa-bluesky"></i></a>
+          <a href="https://instagram.com/ivandfx" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/ivandfx" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitch.tv/ivandfx" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+          </div>
+      </nav>
+      <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+    </div>
+      <div class="social-icons desktop">
+        <a href="https://x.com/ivandfx" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Twitch"><i class="fa-brands fa-bluesky"></i></a>
+        <a href="https://instagram.com/ivandfx" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/ivandfx" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitch.tv/ivandfx" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+        </div>
+        <div>
+        <button id="modeToggleMobile" class="mode-toggle mobile" title="Alternar modo claro/oscuro">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+          <div>
+          <button id="modeToggle" class="mode-toggle desktop" title="Alternar modo claro/oscuro">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+    </div>
+  </div>
+</header>
