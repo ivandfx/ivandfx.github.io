@@ -138,20 +138,22 @@ function loadComponent(id, url) {
 loadComponent("sidebar-container", "/sidebar.html");
 
 const footerHTML = `
-<footer id="dynamic-footer" class="hidden-mobile" style="
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #00000065;
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  font-size: 0.9rem;
-  z-index: 5;">
-  © 2025 ivandfx</footer>`;
+  <footer id="dynamic-footer" class="hidden-mobile" style="
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00000065;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff1e;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+    z-index: 5;">
+    <span style="line-height:0; vertical-align:middle;">©</span> 2025 IVANDFX
+  </footer>`;
 
 document.body.insertAdjacentHTML('beforeend', footerHTML);
 

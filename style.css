@@ -49,6 +49,11 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background: #8dcaca;
+  color: #1e1e1e;
+}
+
 .title-row {
   display: flex;
   align-items: baseline;
@@ -154,13 +159,13 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
 
 .promo-banner, .msg-banner, .issue-banner, .click-banner {
   position: fixed;
-  top: 52px;
+  top: 50px;
   left: 0;
   right: 0;
   z-index: 999;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 22px 40px 8px;
+  padding: 26px 40px 8px;
   border-radius: 0 0 20px 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   text-decoration: none;
@@ -170,13 +175,14 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.promo-banner { background-color: #b371bd; color: #ffffff; }
-.msg-banner   { background-color: #8dcaca; color: #1e1e1e; }
-.issue-banner { background-color: #bb5151; color: #ffffff; }
-.click-banner { background-color: #c2b010; color: #ffffff; }
+.promo-banner { background-color: #b371bd60; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(10px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
+.msg-banner   { background-color: #8dcaca60; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(10px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
+.issue-banner { background-color: #bb515160; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(10px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
+.click-banner { background-color: #c2b01060; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(10px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
 
 .click-banner:hover {
-  background-color: #beb452;
+  background-color: #beb352d0;
+  color: #1e1e1e;
 }
 
 .pb-button, .dl-button {
@@ -187,6 +193,7 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
   display: flex;
   justify-content: center;
   transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid #ffffff1e;
 }
 
 .pb-button {
@@ -195,18 +202,17 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
   width: 150px;
 }
 .pb-button:hover {
-  background-color: #ff80c0;
+  background-color: #409292;
   color: var(--text-color);
 }
 
 .dl-button {
   background-color: #5aa32f;
-  color: var(--bg-color);
+  color: #ffffff;
   width: 200px;
 }
 .dl-button:hover {
-  background-color: var(--link-hover);
-  color: #000000;
+  background-color: #4c7435;
 }
 
 button {
@@ -215,7 +221,7 @@ button {
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
-  background-color: #b66100;
+  background-color: #8dcaca60;
   color: var(--text-color);
   transition: background-color 0.3s ease;
 }
@@ -375,7 +381,7 @@ hr.separator {
   text-decoration: none;
   background-color: var(--sidebar-bg);
   color: var(--side-text);
-  border: 1px solid #ffffff1e;
+  border: 2px solid #ffffff1e;
   padding: 10px;
   width: 160px;
   border-radius: 20px;
@@ -694,20 +700,20 @@ input[type="text"]:focus, textarea:focus {
   .social-icons.mobile  { display: flex; }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
   .promo-banner, .msg-banner, .issue-banner, .click-banner {
-    top: 40px;
+    top: 38px;
   }
 }
 
 @media (max-width: 768px) {
   .promo-banner, .msg-banner, .issue-banner, .click-banner {
     top: 0px;
-    padding: 6px 40px 8px;
+    padding: 8px 40px 8px;
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
   .topnav { top: 0; }
   .topnav .container {
     border-radius: 0 0 20px 20px;
@@ -742,7 +748,7 @@ input[type="text"]:focus, textarea:focus {
     max-width: 420px;
     margin: 20px auto;
     padding: 12px;
-    border: 1px solid #ffffff1e;
+    border: 2px solid #ffffff1e;
     border-radius: 20px;
     background: var(--sidebar-bg);
     color: white;
@@ -776,7 +782,7 @@ input[type="text"]:focus, textarea:focus {
 
   .fx-progress-container {
     flex: 1;
-    border: 1px solid #ffffff33;
+    border: 1px solid #ffffff1e;
     height: 8px;
     border-radius: 6px;
     overflow: hidden;
