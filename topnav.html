@@ -34,8 +34,13 @@
         </div>
 
         <div class="social-icons mobile">
+          <a href="https://github.com/ivandfx" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://gitlab.com/ivandfx" target="_blank" aria-label="GitLab"><i class="fa-brands fa-gitlab"></i></a>
           <a href="https://x.com/ivandfx" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Twitch"><i class="fa-brands fa-bluesky"></i></a>
+          <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Twitch"><i class="fa-brands fa-bluesky"></i></a>
+          </div>
+          <div>
+        <div class="social-icons mobile">
           <a href="https://instagram.com/ivandfx" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://youtube.com/ivandfx" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           <a href="https://twitch.tv/ivandfx" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
@@ -43,20 +48,30 @@
       </nav>
       <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
     </div>
-      <div class="social-icons desktop">
-        <a href="https://x.com/ivandfx" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Twitch"><i class="fa-brands fa-bluesky"></i></a>
-        <a href="https://instagram.com/ivandfx" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/ivandfx" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://twitch.tv/ivandfx" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
-        </div>
-        <div>
-        <button id="modeToggleMobile" class="mode-toggle mobile" title="Alternar modo claro/oscuro">
-          <i class="fas fa-moon"></i>
-        </button>
-      </div>
+<div class="social-area desktop">
+  <button class="social-toggle desktop" type="button"
+          aria-expanded="false"
+          aria-controls="socialDesktop"
+          onclick="toggleSocialDesktop(this)">
+    <i class="fa-solid fa-angles-left"></i>
+  </button>
+
+  <div class="social-icons desktop" id="socialDesktop">
+    <a href="https://github.com/ivandfx" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://gitlab.com/ivandfx" target="_blank" aria-label="GitLab"><i class="fa-brands fa-gitlab"></i></a>
+    <a href="https://x.com/ivandfx" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
+    <a href="https://instagram.com/ivandfx" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/ivandfx" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://twitch.tv/ivandfx" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+  </div>
+
+  <button id="modeToggle" class="mode-toggle desktop" title="Alternar modo claro/oscuro">
+    <i class="fas fa-moon"></i>
+  </button>
+</div>
           <div>
-          <button id="modeToggle" class="mode-toggle desktop" title="Alternar modo claro/oscuro">
+          <button id="modeToggle" class="mode-toggle mobile" title="Alternar modo claro/oscuro">
             <i class="fas fa-moon"></i>
           </button>
         </div>

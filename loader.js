@@ -75,6 +75,12 @@ fetch('/topnav.html')
     });
   });
 
+  function toggleSocialDesktop(btn) {
+    const area = btn.closest('.social-area.desktop');
+    const isOpen = area.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', isOpen);
+  }
+
 // toggle main nav menu
 function toggleMenu() {
   const navLinks = document.getElementById("navLinks");

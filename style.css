@@ -305,6 +305,17 @@ hr.separator {
   color:  var(--link-hover);
 }
 
+.gitlab-icon {
+  color: var(--text-color);
+  font-size: 32px;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.gitlab-icon:hover {
+  color:  var(--link-hover);
+}
+
 .mode-toggle {
   display: inline-block;
   background-color: var(--link-hover);
@@ -698,6 +709,56 @@ input[type="text"]:focus, textarea:focus {
 
   .social-icons.desktop { display: none; }
   .social-icons.mobile  { display: flex; }
+}
+
+.social-area.desktop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-toggle.desktop {
+  background: var(--bg-color);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 4px 6px;
+  font-size: 1rem;
+  transition: background .3s;
+}
+.social-toggle.desktop:hover {
+  background: var(--dropdown-bg);
+}
+
+@media (max-width: 900px) {
+  .social-icons.desktop,
+  .social-toggle.desktop {
+    display: none !important;
+  }
+}
+
+.social-icons.desktop {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(20px);
+  pointer-events: none;
+  transition: max-width .4s ease, opacity .4s ease, transform .4s ease;
+}
+
+.social-area.desktop.is-open .social-icons.desktop {
+  max-width: 500px;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.social-area.desktop.is-open .social-toggle.desktop i {
+  transform: rotate(180deg);
+  transition: transform .3s;
 }
 
 @media (max-width: 1280px) {
