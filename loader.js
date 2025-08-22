@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(5px);
       z-index: 9998;
       pointer-events: all;
     `;
@@ -344,12 +344,15 @@ document.addEventListener("DOMContentLoaded", () => {
       box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
     `;
 
-    const text = document.createElement("span");
-    text.innerHTML = `Este sitio usa cookies para mejorar tu experiencia.<br>
-    Aunque por ahora solo se usan para guardar tus ajustes. 
-    <a href="/cookies.html" target="_blank" style="color: var(--link-hover); font-weight: 600; text-decoration: underline; cursor: pointer;">
-    Ver política de cookies
-    </a>`;
+const text = document.createElement("span");
+text.innerHTML = `Este sitio usa cookies para mejorar tu experiencia.<br>
+Aunque por ahora solo se usan para guardar tus ajustes.<br>
+<a href="/cookies.html" target="_blank" style="color: var(--link-hover); font-weight: 600; text-decoration: none; cursor: pointer;"
+   onmouseenter="this.style.color='#409292'" 
+   onmouseleave="this.style.color='var(--link-hover)'" >
+   Ver política de cookies
+</a>`;
+
 
     const btnContainer = document.createElement("div");
     btnContainer.style.cssText = `
