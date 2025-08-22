@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     const btnYes = document.createElement("button");
-    btnYes.textContent = "Sí";
+    btnYes.textContent = "Aceptar";
     btnYes.style.cssText = baseBtnStyle + `
       background-color: var(--link-hover);
       color: var(--bg-color);
@@ -359,12 +359,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const btnNo = document.createElement("button");
-    btnNo.textContent = "No";
+    btnNo.textContent = "Rechazar";
     btnNo.style.cssText = baseBtnStyle + `
       background-color: #bb5151;
       color: var(--text-color);
     `;
-    btnNo.onmouseenter = () => { btnNo.style.backgroundColor = "#bb5151"; btnNo.style.color = "#fff"; };
+    btnNo.onmouseenter = () => { btnNo.style.backgroundColor = "#853838ff"; btnNo.style.color = "#fff"; };
     btnNo.onmouseleave = () => { btnNo.style.backgroundColor = "#bb5151"; btnNo.style.color = "var(--text-color)"; };
     btnNo.onclick = () => {
       localStorage.setItem("cookiesAccepted", "false");
