@@ -296,3 +296,87 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Error al cargar share.html:', err));
 });
+
+// cookies
+document.addEventListener("DOMContentLoaded", () => {
+  if (!localStorage.getItem("cookiesAccepted")) {
+    const cookieBanner = document.createElement("div");
+    cookieBanner.id = "cookie-banner";
+    cookieBanner.style.cssText = `
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      max-width: 800px;
+      background: var(--sidebar-bg);
+      color: var(--text-color);
+      padding: 16px 20px;
+      border-radius: 20px 20px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-size: 1rem;
+      font-family: 'Gabarito', sans-serif;
+      z-index: 9999;
+      border: 2px solid #ffffff1e;
+      border-bottom: none;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
+    `;
+
+    const text = document.createElement("span");
+    text.innerHTML = "Este sitio usa cookies para mejorar tu experiencia.<br>Aunque por ahora solo se usan para guardar tus preferencias de modo de color, pero quién sabe si en un futuro otras funciones las necesitarán...";
+
+    const btnContainer = document.createElement("div");
+    btnContainer.style.cssText = `
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    `;
+
+    const baseBtnStyle = `
+      padding: 8px 20px;
+      border: 2px solid #ffffff1e;
+      border-radius: 12px;
+      font-weight: 700;
+      font-family: 'Gabarito', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    `;
+
+    const btnYes = document.createElement("button");
+    btnYes.textContent = "Sí";
+    btnYes.style.cssText = baseBtnStyle + `
+      background-color: var(--link-hover);
+      color: var(--bg-color);
+    `;
+    btnYes.onmouseenter = () => { btnYes.style.backgroundColor = "#409292"; btnYes.style.color = "var(--text-color)"; };
+    btnYes.onmouseleave = () => { btnYes.style.backgroundColor = "var(--link-hover)"; btnYes.style.color = "var(--bg-color)"; };
+    btnYes.onclick = () => {
+      localStorage.setItem("cookiesAccepted", "true");
+      cookieBanner.remove();
+    };
+
+    const btnNo = document.createElement("button");
+    btnNo.textContent = "No";
+    btnNo.style.cssText = baseBtnStyle + `
+      background-color: #bb5151;
+      color: var(--text-color);
+    `;
+    btnNo.onmouseenter = () => { btnNo.style.backgroundColor = "#bb5151"; btnNo.style.color = "#fff"; };
+    btnNo.onmouseleave = () => { btnNo.style.backgroundColor = "#bb5151"; btnNo.style.color = "var(--text-color)"; };
+    btnNo.onclick = () => {
+      localStorage.setItem("cookiesAccepted", "false");
+      cookieBanner.remove();
+    };
+
+    btnContainer.appendChild(btnYes);
+    btnContainer.appendChild(btnNo);
+
+    cookieBanner.appendChild(text);
+    cookieBanner.appendChild(btnContainer);
+
+    document.body.appendChild(cookieBanner);
+  }
+});
