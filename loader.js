@@ -305,7 +305,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // cookies
 document.addEventListener("DOMContentLoaded", () => {
-  if (!localStorage.getItem("cookiesAccepted")) {
+  if (localStorage.getItem("cookiesAccepted") !== "true") {
+    const overlay = document.createElement("div");
+    overlay.id = "cookie-overlay";
+    overlay.style.cssText = `
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(2px);
+      z-index: 9998;
+      pointer-events: all;
+    `;
+
+    // banner
     const cookieBanner = document.createElement("div");
     cookieBanner.id = "cookie-banner";
     cookieBanner.style.cssText = `
@@ -333,7 +345,11 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     const text = document.createElement("span");
-    text.innerHTML = "Este sitio usa cookies para mejorar tu experiencia.<br>Aunque por ahora se usan para poca cosa, pero quién sabe.";
+    text.innerHTML = `Este sitio usa cookies para mejorar tu experiencia.<br>
+    Aunque por ahora solo se usan para guardar tus ajustes. 
+    <a href="/cookies.html" target="_blank" style="color: var(--link-hover); font-weight: 600; text-decoration: underline; cursor: pointer;">
+    Ver política de cookies
+    </a>`;
 
     const btnContainer = document.createElement("div");
     btnContainer.style.cssText = `
@@ -349,6 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
       font-weight: 700;
       font-family: 'Gabarito', sans-serif;
       transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
     `;
 
     const btnYes = document.createElement("button");
@@ -362,6 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnYes.onclick = () => {
       localStorage.setItem("cookiesAccepted", "true");
       cookieBanner.remove();
+      overlay.remove();
     };
 
     const btnNo = document.createElement("button");
@@ -372,10 +390,11 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     btnNo.onmouseenter = () => { btnNo.style.backgroundColor = "#853838ff"; btnNo.style.color = "#fff"; };
     btnNo.onmouseleave = () => { btnNo.style.backgroundColor = "#bb5151"; btnNo.style.color = "var(--text-color)"; };
-    btnNo.onclick = () => {
-      localStorage.setItem("cookiesAccepted", "false");
-      cookieBanner.remove();
-    };
+btnNo.onclick = () => {
+  localStorage.setItem("cookiesAccepted", "false");
+  cookieBanner.remove();
+  overlay.remove();
+};
 
     btnContainer.appendChild(btnYes);
     btnContainer.appendChild(btnNo);
@@ -383,6 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cookieBanner.appendChild(text);
     cookieBanner.appendChild(btnContainer);
 
+    document.body.appendChild(overlay);
     document.body.appendChild(cookieBanner);
   }
 });
