@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     const text = document.createElement("span");
-    text.innerHTML = "Este sitio usa cookies para mejorar tu experiencia.<br>Aunque por ahora solo se usan para guardar tus preferencias de modo de color, pero quién sabe si en un futuro otras funciones las necesitarán...";
+    text.innerHTML = "Este sitio usa cookies para mejorar tu experiencia.<br>Aunque por ahora se usan para poca cosa, pero quién sabe.";
 
     const btnContainer = document.createElement("div");
     btnContainer.style.cssText = `
