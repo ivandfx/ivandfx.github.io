@@ -303,6 +303,18 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.error('Error al cargar share.html:', err));
 });
 
+// ruffle
+(function () {
+  var ruffleScript = document.createElement("script");
+  ruffleScript.src = "https://unpkg.com/@ruffle-rs/ruffle";
+  ruffleScript.async = true;
+  document.head.appendChild(ruffleScript);
+
+  ruffleScript.onload = () => {
+    console.log("✅ Ruffle cargado desde loader.js");
+  };
+})();
+
 // cookies
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("cookiesAccepted") !== "true") {
