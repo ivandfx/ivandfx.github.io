@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.head.appendChild(ruffleScript);
 
   ruffleScript.onload = () => {
-    console.log("✅ Ruffle cargado desde loader.js");
+    console.log("loaded from loader.js");
   };
 })();
 
