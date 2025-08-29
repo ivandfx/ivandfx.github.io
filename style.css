@@ -5,6 +5,7 @@
   --text-color: #f0f0f0;
   --link-hover: #8dcaca;
   --dropdown-bg: #2e2e2e;
+  --category-bg: #1e1e1e;
   --side-text: #fff;
   --sidebar-bg: #00000065;
   --post-notif: #fffa45;
@@ -17,6 +18,7 @@ html.light-mode {
   --bg-color: #ffffff;
   --text-color: #1e1e1e;
   --dropdown-bg: #f0f0f0;
+  --category-bg: #cacaca;
   --post-notif: #ff4a4a;
   --post-link: #000000;
 }
