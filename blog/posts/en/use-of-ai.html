@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="date" content="22-07-2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Post</title>
+  <link rel="icon" href="/img/favicon/main.png">
+  <link rel="stylesheet" href="/style.css">
+  <meta name="post-subtitle" content="Was the IVANDFX website made by an AI?" />
+</head>
+
+<body>
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+<a class="click-banner" href="/blog/posts/uso-de-ia.html">Para el post en Español, haz click aquí</a>
+  <div id="sidebar-container"></div>
+    <main>
+      <div class="post-header">
+        <div class="title-row">
+          <h1 class="post-title">REGARDING USE OF AI</h1>
+          <h2 class="post-date">22-07-2025</h2>
+        </div>
+      </div>
+    <p>Let’s be honest, I didn’t make this website 100% by myself… but it’s probably not as bad as you might think.</p>
+    <p>I used artificial intelligence to create pretty much all the JavaScript on the site — which, to sum it up, handles the more advanced functionality, like sharing posts to Twitter or Bluesky, the music player for ‘Amor Loco’ and ‘Gritos Rotos’, among other internal things.</p>
+    <p>And why? Simple: because I don’t know much JavaScript, and yet, I needed it no matter what.</p>
+    <p>At least, as I manually edited and adjusted things, little by little, I was learning.</p>
+    <br>
+    <p>AI also helped me clean up and restructure the CSS (the design part) when it started to turn into spaghetti code — with duplicated styles and conflicts that made it harder to keep working on the site.</p>
+    <p>At the end of the day, that’s what it’s about: using AI to make things easier and, if you’re invested, learning something along the way.</p>
+    <p>I firmly believe that AI should be used to speed things up, not to replace the process entirely.</p>
+    <p>So the answer you’re probably looking for is… No, this website wasn’t made by an AI — I used the AI to help me learn and build it myself.</p>
+    <br>
+    <p>And with that said, this is the end of the very first post on the new site. So… what do you think? Do you like it?</p>
+    <p>And now you can even share the post!</p>
+    <div id="share-container"></div>
+
+</main>
+<script src="/loader.js"></script>
+<script>
+fetch('/blog/share.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('share-container').innerHTML = html;
+  });
+</script>
+
+</body>
+</html>
