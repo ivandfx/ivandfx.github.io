@@ -31,11 +31,69 @@
 </div>
 <br>
 <span style="font-size: 0.9rem; color: var(--post-link)">Downloads from GitHub</span>
-  <h2>How to install</h2>
+  <h2>Auto install</h2>
+  <p>Copy & paste this into a terminal window:</p>
+
+<div style="position: relative; display: inline-block; max-width: 400px;">
+  <div id="code-block" style="background:#7a7a7a; color:#ffffff; font-weight: bold; padding: 8px 10px; border-radius: 12px; border: 2px solid #ffffff1e; overflow-x: auto; white-space: nowrap;">
+    <code>curl -fsSL https://raw.githubusercontent.com/ivandfx/fnkeys/refs/heads/main/FnKeysAutoInstaller.sh | bash</code>
+  </div>
+  <button id="copy-btn" onclick="copyToClipboard()" style="position: absolute; top: 5px; right: 5px; background: #444; color: white; border: none; padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 14px;">
+    <i class="fas fa-clipboard"></i>
+  </button>
+</div>
+
+<script>
+  function copyToClipboard() {
+    const code = document.querySelector('#code-block code').innerText;
+    const button = document.getElementById('copy-btn');
+    const icon = button.querySelector('i');
+
+    navigator.clipboard.writeText(code).then(() => {
+      icon.className = 'fas fa-check';
+    }).catch(err => {
+      icon.className = 'fas fa-times';
+    }).finally(() => {
+      setTimeout(() => {
+        icon.className = 'fas fa-clipboard';
+      }, 1500);
+    });
+  }
+</script>
+
+  <br>
+  <br>
+  <h2>Manual install</h2>
   <p>1. Download fnKeys using the Download button.</p>
   <p>2. Go to the folder where fnKeys is located and open a terminal window.</p>
   <p>3. Then, copy & paste this:</p>
-  <span style="background:#7a7a7a; color:#ffffff; font-weight: bold; padding: 8px 10px; border-radius: 12px; border: 2px solid #ffffff1e; display:inline-block;">sudo chmod +x FnKeysFix.sh && ./FnKeysFix.sh</span>
+
+<div style="position: relative; display: inline-block; max-width: 400px;">
+  <div id="code-block" style="background:#7a7a7a; color:#ffffff; font-weight: bold; padding: 8px 10px; border-radius: 12px; border: 2px solid #ffffff1e; overflow-x: auto; white-space: nowrap;">
+    <code>sudo chmod +x FnKeysFix.sh && ./FnKeysFix.sh</code>
+  </div>
+  <button id="copy-btn" onclick="copyToClipboard()" style="position: absolute; top: 5px; right: 5px; background: #444; color: white; border: none; padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 14px;">
+    <i class="fas fa-clipboard"></i>
+  </button>
+</div>
+
+<script>
+  function copyToClipboard() {
+    const code = document.querySelector('#code-block code').innerText;
+    const button = document.getElementById('copy-btn');
+    const icon = button.querySelector('i');
+
+    navigator.clipboard.writeText(code).then(() => {
+      icon.className = 'fas fa-check';
+    }).catch(err => {
+      icon.className = 'fas fa-times';
+    }).finally(() => {
+      setTimeout(() => {
+        icon.className = 'fas fa-clipboard';
+      }, 1500);
+    });
+  }
+</script>
   <p>4. Run the installer, and you're done!</p>
   </main>
 </div>
