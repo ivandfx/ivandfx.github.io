@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="date" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Post</title>
+  <link rel="icon" href="/img/favicon/main.png">
+  <link rel="stylesheet" href="/style.css">
+  <meta name="post-subtitle" content="¡El primer gran rediseño de la web!">
+</head>
+<body>
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+  <div id="sidebar-container"></div>
+    <main>
+      <div class="post-header">
+        <div class="title-row">
+          <h1 class="post-title">REDISEÑO GENERAL DE LA WEB</h1>
+          <h2 class="post-date"></h2>
+        </div>
+      </div>
+    <div id="share-container"></div>
+
+</main>
+<script src="/loader.js"></script>
+<script>
+fetch('/blog/share.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('share-container').innerHTML = html;
+  });
+</script>
+
+</body>
+</html>
