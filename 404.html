@@ -6,234 +6,27 @@
   <title>ivandfx | 404</title>
   <link rel="icon" href="img/favicon/main.png">
   <link rel="stylesheet" href="/style.css">
-  <style>
-.board {
-  display: grid;
-  grid-template-columns: repeat(7, 60px);
-  grid-template-rows: repeat(6, 60px);
-  gap: 5px;
-  margin: 30px auto;
-  background-color: var(--sidebar-bg);
-  padding: 10px;
-  border-radius: 36px;
-  z-index: 100;
-  width: max-content;
-  max-width: 100%;
-  overflow-x: auto;
-  border: 1px solid #ffffff1e;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.board-wrapper {
-  overflow-x: auto;
-  width: 100%;
-}
-
-.cell {
-  width: 60px;
-  height: 60px;
-  background-color: #f0f0f0;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cell.red {
-  background-color: #ff4a4a;
-}
-
-.cell.yellow {
-  background-color: #fffa45;
-}
-
-.cell.falling {
-  animation: fall 0.4s ease-out forwards;
-  z-index: 1;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(-400%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.status {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-.reset-button {
-  margin: 15px auto;
-  display: block;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  background: var(--link-hover, #444);
-  color: white;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.reset-button:hover {
-  background: #666;
-}
-
-  </style>
 </head>
 <body>
   <div id="topnav-container"></div>
-
   <div class="page-wrapper">
-  <a class="msg-banner">Admite que te has equivocado escribiendo el enlace, no pasa nada 😉</a>
     <main>
-      <h1>Vaya, esa página no existe.</h1>
-      <div class="board-wrapper">
-        <div class="board" id="board"></div>
-      </div>
-      <div class="status" id="status">Tu turno</div>
-      <button class="reset-button" onclick="init()">Reiniciar</button>
+      <h1>¡Vaya! Esa página no existe</h1>
+      <h2>Puedes probar lo siguiente:</h2>
+      <br>
+      <p>- Comprueba que el enlace que has escrito sea el correcto.</p>
+      <p>- Busca a través de los diversos menús y botones de la web.</p>
+      <p>- Si te han enviado el enlace, pregunta si hubo una equivocación.</p>
+      <br>
+      <h3>Si todo esto falla, es posible que:</h3>
+      <p>- La página que buscabas existiera en el pasado, pero en algún punto se moviera a otro enlace o se eliminara.</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3>Si necesitas más ayuda, contacta a uno de los correos electrónicos que encontrarás en el pie de página.</h3>
     </main>
   </div>
-
-  <script>
-    const ROWS = 6;
-    const COLS = 7;
-    let board = [];
-    let gameOver = false;
-    const boardElement = document.getElementById("board");
-    const statusElement = document.getElementById("status");
-
-    function init() {
-      board = Array.from({ length: ROWS }, () => Array(COLS).fill(null));
-      boardElement.innerHTML = "";
-      gameOver = false;
-
-      for (let r = 0; r < ROWS; r++) {
-        for (let c = 0; c < COLS; c++) {
-          const cell = document.createElement("div");
-          cell.classList.add("cell");
-          cell.dataset.row = r;
-          cell.dataset.col = c;
-          cell.addEventListener("click", () => playerMove(c));
-          boardElement.appendChild(cell);
-        }
-      }
-
-      statusElement.textContent = "Tu turno";
-    }
-
-    function playerMove(col) {
-      if (gameOver) return;
-      if (!drop(col, "red")) return;
-
-      if (checkVictory("red")) {
-        statusElement.textContent = "¡Ganaste!";
-        gameOver = true;
-        return;
-      }
-
-      if (isBoardFull()) {
-        statusElement.textContent = "Empate";
-        gameOver = true;
-        return;
-      }
-
-      statusElement.textContent = "Turno de la IA";
-      setTimeout(aiMove, 600);
-    }
-
-    function aiMove() {
-      if (gameOver) return;
-      let validCols = [];
-      for (let c = 0; c < COLS; c++) {
-        if (board[0][c] === null) validCols.push(c);
-      }
-
-      if (validCols.length === 0) return;
-
-      const randomCol = validCols[Math.floor(Math.random() * validCols.length)];
-      drop(randomCol, "yellow");
-
-      if (checkVictory("yellow")) {
-        statusElement.textContent = "La IA gana";
-        gameOver = true;
-      } else if (isBoardFull()) {
-        statusElement.textContent = "Empate";
-        gameOver = true;
-      } else {
-        statusElement.textContent = "Tu turno";
-      }
-    }
-
-    function drop(col, color) {
-      for (let row = ROWS - 1; row >= 0; row--) {
-        if (!board[row][col]) {
-          board[row][col] = color;
-
-          const cell = [...boardElement.children].find(
-            el => el.dataset.row == row && el.dataset.col == col
-          );
-
-          cell.classList.add("falling", color);
-
-          setTimeout(() => {
-            cell.classList.remove("falling");
-          }, 400);
-
-          return true;
-        }
-      }
-      return false;
-    }
-
-
-    function isBoardFull() {
-      return board[0].every(cell => cell !== null);
-    }
-
-    function checkVictory(color) {
-      const directions = [
-        [[0,1],[0,-1]],
-        [[1,0],[-1,0]],
-        [[1,1],[-1,-1]],
-        [[1,-1],[-1,1]]
-      ];
-      for (let r = 0; r < ROWS; r++) {
-        for (let c = 0; c < COLS; c++) {
-          if (board[r][c] !== color) continue;
-          for (let [[dr1, dc1], [dr2, dc2]] of directions) {
-            let count = 1;
-            count += countDirection(r, c, dr1, dc1, color);
-            count += countDirection(r, c, dr2, dc2, color);
-            if (count >= 4) return true;
-          }
-        }
-      }
-      return false;
-    }
-
-    function countDirection(r, c, dr, dc, color) {
-      let count = 0;
-      r += dr; c += dc;
-      while (r >= 0 && r < ROWS && c >= 0 && c < COLS && board[r][c] === color) {
-        count++;
-        r += dr;
-        c += dc;
-      }
-      return count;
-    }
-
-    init();
-  </script>
   <script src="/loader.js"></script>
 </body>
 </html>

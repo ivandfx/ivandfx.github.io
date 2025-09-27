@@ -30,7 +30,7 @@ window.addEventListener("scroll", () => {
 
   const currentScroll = window.scrollY;
 
-  if (currentScroll > lastScroll && currentScroll > 300) {
+  if (currentScroll > lastScroll && currentScroll > 200) {
     nav.classList.add("scroll-down", "clear");
     nav.classList.remove("scroll-up");
     banners.forEach(b => {
