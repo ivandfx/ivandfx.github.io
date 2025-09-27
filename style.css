@@ -79,7 +79,7 @@ body {
 }
 
 main {
-  padding: 50px 50px;
+  padding: 60px 50px;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -948,7 +948,7 @@ input[type="text"]:focus, textarea:focus {
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  background: linear-gradient(135deg, var(--sidebar-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(135deg, #00000060 0%, #00000060 100%);
   color: white;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(20px);
@@ -957,7 +957,7 @@ input[type="text"]:focus, textarea:focus {
 .fx-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -966,7 +966,7 @@ input[type="text"]:focus, textarea:focus {
   height: 32px;
   background: linear-gradient(135deg, #8dcaca 0%, #64d8d8 100%);
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   color: var(--text-color);
   font-size: 16px;
   display: flex;
@@ -978,7 +978,7 @@ input[type="text"]:focus, textarea:focus {
 }
 
 .fx-play:hover {
-  background: linear-gradient(135deg, #64d8d8 0%, #8dcaca 100%);
+  background: linear-gradient(135deg, rgba(100, 216, 216, 0.4) 0%, #8dcaca 100%);
   transform: translateY(-1px);
   box-shadow: 0 4px 16px rgba(100, 216, 216, 0.4);
 }
@@ -986,8 +986,8 @@ input[type="text"]:focus, textarea:focus {
 .fx-progress-container {
   flex: 1;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  height: 8px;
-  border-radius: 6px;
+  height: 10px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -999,11 +999,11 @@ input[type="text"]:focus, textarea:focus {
   background: linear-gradient(90deg, var(--link-hover) 0%, #64d8d8 100%);
   width: 0%;
   transition: none;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 0 8px rgba(100, 216, 216, 0.5);
 }
 
 .fx-time {
-  font-size: 13px;
+  font-size: 14px;
   white-space: nowrap;
 }
