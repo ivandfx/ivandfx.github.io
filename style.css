@@ -184,14 +184,14 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.promo-banner { background-color: #b371bd60; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(10px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
-.msg-banner   { background-color: #1a1a1a60; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(10px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
-.issue-banner { background-color: #ff656560; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(10px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
-.click-banner { background-color: #3c718f60; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(10px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
+.promo-banner { background-color: #b371bd60; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(5px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
+.msg-banner   { background-color: #1a1a1a60; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(5px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
+.issue-banner { background-color: #ff656560; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(5px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
+.click-banner { background-color: #3c718f60; color: var(--text-color); border: 2px solid #ffffff1e; border-top: none; backdrop-filter: blur(5px); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);}
 
 .click-banner:hover {
   background: #4e91b860;
@@ -391,7 +391,7 @@ hr.separator {
   width: 160px;
   border-radius: 20px;
   box-shadow: 0 4px 16px #0000004d, 0 2px 8px #00000033;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
   transition: all 0.3s ease;
   line-height: 1;
 }
@@ -494,7 +494,7 @@ input[type="text"]:focus, textarea:focus {
 .topnav.scroll-down .container {
   border-radius: 0 0 20px 20px;
   background-color: #1a1a1a60;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
   border-top: none;
   transition: border-radius 0.3s ease, top 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
@@ -635,7 +635,7 @@ input[type="text"]:focus, textarea:focus {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--dropdown-bg) 0%, rgba(26, 26, 26, 0.98) 100%);
+  background: linear-gradient(135deg, var(--dropdown-bg) 0%, rgb(26, 26, 26) 100%);
   margin-top: 5px;
   border-radius: 20px;
   min-width: 200px;
@@ -646,7 +646,6 @@ input[type="text"]:focus, textarea:focus {
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(20px);
   outline: 1px solid rgba(255, 255, 255, 0.1);
   transition-delay: 0s;
 }
@@ -862,7 +861,6 @@ input[type="text"]:focus, textarea:focus {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: -10000;
     overflow: visible;
-    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
@@ -1007,7 +1005,7 @@ input[type="text"]:focus, textarea:focus {
   background: linear-gradient(135deg, #00000060 0%, #00000060 100%);
   color: white;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
 }
 
 .fx-controls {
