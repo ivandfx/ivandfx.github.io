@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="date" content="01-08-2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Post</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="post-subtitle" content="¡IVANDFX estrena nuevo logo!">
+</head>
+<body>
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+  <div id="sidebar-container"></div>
+    <main>
+      <div class="post-header">
+        <div class="title-row">
+          <h1 class="post-title"> ¡ESTRENAMOS NUEVO LOGO!</h1>
+          <h2 class="post-date">01-08-2025</h2>
+        </div>
+      </div>
+    <p>Tras 2 años, llegó la hora de darle un lavado de cara a la identidad visual de IVANDFX (osea, yo).</p>
+    <p>De primeras, dejemos las cosas claras; no tenía ningún permiso para utilizar la fuente que se utilizaba en el anterior logo, o al menos no para monetizar nada donde estuviese presente, ya que la fuente que usaba estaba bajo licencia de pago (la cual yo no había pagado) y por mucho que me gustara, no me podía permitir pagarlo.</p>
+    <p>Tenía que cambiar el logo cuanto antes...</p>
+    <br>
+    <p>Dicho esto, en Marzo empecé la búsqueda de una fuente que pudiese sustituir a la anterior, estando bajo licencias libres y/o gratuitas para uso comercial, y así ahorrarme problemas a futuro.</p>
+    <p>Y tras todo este tiempo buscando una que se diferenciase del anterior pero que a su vez mantuviese la esencia del mismo, y tras pasar por varios diseños, puedo decir orgullosamente que finalmente la encontré:</p>
+    <img src="/blog/posts/img/logocomp1.png" class="img-full">
+    <span style="font-size: 0.8rem; color: var(--post-link)">Comparación entre el anterior logo y el nuevo.</span>
+    <br>
+    <br>
+    <p>Este nuevo logo mantiene la estructura visual del anterior, pero sustituye las formas que componen el logo principal por letras reales.</p>
+    <p>Quizás a primera vista sea extraño ver el nuevo logo, pero igual que todo, con el tiempo todos nos acostumbraremos.</p>
+    <p>De hecho, no solo cambia la fuente principal del logo (DFX), que de hecho ahora es <a href="https://fontesk.com/audex-font/" class="text-url" target="_blank" rel="noopener noreferrer">Audex</a>, sino que la fuente secundaria (la que forma el nombre IVAN) también ha cambiado, antes era <a href="https://rsms.me/inter/" class="text-url" target="_blank" rel="noopener noreferrer">Inter</a>, y ahora es <a href="https://fonts.google.com/specimen/Gabarito" class="text-url" target="_blank" rel="noopener noreferrer">Gabarito</a>.</p>
+    <p>Además, para mantener la consistencia, esta última, Gabarito, se ha aplicado como fuente principal en toda la web, y de hecho, queda MUY bien 🙂‍↕️</p>
+    <br>
+    <p>He tomado muy seriamente la consistencia, hasta el punto en el que he decidido actualizar el logo de Kunex Media, mi "marca multimedia", que llevaba usando su anterior logo propio desde 2021.</p>
+    <img src="/blog/posts/img/kmediacomp1.png" class="img-full">
+    <span style="font-size: 0.8rem; color: var(--post-link)">Comparación entre el logo de Kunex Media de 2021 y 2025.</span>
+    <br>
+    <br>
+    <p>¿Qué te parece el nuevo logo? ¡Puedes opinar de él al compartir el post o mencionándome en Twitter/Bluesky!</p>
+    <br>
+    <p>¡Recuerda que puedes compartir el post!</p>
+    <div id="share-container"></div>
+
+</main>
+<script src="/loader.js"></script>
+<script>
+fetch('/blog/share.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('share-container').innerHTML = html;
+  });
+</script>
+
+</body>
+</html>

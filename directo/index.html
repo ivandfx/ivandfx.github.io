@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Directo</title>
+  <link rel="stylesheet" href="/style.css">
+  <body style="background: linear-gradient(#0000008e, #0000008e), url('/public/img/bg/bgdfx.png') center center / cover no-repeat fixed;">
+  <style>
+    .live-layout {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .page-wrapper { overflow-x: visible; }
+    main { overflow: visible; }
+    .full-bleed {
+      width: 100vw;
+      box-sizing: border-box;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+    .live-card {
+      background: rgba(26, 26, 26, 0.8);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2);
+      backdrop-filter: blur(16px);
+    }
+    .live-player,
+    .live-chat {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      background: #000;
+    }
+    
+    .live-player iframe,
+    .live-chat iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .live-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .live-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #1e1e1e;
+      background: linear-gradient(135deg, var(--link-hover) 0%, #64d8d8 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    .live-btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    @media (max-width: 1100px) {
+      .live-layout { grid-template-columns: 1fr; }
+      .live-player, .live-chat { padding-bottom: 56.25%; }
+    }
+  </style>
+  <script>
+    function twitchParent() {
+      try { return location.hostname || 'localhost'; } catch(e) { return 'localhost'; }
+    }
+    function buildTwitchSrc() {
+      const parent = encodeURIComponent(twitchParent());
+      return `https://player.twitch.tv/?channel=ivandfx&parent=${parent}&muted=false&autoplay=true`;
+    }
+    function buildChatSrc() {
+      const parent = encodeURIComponent(twitchParent());
+      return `https://www.twitch.tv/embed/ivandfx/chat?parent=${parent}&darkpopout`;
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const player = document.getElementById('twitch-player');
+      const chat = document.getElementById('twitch-chat');
+      if (player) player.src = buildTwitchSrc();
+      if (chat) chat.src = buildChatSrc();
+      function syncHeights() {
+        const playerBox = player?.parentElement;
+        const chatBox = chat?.parentElement;
+        if (!playerBox || !chatBox) return;
+        const isStacked = window.matchMedia('(max-width: 1100px)').matches;
+        if (!isStacked) {
+          const h = playerBox.offsetHeight;
+          chatBox.style.height = h + 'px';
+          chatBox.style.paddingBottom = '0px';
+        } else {
+          chatBox.style.height = '';
+          chatBox.style.paddingBottom = '';
+        }
+      }
+      syncHeights();
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(syncHeights, 100);
+      });
+    });
+  </script>
+  
+  <link rel="preconnect" href="https://player.twitch.tv">
+  <link rel="preconnect" href="https://www.twitch.tv">
+  <link rel="dns-prefetch" href="https://player.twitch.tv">
+  <link rel="dns-prefetch" href="https://www.twitch.tv">
+</head>
+<body>
+  <div id="topnav-container"></div>
+    <a href="https://twitch.tv/ivandfx" class="click-banner" target="_blank">¿Problemas con el directo? Visita la fuente original aquí.</a>
+  <div class="page-wrapper">
+    <main>
+    <div class="title-row">
+      <h1>DIRECTO | ivandfx</h1>
+      <h2>twitch.tv/ivandfx</h2>
+    </div>
+
+    <div class="live-layout full-bleed">
+      <div class="live-card">
+        <div class="live-player">
+          <iframe id="twitch-player" allowfullscreen allow="autoplay; fullscreen"></iframe>
+        </div>
+      </div>
+      <div class="live-card">
+        <div class="live-chat">
+          <iframe id="twitch-chat"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+  </div>
+
+<script src="/loader.js"></script>
+</body>
+</html>
