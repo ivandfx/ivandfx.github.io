@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | fnKeys</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body style="background: linear-gradient(#0000008e, #0000008e), url('/public/img/bg/fnk1bg.png') center center / cover no-repeat fixed;">
+    <div id="topnav-container"></div>
+  <a class="msg-banner">Esta página solo está disponible en Inglés</a>
+<div class="page-wrapper">
+  <div id="sidebar-container"></div>
+  <main>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <h1>fnKeys</h1>
+  <a href="https://github.com/ivandfx/fnkeys" target="_blank" class="github-icon" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  <a href="https://gitlab.com/ivandfx/fnkeys" target="_blank" class="gitlab-icon" aria-label="GitLab">
+    <i class="fa-brands fa-gitlab"></i>
+  </a>
+</div>
+    <h3>Fix function keys on TKL and compact keyboards under Linux.</h3>
+    <p>Version 3 - July 23, 2025</p>
+    <p>Only tested on Linux x86-64</p>
+<div style="display: flex; gap: 40px; flex-wrap: wrap;">
+  <div style="flex-direction: column; align-items: start;">
+  </div>
+</div>
+  <h2>Auto install</h2>
+  <p>Copy & paste this into a terminal window:</p>
+
+<div style="position: relative; display: inline-block; max-width: 400px;">
+  <div id="code-block" style="background:#7a7a7a; color:#ffffff; font-weight: bold; padding: 8px 10px; border-radius: 12px; border: 2px solid #ffffff1e; overflow-x: auto; white-space: nowrap;">
+    <code>curl -fsSL https://raw.githubusercontent.com/ivandfx/fnkeys/refs/heads/main/FnKeysAutoInstaller.sh | bash</code>
+  </div>
+  <button id="copy-btn" onclick="copyToClipboard()" style="position: absolute; top: 5px; right: 5px; background: #444; color: white; border: none; padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 14px;">
+    <i class="fas fa-clipboard"></i>
+  </button>
+</div>
+
+<script>
+  function copyToClipboard() {
+    const code = document.querySelector('#code-block code').innerText;
+    const button = document.getElementById('copy-btn');
+    const icon = button.querySelector('i');
+
+    navigator.clipboard.writeText(code).then(() => {
+      icon.className = 'fas fa-check';
+    }).catch(err => {
+      icon.className = 'fas fa-times';
+    }).finally(() => {
+      setTimeout(() => {
+        icon.className = 'fas fa-clipboard';
+      }, 1500);
+    });
+  }
+</script>
+
+  <br>
+  <br>
+  <h2>Manual install</h2>
+    <a href="https://github.com/ivandfx/fnkeys/releases/download/v3/FnKeysFix.sh" class="dl-button">Download</a>
+  <span style="font-size: 0.9rem">Download from GitHub</span>
+    <br>
+    <br>
+  <p>1. Download fnKeys using the Download button.</p>
+  <p>2. Go to the folder where fnKeys is located and open a terminal window.</p>
+  <p>3. Then, copy & paste this:</p>
+
+<div style="position: relative; display: inline-block; max-width: 400px;">
+  <div id="code-block" style="background:#7a7a7a; color:#ffffff; font-weight: bold; padding: 8px 10px; border-radius: 12px; border: 2px solid #ffffff1e; overflow-x: auto; white-space: nowrap;">
+    <code1>sudo chmod +x FnKeysFix.sh && ./FnKeysFix.sh</code1>
+  </div>
+  <button id="copy-btn1" onclick="copyToClipboard1()" style="position: absolute; top: 5px; right: 5px; background: #444; color: white; border: none; padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 14px;">
+    <i class="fas fa-clipboard"></i>
+  </button>
+</div>
+
+<script>
+  function copyToClipboard1() {
+    const code = document.querySelector('#code-block code1').innerText;
+    const button = document.getElementById('copy-btn1');
+    const icon = button.querySelector('i');
+
+    navigator.clipboard.writeText(code).then(() => {
+      icon.className = 'fas fa-check';
+    }).catch(err => {
+      icon.className = 'fas fa-times';
+    }).finally(() => {
+      setTimeout(() => {
+        icon.className = 'fas fa-clipboard';
+      }, 1500);
+    });
+  }
+</script>
+  <p>4. Run the installer, and you're done!</p>
+  </main>
+</div>
+
+<script src="/loader.js"></script>
+</body>
+</html>
