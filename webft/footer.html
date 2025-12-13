@@ -1,0 +1,171 @@
+  <style>
+    .footer {
+      background-color: #0f0f0f;
+      color: #fff;
+      padding: 20px 20px;
+      font-family: Gabarito, sans-serif;
+      border-top: 5px solid;
+      /*border-image: linear-gradient(135deg, #8dcaca, #2587a5, #45399e) 1;*/
+      border-image: linear-gradient(135deg, #8dca95, #25a52b, #175e14) 1;
+    }
+
+    .footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer .footer-col {
+      flex: 1 1 200px;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer .footer-col h4 {
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #ffffff50;
+      padding-bottom: 5px;
+    }
+
+    .footer .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer .footer-col ul li {
+      margin-bottom: 5px;
+    }
+
+    .footer .footer-col ul li a {
+      text-decoration: none !important;
+      transition: color 0.2s;
+    }
+
+    .footer .footer-col ul li a:hover {
+      color: var(--link-hover);
+    }
+
+    .footer .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .footer .social-icons a {
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.2s;
+    }
+
+    .social-icons a[href*="github.com"]:hover {
+      color: #64d8d8;
+    }
+
+    .social-icons a[href*="gitlab.com"]:hover {
+      color: #FC6D26;
+    }
+
+    .social-icons a[href*="x.com"]:hover,
+    .social-icons a[href*="twitter.com"]:hover {
+      color: #1DA1F2;
+    }
+
+    .social-icons a[href*="bsky.app"]:hover {
+      color: #0085FF;
+    }
+
+    .social-icons a[href*="instagram.com"]:hover {
+      color: #C13584;
+    }
+
+    .social-icons a[href*="youtube.com"]:hover {
+      color: #FF0000;
+    }
+
+    .social-icons a[href*="twitch.tv"]:hover {
+      color: #9146FF;
+    }
+
+    .footer .logo {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 16px;
+      color: #ffffff;
+      padding-bottom: 10px;
+    }
+
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .footer-col {
+    margin: -40px 0;
+  }
+
+  .footer .logo {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+}
+
+  </style>
+<body>
+<br>
+<br>
+<br>
+<br>
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-col">
+        <div class="logo">
+          <img src="/public/img/logo.png">
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>info web</h4>
+        <ul>
+          <li><a href="/info/cookies.html">Política de cookies</a></li>
+          <li><a href="/info/creditos.html">Créditos</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>sígueme</h4>
+        <div class="social-icons">
+        <a href="https://youtube.com/ivandfx" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitch.tv/ivandfx" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+        <a href="https://x.com/ivandfx" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Bluesky"><i class="fab fa-bluesky"></i></a>
+        <a href="https://instagram.com/ivandfx" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/ivandfx" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://gitlab.com/ivandfx" target="_blank" aria-label="GitLab"><i class="fa-brands fa-gitlab"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>contacto</h4>
+        <ul>
+        <li><a href="mailto:dfxcontacto@proton.me">dfxcontacto@proton.me</a></li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="footer-bottom">2022-2025 IVANDFX</div>
+  </footer>
+</body>
+</html>
