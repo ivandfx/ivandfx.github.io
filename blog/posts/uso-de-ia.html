@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="date" content="22-07-2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Post</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="post-subtitle" content="¿Fue la web de IVANDFX hecha por una IA?">
+</head>
+<body>
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+  <div id="sidebar-container"></div>
+    <main>
+      <div class="post-header">
+        <div class="title-row">
+          <h1 class="post-title">SOBRE EL USO DE LA IA</h1>
+          <h2 class="post-date">22-07-2025</h2>
+        </div>
+      </div>
+    <p>Seamos honestos, no he hecho esta web al 100%, pero antes de que te alarmes, sigue leyendo.</p>
+    <p>He usado la IA para hacer una buena parte del JavaScript de la web, que en resumen, es la parte que se encarga de la funcionalidad avanzada de la web, como compartir posts a Twitter o Bluesky, el aviso de cookies, entre otras cosas internas.</p>
+    <p>Y, ¿por qué? Muy sencillo, porque no tengo mucha idea de JavaScript, y sin embargo requería del mismo sí o sí.</p>
+    <p>Lo bueno de cara al futuro es que a medida que lo modificaba manualmente, iba descubriendo qué hacía cada línea y cómo funcionaba, por lo que es aprendizaje que me llevo.</p>
+    <br>
+    <p>Además, la IA ayudó a ordenar y reestructurar el CSS (el diseño de la web) cuando el código empezaba a ser un espagueti y muchas cosas quedaban duplicadas o hacían conflicto entre sí, en resumen, cosas que me empezaban a dificultar el seguir trabajando en la web.</p>
+    <p>En el fondo, de eso se trata: usar la IA para facilitar el proceso y, si te implicas, también aprender en el camino.</p></p>
+    <p>Creo firmemente que la IA está para agilizar procesos, no sustituirlos.</p>
+    <p>Así que la respuesta que buscas es... No, la web no la hizo una IA, más bien, la usé para aprendizaje propio.</p>
+    <br>
+    <p>Y sin más que decir, aquí termina el primer post de la nueva web ¿Qué, os gusta?</p>
+    <br>
+    <p>¡Y ahora también puedes compartir el post!</p>
+    <br>
+      <h3>Editado: 26-09-2025</h3>
+    <div id="share-container"></div>
+
+</main>
+<script src="/loader.js"></script>
+<script>
+fetch('/blog/share.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('share-container').innerHTML = html;
+  });
+</script>
+
+</body>
+</html>

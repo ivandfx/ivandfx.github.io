@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Inicio</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="topnav-container"></div>
+
+  <div class="page-wrapper">
+    <a class="msg-banner">Curiosidad: ¿Sabías que a los pandas les encanta comer bambú?</a>
+    <div id="sidebar-container"></div>
+
+    <main>
+      <div class="tabs-container">
+        <button class="tab-button active" data-tab="Inicio">INICIO</button>
+        <button class="tab-button" data-tab="Sobre mí">SOBRE MÍ</button>
+      </div>
+
+      <section id="Inicio" class="tab-content active">
+            <h1>INICIO</h1>
+      <p>¡Bienvenid@ a mi web! Aquí podrás descubrir quién soy, qué hago, qué publico y ver cómo esta web evoluciona con el paso del tiempo… ¡siempre para mejor!</p>
+      <br>
+      <h2>BLOG Y PROYECTOS</h2>
+      <h3>Sobre el blog</h3>
+      <p>En el blog compartiré novedades sobre la web, sobre mí o sobre cualquier tema que considere interesante o importante.</p>
+      <p>Será un espacio donde escribiré libremente, y quien quiera leer o compartir algo, podrá hacerlo sin problema.</p>
+      <h3>Sobre los proyectos</h3>
+      <p>En la sección "PROYECTOS" encontrarás todos mis trabajos publicados en GitHub y algunos en GitLab. Puede que encuentres alguno marcado como "EOL" (End-Of-Life), indicando que ya no tiene soporte.</p>
+      <p>Y con esta web, eso me permite estar seguro de que cada página sea coherente y fácil de mantener.</p>
+      <br>
+      <h2>OTROS</h2>
+      <p>En esta sección encontrarás contenido más relajado, menos técnico y hasta absurdo.</p>
+      <p>Aunque con alguna excepción, como la página con los <a href="/otros/pc.html" class="text-url">componentes de mi PC</a>.</p>
+      <br>
+      <h2>JUEGOS</h2>
+      <p>Aquí encontrarás algunos juegos, desde clásicos Flash y HTML5, hasta juegos diseñados para la web.</p>
+      <p>Estos aún están en desarrollo, por lo que la disponibilidad puede variar o ser inexistente en primer lugar.</p>
+      <br>
+      <h2>MULTIMEDIA</h2>
+      <p>Esta será la zona más grande de la web, ya que aquí se encontrarán los últimos vídeos del canal de YouTube, los directos de ivandfx y Kunex TV (bajo Kunex Media), así como algún otro streamer que se una en el futuro.</p>
+      <p>También podrás escuchar canciones como <a href="/multimedia/amorloco.html" class="text-url">Amor Loco</a> y <a href="/multimedia/gritosrotos.html" class="text-url">Gritos Rotos</a> y cualquier otro que se añada más adelante.</p>
+      <p>Se creará contenido exclusivo para la web.</p>
+      <br>
+      <h2>PANEL LATERAL</h2>
+      <p>El panel lateral se muestra únicamente en pantallas grandes: PC, tablets y algunos móviles en modo horizontal. En móviles verticales y resoluciones más bajas no aparecerá.</p>
+      <p>Este panel destacará un máximo de 6 páginas que yo considere importantes y/o que merecen mayor visibilidad.</p>
+      <br>
+      <h3>¡Y eso es todo por ahora! Cualquier cambio importante se notificará en su debido momento.</h3>
+      </section>
+
+      <section id="Sobre mí" class="tab-content">
+            <h1>SOBRE MÍ</h1>
+        <div id="sobre-container" style="display: flex; gap: 20px;">
+          <div style="flex: 1;">
+            <p style="margin-top: 0;">¡Buenas! Me llamo Iván, y aunque en la actualidad se me conoce como <b>ivandfx</b>, puede que aún suenen mis anteriores nicks, <b>IvanPCER</b> e <b>IvanTerrible</b>.</p>
+            <p>Nací en Valencia, España, y actualmente tengo 20 años.</p>
+            <br>
+            <h2>Esta página está en construcción</h2>
+          </div>
+          <div style="flex-shrink: 1;">
+            <img src="/public/img/base/20240202_102848.jpg" alt="Iván" style="max-width: 300px; height: auto; border-radius: 20px; outline: 2px solid rgba(255, 255, 255, 0.1)"><br>
+            <span style="font-size: 0.9rem; display: flex">IMAGEN: Iván (2024)</span>
+          </div>
+        </div>
+
+        <style>
+          @media (max-width: 1000px) {
+            #sobre-container {
+              flex-direction: column;
+            }
+          }
+        </style>
+      </section>
+    </main>
+  </div>
+
+  <script src="/loader.js"></script>
+  <script>
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const target = tab.dataset.tab;
+        contents.forEach(c => {
+          c.classList.toggle('active', c.id === target);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
