@@ -77,16 +77,16 @@ window.addEventListener("scroll", () => {
 fetch('/webft/footer.html')
   .then(res => res.text())
   .then(html => {
-    // create container
     let footerContainer = document.getElementById('footer-container');
     if (!footerContainer) {
       footerContainer = document.createElement('div');
       footerContainer.id = 'footer-container';
       document.body.appendChild(footerContainer);
     }
-
     footerContainer.innerHTML = html;
-  })
+
+    enableStickyFxPlayer();
+  });
 
     // Dropdown listeners
     document.querySelectorAll('.dropdown').forEach(el => {
@@ -489,18 +489,20 @@ function enableStickyFxPlayer(playerSelector = '.fx-player', wrapperSelector = '
 
   observer.observe(wrapper);
 
-  function adjustPlayerPosition() {
-    if (!footer) return;
-    const playerRect = fxPlayer.getBoundingClientRect();
-    const footerRect = footer.getBoundingClientRect();
-    const overlap = playerRect.bottom - footerRect.top;
+function adjustPlayerPosition() {
+  if (!footer || !fxPlayer.classList.contains('fixed')) return;
 
-    if (overlap > 0) {
-      fxPlayer.style.bottom = `${overlap}px`;
-    } else {
-      fxPlayer.style.bottom = '0';
-    }
+  const footerRect = footer.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+
+  const overlap = viewportHeight - footerRect.top;
+
+  if (overlap > 0) {
+    fxPlayer.style.bottom = `${overlap}px`;
+  } else {
+    fxPlayer.style.bottom = '0px';
   }
+}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
