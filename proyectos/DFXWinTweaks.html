@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | DFX WinTweaks</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body style="background: linear-gradient(#0000008e, #0000008e), url('/public/img/bg/wt1bg.png') center center / cover no-repeat fixed;">
+    <div id="topnav-container"></div>
+  <a class="msg-banner">Esta página solo está disponible en Inglés</a>
+<div class="page-wrapper">
+  <div id="sidebar-container"></div>
+<main>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <h1>DFX WinTweaks</h1>
+  <a href="https://github.com/ivandfx/DFXWinTweaks" target="_blank" class="github-icon" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  <a href="https://gitlab.com/ivandfx/DFXWinTweaks" target="_blank" class="gitlab-icon" aria-label="GitLab">
+    <i class="fa-brands fa-gitlab"></i>
+  </a>
+    <span>EOL</span>
+</div>
+    <h3>As of April 19, 2025, DFX WinTweaks is no longer supported.</h3>
+<div style="display: flex; gap: 40px; flex-wrap: wrap;">
+  <div style="flex-direction: column; align-items: start;">
+    <p>Version 24.7.1 - July 19, 2024</p>
+    <p>For Windows 11, 10</p>
+    <a href="https://github.com/ivandfx/DFXWinTweaks/releases/download/24.7.1/DFXWT_24.7.1.VBS" class="dl-button">Download</a>
+  </div>
+<div style="flex-direction: column; align-items: start;">
+    <p>Version 3.3.4 LTS - October 26, 2023</p>
+    <p>For Windows 7, 8, 8.1, 10, 11</p>
+    <a href="https://github.com/ivandfx/DFXWinTweaks/releases/download/v3.3.4LTS/DFXWT_3.3.4_LTS.VBS" class="dl-button">Download</a>
+    <br>
+  </div>
+</div>
+<span style="font-size: 0.9rem;">Downloads from GitHub</span>
+    <p>See the development roadmap on <a href="https://trello.com/b/6GAp9cjs">Trello</a> (Discontinued)</p>
+    <br>
+    <h4>Starting with Windows 11 version 24H2, the use of DFX WinTweaks is no longer recommended.</h4>
+    <h4>And it may not work on newer builds of Windows 10 22H2/21H2.</h4>
+    <img src="/public/img/otros/wt_stmenu.png" style="max-width: 800px; height: auto;"><br>
+  </main>
+  </div>
+</div>
+<script src="/loader.js"></script>
+<script>
+function showPageLoadMessage() {
+  const overlay = document.createElement("div");
+  overlay.id = "page-load-overlay";
+  overlay.style.cssText = `
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 9998;
+    pointer-events: all;
+  `;
+
+  const messageBox = document.createElement("div");
+  messageBox.id = "page-load-message";
+  messageBox.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(135deg, var(--bg-color) 0%, rgba(26, 26, 26, 0.95) 100%);
+    color: var(--text-color);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.1rem;
+    z-index: 9999;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    text-align: center;
+  `;
+
+  const icon = document.createElement("div");
+  icon.innerHTML = '<i class="fas fa-ban" style="font-size: 3rem; color: #bb5151; margin-bottom: 10px;"></i>';
+  
+  const title = document.createElement("h3");
+  title.textContent = "END OF LIFE";
+  title.style.cssText = `
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+  `;
+
+  const message = document.createElement("p");
+  message.textContent = "DFX WinTweaks is no longer supported and shouldn't be used. Use it at your own risk.";
+  message.style.cssText = `
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text-color);
+  `;
+
+  const closeBtn = document.createElement("button");
+  closeBtn.textContent = "Okay";
+  closeBtn.style.cssText = `
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--link-hover) 0%, var(--link-hover2) 100%);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 12px;
+    font-family: 'Gabarito', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(100, 216, 216, 0.3);
+  `;
+
+  closeBtn.onmouseenter = () => {
+    closeBtn.style.background = "linear-gradient(135deg, #64d8d8 0%, #409292 100%)";
+    closeBtn.style.transform = "translateY(-2px)";
+    closeBtn.style.boxShadow = "0 6px 20px rgba(100, 216, 216, 0.4)";
+  };
+  
+  closeBtn.onmouseleave = () => {
+    closeBtn.style.background = "linear-gradient(135deg, var(--link-hover) 0%, var(--link-hover2) 100%)";
+    closeBtn.style.transform = "translateY(0)";
+    closeBtn.style.boxShadow = "0 4px 16px rgba(100, 216, 216, 0.3)";
+  };
+
+  closeBtn.onclick = () => {
+    overlay.remove();
+    messageBox.remove();
+  };
+
+  const handleEscape = (e) => {
+    if (e.key === 'Escape') {
+      overlay.remove();
+      messageBox.remove();
+      document.removeEventListener('keydown', handleEscape);
+    }
+  };
+  document.addEventListener('keydown', handleEscape);
+
+  overlay.onclick = () => {
+    overlay.remove();
+    messageBox.remove();
+    document.removeEventListener('keydown', handleEscape);
+  };
+
+  messageBox.appendChild(icon);
+  messageBox.appendChild(title);
+  messageBox.appendChild(message);
+  messageBox.appendChild(closeBtn);
+
+  document.body.appendChild(overlay);
+  document.body.appendChild(messageBox);
+
+  messageBox.style.opacity = "0";
+  messageBox.style.transform = "translate(-50%, -50%) scale(0.9)";
+  messageBox.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
+  
+  requestAnimationFrame(() => {
+    messageBox.style.opacity = "1";
+    messageBox.style.transform = "translate(-50%, -50%) scale(1)";
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    showPageLoadMessage();
+  }, 500);
+});
+</script>
+</body>
+</html>

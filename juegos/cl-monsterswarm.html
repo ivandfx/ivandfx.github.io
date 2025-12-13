@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Juegos</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    #unsupported-message {
+      display:none;
+      background:#300;
+      color:#fff;
+      padding:16px;
+      border-radius:12px;
+      text-align:center;
+      max-width:900px;
+      margin:20px auto;
+      font-size:1rem;
+    }
+
+    @media (max-width: 768px) {
+      .flash-container { display: none !important; }
+      #unsupported-message { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+    <a class="msg-banner">¡Ten cuidado, no te vicies!</a>
+    <div id="sidebar-container"></div>
+    <main>
+      <h1>Code Lyoko: Monster Swarm</h1>
+      <span style="font-size: 1rem; display: inline-block; padding-bottom: 10px;">Cartoon Network (2007)</span><br>
+
+<div id="unsupported-message">La resolución de pantalla no es compatible con el juego.</div>
+
+      <p id="flash-container" style="max-width: 100%; margin: 0 auto; background: transparent;">
+        <object 
+          data="/juegos/data/monsterswarm.swf" 
+          type="application/x-shockwave-flash"
+          style="
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            height: auto;
+            outline: 2px solid #ffffff1e;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            display: block;
+            background: #1e1e1e;
+          ">
+          <param name="movie" value="/juegos/data/monsterswarm.swf" />
+          <param name="allowFullScreen" value="true" />
+          <param name="allowScriptAccess" value="always" />
+          <param name="wmode" value="transparent" />
+        </object>
+      </p>
+    </main>
+  </div>
+
+  <script src="/loader.js"></script>
+  
+  <script>
+  function checkScreenWidth() {
+    const minWidth = 768;
+    const flashContainer = document.getElementById('flash-container');
+    const unsupportedMessage = document.getElementById('unsupported-message');
+
+    if (window.innerWidth < minWidth) {
+      unsupportedMessage.style.display = 'block';
+      flashContainer.style.display = 'none';
+    } else {
+      unsupportedMessage.style.display = 'none';
+      flashContainer.style.display = 'block';
+    }
+  }
+
+  window.addEventListener('load', checkScreenWidth);
+  window.addEventListener('resize', checkScreenWidth);
+</script>
+
+</body>
+</html>

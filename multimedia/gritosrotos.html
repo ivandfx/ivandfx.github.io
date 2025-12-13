@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Gritos Rotos</title>
+  <link rel="icon" href="/public/img/otros/GritosRotosCover-RND.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body oncontextmenu="return false;" style="background: url('/public/img/otros/bg-gritosrotos.png') center center / cover no-repeat fixed;">
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+    <main>
+      <br>
+      <div style="max-width:1000px; padding:20px;">
+        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:30px; justify-content:center;">
+                    <div style="flex:1 1 300px; max-width:400px;">
+            <img src="/public/img/otros/GritosRotosCover-RND.png" ondragstart="return false;" draggable="false" style="width:100%;">
+          </div>
+          <div style="flex:1 1 300px; max-width:500px;">
+            <h1 style="font-size:2.5em; margin-top:0;">Gritos Rotos</h1>
+            
+            <p><strong>Sinopsis:</strong><br>
+            Una pareja deberá superar sus roturas emocionales para luchar contra el ente maligno que les impide estar juntos.</p>
+
+            <p style="margin-top:20px;">
+            <p>
+                <a href="https://soundcloud.com/ivandfx/gritosrotos" target="_blank" class="pb-button">SoundCloud</a>
+                <span style="font-size: 0.8rem">¡Escúchalo desde la app de SoundCloud!</span>
+            </p>
+            </p>
+            <p>
+              <a href="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/GritosRotos.mp3" class="pb-button">Descargar MP3</a>
+              <span style="font-size: 0.8rem">¡Escúchalo desde tu dispositivo!</span>
+            </p>
+        </div>
+  </div>
+<div class="fx-player">
+  <audio id="fx-audio" preload="metadata">
+    <source src="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/GritosRotos.mp3" type="audio/mpeg">
+    Tu navegador no puede reproducir esto.
+  </audio>
+
+  <div class="fx-controls">
+    <button id="fx-play" class="fx-play">
+      <i class="fas fa-play"></i>
+    </button>
+
+    <div class="fx-progress-container" id="fx-progress-container">
+      <div id="fx-progress" class="fx-progress"></div>
+    </div>
+
+    <div class="fx-time">
+      <span id="fx-current">0:00</span> / <span id="fx-duration">0:00</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const audio = document.getElementById("fx-audio");
+  const playBtn = document.getElementById("fx-play");
+  const progress = document.getElementById("fx-progress");
+  const progressContainer = document.getElementById("fx-progress-container");
+  const currentTime = document.getElementById("fx-current");
+  const duration = document.getElementById("fx-duration");
+
+  const playIcon = '<i class="fas fa-play"></i>';
+  const pauseIcon = '<i class="fas fa-pause"></i>';
+
+  let isDragging = false;
+
+  function formatTime(t) {
+    const min = Math.floor(t / 60);
+    const sec = Math.floor(t % 60).toString().padStart(2, "0");
+    return `${min}:${sec}`;
+  }
+
+  audio.addEventListener("loadedmetadata", () => {
+    duration.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    if (!isDragging) {
+      progress.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+      currentTime.textContent = formatTime(audio.currentTime);
+    }
+  });
+
+  function setProgress(e) {
+    const rect = progressContainer.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const percentage = Math.min(Math.max(offsetX / rect.width, 0), 1);
+    progress.style.width = `${percentage * 100}%`;
+    audio.currentTime = percentage * audio.duration;
+    currentTime.textContent = formatTime(audio.currentTime);
+  }
+
+  progressContainer.addEventListener("click", (e) => {
+    setProgress(e);
+  });
+
+  progressContainer.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    setProgress(e);
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      setProgress(e);
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (isDragging) {
+      isDragging = false;
+    }
+  });
+
+  playBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.innerHTML = pauseIcon;
+    } else {
+      audio.pause();
+      playBtn.innerHTML = playIcon;
+    }
+  });
+</script>
+
+            <div>
+              <p>Disponible en:</p>
+              <img src="/public/img/sdlogo.png" ondragstart="return false;" draggable="false" alt="SoundCloud" style="height:30px; vertical-align:middle; margin-right:10px;">
+              <img src="/public/img/logo.png" ondragstart="return false;" draggable="false" alt="ivandfx web" style="height:30px; vertical-align:middle; margin-right:10px;">
+              <span id="desarrollo" style="color: var(--text-color); background-color: var(--category-bg); padding: 0 6px; border-radius: 8px; outline: 2px solid var(--link-hover); z-index: 1000000; vertical-align: middle;">WEB</span>
+        </div>
+</div>
+<br>
+  <h1>Letra</h1>
+
+<p>Las noches frías, los gritos rotos,</p>
+<p>las dudas como espinas en la piel.</p>
+<p>Se miran, pero el miedo es sordo,</p>
+<p>el amor arde, pero no se ve.</p>
+<br>
+<p>Se juran que esta vez es la última,</p>
+<p>pero el alma sabe la verdad.</p>
+<p>Se pierden, pero siempre vuelven,</p>
+<p>siguiendo un hilo de ansiedad.</p>
+<br>
+<p>Lozano y Abel, contra el mundo van,</p>
+<p>con el alma herida, pero amando igual.</p>
+<p>Se rompen, se sanan, se vuelven a armar,</p>
+<p>y en cada caída se aprenden a amar.</p>
+<br>
+<p>Las sombras pesan, las dudas matan,</p>
+<p>el orgullo es fuego y quema más.</p>
+<p>Pero entre ruinas, aún se abrazan,</p>
+<p>y encuentran fuerza en lo que fue.</p>
+<br>
+<p>Se pierden, pero siempre vuelven,</p>
+<p>siguiendo un hilo de ansiedad.</p>
+<br>
+<p>Lozano y Abel, contra el mundo van,</p>
+<p>con el alma herida, pero amando igual.</p>
+<p>Se rompen, se sanan, se vuelven a armar,</p>
+<p>y en cada caída se aprenden a amar.</p>
+<br>
+<p>Y aunque tiemble el suelo bajo sus pies,</p>
+<p>aunque el miedo intente hacerlos caer,</p>
+<p>se encuentran de nuevo, se juran de nuevo,</p>
+<p>porque en su amor hay más que ayer.</p>
+<br>
+<p>Lozano y Abel, contra el mundo van,</p>
+<p>con el alma herida, pero amando igual.</p>
+<p>Se rompen, se sanan, se vuelven a armar,</p>
+<p>y en cada caída se aprenden a amar.</p>
+<p>(¡Amar!)</p>
+<br>
+<p>(Fin)</p>
+
+  <script src="/loader.js"></script>
+</body>
+</html>

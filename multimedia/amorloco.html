@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Amor Loco</title>
+  <link rel="icon" href="/public/img/otros/AmorLocoCover-RND.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body oncontextmenu="return false;" style="background: url('/public/img/otros/bg-amorloco.png') center center / cover no-repeat fixed;">
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+    <main>
+      <br>
+      <div style="max-width:1000px; padding:20px;">
+        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:30px; justify-content:center;">
+                    <div style="flex:1 1 300px; max-width:400px;">
+            <img src="/public/img/otros/AmorLocoCover-RND.png" ondragstart="return false;" draggable="false" style="width:100%;">
+          </div>
+          <div style="flex:1 1 300px; max-width:500px;">
+            <h1 style="font-size:2.5em; margin-top:0;">Amor Loco</h1>
+            
+            <p><strong>Sinopsis:</strong><br>
+            Dos enamorados se encuentran atrapados en un mundo que les impide estar juntos, por lo que lucharán más fuertes que nunca por su amor.<br><br>
+            Uno que haría temblar el mundo...</p>
+
+            <p style="margin-top:20px;">
+            <p>
+                <a href="https://soundcloud.com/ivandfx/amorloco" target="_blank" class="pb-button">SoundCloud</a>
+                <span style="font-size: 0.8rem">¡Escúchalo desde la app de SoundCloud!</span>
+            </p>
+            </p>
+            <p>
+              <a href="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/AmorLoco.mp3" class="pb-button">Descargar MP3</a>
+              <span style="font-size: 0.8rem">¡Escúchalo desde tu dispositivo!</span>
+            </p>
+        </div>
+  </div>
+<div class="fx-player">
+  <audio id="fx-audio" preload="metadata">
+    <source src="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/AmorLoco.mp3" type="audio/mpeg">
+    Tu navegador no puede reproducir esto.
+  </audio>
+
+  <div class="fx-controls">
+    <button id="fx-play" class="fx-play">
+      <i class="fas fa-play"></i>
+    </button>
+
+    <div class="fx-progress-container" id="fx-progress-container">
+      <div id="fx-progress" class="fx-progress"></div>
+    </div>
+
+    <div class="fx-time">
+      <span id="fx-current">0:00</span> / <span id="fx-duration">0:00</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const audio = document.getElementById("fx-audio");
+  const playBtn = document.getElementById("fx-play");
+  const progress = document.getElementById("fx-progress");
+  const progressContainer = document.getElementById("fx-progress-container");
+  const currentTime = document.getElementById("fx-current");
+  const duration = document.getElementById("fx-duration");
+
+  const playIcon = '<i class="fas fa-play"></i>';
+  const pauseIcon = '<i class="fas fa-pause"></i>';
+
+  let isDragging = false;
+
+  function formatTime(t) {
+    const min = Math.floor(t / 60);
+    const sec = Math.floor(t % 60).toString().padStart(2, "0");
+    return `${min}:${sec}`;
+  }
+
+  audio.addEventListener("loadedmetadata", () => {
+    duration.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    if (!isDragging) {
+      progress.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+      currentTime.textContent = formatTime(audio.currentTime);
+    }
+  });
+
+  function setProgress(e) {
+    const rect = progressContainer.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const percentage = Math.min(Math.max(offsetX / rect.width, 0), 1);
+    progress.style.width = `${percentage * 100}%`;
+    audio.currentTime = percentage * audio.duration;
+    currentTime.textContent = formatTime(audio.currentTime);
+  }
+
+  progressContainer.addEventListener("click", (e) => {
+    setProgress(e);
+  });
+
+  progressContainer.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    setProgress(e);
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      setProgress(e);
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (isDragging) {
+      isDragging = false;
+    }
+  });
+
+  playBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.innerHTML = pauseIcon;
+    } else {
+      audio.pause();
+      playBtn.innerHTML = playIcon;
+    }
+  });
+</script>
+            <div>
+              <p>Disponible en:</p>
+              <img src="/public/img/sdlogo.png" ondragstart="return false;" draggable="false" alt="SoundCloud" style="height:30px; vertical-align:middle; margin-right:10px;">
+              <img src="/public/img/logo.png" ondragstart="return false;" draggable="false" alt="ivandfx web" style="height:30px; vertical-align:middle; margin-right:10px;">
+              <span id="desarrollo" style="color: var(--text-color); background-color: var(--category-bg); padding: 0 6px; border-radius: 8px; outline: 2px solid var(--link-hover); z-index: 1000000; vertical-align: middle;">WEB</span>
+        </div>
+</div>
+<br>
+  <h1>Letra</h1>
+
+<p>Lozano va por calles vacías.</p>
+<p>Peluke tiene lágrimas en sus días.</p>
+<p>El dolor les quiere separar, pero su amor no va a fallar.</p>
+<p>Se gritan hasta romper el cielo (cielo)</p>
+<p>Caminan juntos en un duelo (duelo)</p>
+<p>Las noches frías de la ciudad, fortalecen su tempestad.</p>
+<br>
+<p>Amor loco e inquebrantable, a pesar del caos inevitable,</p>
+<p>sus corazones laten al son, y a un destino lleno de pasión.</p>
+<p>Entre sombras y luces van, con heridas que sanarán,</p>
+<p>los secretos les pesan más, pero juntos, siempre están.</p>
+<br>
+<p>Rompen cadenas de temor, se abrazan con tanto fervor,</p>
+<p>las promesas al amanecer, son lo único que quieren creer.</p>
+<br>
+<p>Amor loco e inquebrantable, a pesar del caos inevitable,</p>
+<p>sus corazones laten al son, y a un destino lleno de pasión.</p>
+<br>
+<p>Rompen cadenas de temor, se abrazan con tanto fervor,</p>
+<p>las promesas al amanecer, son lo único que quieren creer.</p>
+<br>
+<p>Amor loco e inquebrantable, a pesar del caos inevitable,</p>
+<p>sus corazones laten al son, y a un destino lleno de pasión.</p>
+<br>
+<p>(Fin)</p>
+
+<script src="/loader.js"></script>
+</body>
+</html>
