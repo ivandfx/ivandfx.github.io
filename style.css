@@ -1033,8 +1033,7 @@ input[type="text"]:focus, textarea:focus {
   }
 }
 
-.fx-player {
-  max-width: 420px;
+.fx-player{
   margin: 20px auto;
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1043,6 +1042,27 @@ input[type="text"]:focus, textarea:focus {
   color: white;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
+}
+
+.fx-player-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fx-player.fixed {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 800px;
+} 
+
+.fx-player.hidden {
+  transform: translateY(100%);
 }
 
 .fx-controls {
@@ -1096,4 +1116,10 @@ input[type="text"]:focus, textarea:focus {
 .fx-time {
   font-size: 14px;
   white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .fx-player.fixed {
+    bottom: 60px;
+  }
 }
