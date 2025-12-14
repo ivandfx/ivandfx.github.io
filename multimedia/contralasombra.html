@@ -64,6 +64,7 @@
 
   const playIcon = '<i class="fas fa-play"></i>';
   const pauseIcon = '<i class="fas fa-pause"></i>';
+  const repeatIcon = '<i class="fas fa-rotate-right"></i>';
 
   let isDragging = false;
 
@@ -82,6 +83,10 @@
       progress.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
       currentTime.textContent = formatTime(audio.currentTime);
     }
+  });
+
+  audio.addEventListener("ended", () => {
+    playBtn.innerHTML = repeatIcon;
   });
 
   function setProgress(e) {
@@ -115,6 +120,13 @@
   });
 
   playBtn.addEventListener("click", () => {
+    if (audio.ended) {
+      audio.currentTime = 0;
+      audio.play();
+      playBtn.innerHTML = pauseIcon;
+      return;
+    }
+
     if (audio.paused) {
       audio.play();
       playBtn.innerHTML = pauseIcon;
