@@ -846,7 +846,7 @@ input[type="text"]:focus, textarea:focus {
   }
 
   .dropdown-column span {
-    padding: 6px 12px;
+    padding: 4px 12px;
     border-radius: 12px;
     background: var(--category-bg);
     margin-bottom: 4px;
