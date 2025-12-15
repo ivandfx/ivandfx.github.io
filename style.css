@@ -436,6 +436,15 @@ hr.separator {
   text-align: center;
 }
 
+.side-tag {
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 0.80rem;
+  letter-spacing: 0.05em;
+  border-radius: 999px;
+  background: #ffffff26;
+}
+
 @media (max-width: 900px) {
   .page-wrapper { flex-direction: column; }
   .sidebar { display: none; }
