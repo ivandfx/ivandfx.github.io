@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@200;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@200;300;400;600;700&display=swap');
 
 :root {
   --bg-color: #181818;
@@ -71,7 +71,6 @@ body {
 .title-row h2 {
   margin: 0;
   font-size: 1.5rem;
-  font-weight: normal;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -236,7 +235,6 @@ body:has(.promo-banner, .msg-banner, .issue-banner, .click-banner) .sidebar {
 
 button {
   cursor: pointer;
-  font-weight: 700;
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
@@ -562,7 +560,6 @@ input[type="text"]:focus, textarea:focus {
   align-items: center;
   text-decoration: none;
   color: var(--text-color);
-  font-weight: bold;
   position: relative;
   white-space: nowrap;
   transition: all 0.3s ease;
@@ -835,7 +832,7 @@ input[type="text"]:focus, textarea:focus {
 @media (min-width: 1100px) {
   .dropdown-menu {
     display: flex;
-    gap: 26px;
+    gap: 16px;
     padding: 16px 22px;
     align-items: flex-start;
     text-align: center;
@@ -849,7 +846,6 @@ input[type="text"]:focus, textarea:focus {
   }
 
   .dropdown-column span {
-    font-weight: 700;
     padding: 6px 12px;
     border-radius: 12px;
     background: var(--category-bg);
