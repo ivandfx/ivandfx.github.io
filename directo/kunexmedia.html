@@ -74,6 +74,23 @@
       .live-layout { grid-template-columns: 1fr; }
       .live-player, .live-chat { padding-bottom: 56.25%; }
     }
+    .brave-message {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      padding: 32px;
+
+      color: #fff;
+      background: linear-gradient(180deg, #222222, #000);
+
+      font-weight: 600;
+      line-height: 1.4;
+
+      width: 100%;
+    }
   </style>
   <script>
     function twitchParent() {
@@ -132,8 +149,22 @@
 
     <div class="live-layout full-bleed">
       <div class="live-card">
-        <div class="live-player">
-          <iframe id="twitch-player" allowfullscreen allow="autoplay; fullscreen"></iframe>
+        <div class="live-player" id="player-container">
+
+          <div id="brave-message" class="brave-message">
+            <h2>Directo no disponible en Brave</h2>
+            <p>Estás usando el navegador Brave, conocido por bloquear el reproductor de Twitch.</p>
+            <p>Puedes ver el directo en:<br>
+              <a href="https://twitch.tv/kunexmedia" target="_blank">twitch.tv/ivandfx</a></p>
+            <p>O usa Firefox, Chrome o Edge para verlo en la web.</p>
+          </div>
+
+          <iframe
+            id="twitch-player"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            style="display:none"
+          ></iframe>
         </div>
       </div>
       <div class="live-card">
@@ -146,5 +177,58 @@
   </div>
 
 <script src="/loader.js"></script>
+<script>
+  function isBrave() {
+    return (
+      navigator.brave &&
+      typeof navigator.brave.isBrave === "function"
+    );
+  }
+
+  function getParentDomain() {
+    return location.hostname;
+  }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const brave = isBrave();
+    const iframe = document.getElementById("twitch-player");
+    const message = document.getElementById("brave-message");
+
+    if (brave) {
+      iframe.remove();
+      message.style.display = "flex";
+      return;
+    }
+
+    const parent = encodeURIComponent(getParentDomain());
+    iframe.src = `https://player.twitch.tv/?channel=kunexmedia&parent=${parent}&autoplay=true&muted=false`;
+    iframe.style.display = "block";
+    message.remove();
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("player-container");
+      const iframe = document.getElementById("twitch-player");
+      const message = document.getElementById("brave-message");
+
+      const isBrave = navigator.brave && typeof navigator.brave.isBrave === "function";
+
+      if (isBrave()) {
+        container.style.paddingBottom = "0";
+        container.style.height = "auto";
+        container.style.minHeight = "320px";
+        container.style.position = "relative";
+
+        iframe.remove();
+        message.style.display = "flex";
+        return;
+      }
+
+      const parent = encodeURIComponent(location.hostname);
+      iframe.src = `https://player.twitch.tv/?channel=kunexmedia&parent=${parent}&autoplay=true&muted=false`;
+      iframe.style.display = "block";
+      message.remove();
+    });
+  });
+</script>
 </body>
 </html>
