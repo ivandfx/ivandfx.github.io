@@ -182,7 +182,7 @@ function loadComponent(id, url) {
     .catch(error => console.error(error));
 }
 
-loadComponent("sidebar-container", "/sidebar.html");
+loadComponent("sidebar-container", "/webft/sidebar.html");
 
 fetch('/blog/posts.json')
   .then(res => res.json())

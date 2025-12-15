@@ -368,10 +368,20 @@ hr.separator {
   gap: 10px;
 }
 
+.sidebar-header {
+  text-align: center;
+}
+
+.sidebar-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding-top: 50px !important;
+  padding-top: 30px !important;
   gap: 15px;
   min-width: 120px;
   flex-shrink: 0;
