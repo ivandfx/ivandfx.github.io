@@ -13,7 +13,7 @@
   --side-text: #ffffff;
   --sidebar-bg: #1a1a1a;
   --accent: #333333;
-  --post-notif: #fffa45;
+  --noti: #fffa45;
   --post-hover: #000000;
   --separator: #ffffff50;
 }
@@ -696,7 +696,6 @@ input[type="text"]:focus, textarea:focus {
   margin-right: 3px;
 }
 
-
 #post-list a {
   display: block;
   margin: 0.5rem 0;
@@ -710,37 +709,35 @@ input[type="text"]:focus, textarea:focus {
   color: var(--link-hover);
 }
 
-.blog-alert {
+.noti {
   position: relative;
   display: inline-block;
 }
 
-.blog-alert::after {
+.noti::after {
   content: "";
   position: absolute;
   top: 0px;
-  right: -6px;
   width: 12px;
   height: 12px;
-  background-color: var(--post-notif);
+  background-color: var(--noti);
   border-radius: 100%;
   animation: pulse 1s infinite;
-  box-shadow: var(--post-notif);
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(0.8);
+    transform: scale(0.9);
     opacity: 1;
-    box-shadow: 0 0 0 0 var(--post-notif);
+    box-shadow: 0 0 0 0 var(--noti);
   }
   70% {
-    transform: scale(0.8);
+    transform: scale(0.9);
     opacity: 0;
     box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
   }
   100% {
-    transform: scale(0.8);
+    transform: scale(0.9);
     opacity: 1;
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
   }
