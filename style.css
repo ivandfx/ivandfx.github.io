@@ -826,15 +826,40 @@ input[type="text"]:focus, textarea:focus {
   color: var(--text-color) !important;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
 .toplive-btn {
   display: none !important
   }
 }
 
-@media (max-width: 1120px) {
-.social-area.desktop {
-  display: none !important
+@media (min-width: 1100px) {
+  .dropdown-menu {
+    display: flex;
+    gap: 26px;
+    padding: 16px 22px;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .dropdown-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    gap: 6px;
+  }
+
+  .dropdown-column span {
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 12px;
+    background: var(--category-bg);
+    margin-bottom: 4px;
+  }
+
+  .dropdown-column a {
+    padding: 6px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
   }
 }
 
@@ -1053,7 +1078,7 @@ input[type="text"]:focus, textarea:focus {
 
 .fx-player.fixed {
   position: fixed;
-  bottom: 30px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -1102,6 +1127,7 @@ input[type="text"]:focus, textarea:focus {
   position: relative;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.1);
+  z-index: 1000;
 }
 
 .fx-progress {
@@ -1116,10 +1142,4 @@ input[type="text"]:focus, textarea:focus {
 .fx-time {
   font-size: 14px;
   white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-  .fx-player.fixed {
-    bottom: 60px;
-  }
 }
