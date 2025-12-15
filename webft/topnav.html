@@ -6,97 +6,115 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
       <span id="desarrollo" style="color: var(--text-color); background-color: var(--category-bg); padding: 0 6px; border-radius: 8px; outline: 2px solid var(--link-hover); z-index: 1000000;">WEB</span>
     </a>
+
     <div class="vertical-divider"></div>
     <div class="middle-section">
       <nav class="nav-links" id="navLinks">
+
         <div class="dropdown-wrapper">
-          <a href="/blog">BLOG
+          <a href="/blog">BLOG</a>
+        </div>
+
+        <div class="dropdown-wrapper">
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'other-dropdown')">
+            GUÍAS | INFO
           </a>
+          <div class="dropdown-menu" id="other-dropdown">
+            <div class="dropdown-column">
+              <span>GUÍAS</span>
+              <a href="/info/guias/finde10.html" class="dropdown-item">
+                <img src="/public/img/base/otros/endof10/10_main.png"> Fin de 10
+              </a>
+            </div>
+            <div class="dropdown-column">
+              <span>INFORMACIÓN</span>
+              <a href="/info/otros/pc.html">¿Qué lleva mi PC?</a>
+            </div>
+          </div>
         </div>
-
-      <div class="dropdown-wrapper">
-        <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'other-dropdown')">GUÍAS | INFO</a>
-        <div class="dropdown-menu" id="other-dropdown">
-            <span style="font-size: 0.9rem; color: var(--text-color); background-color: var(--category-bg); padding: 0.2em 0.4em; border-radius: 10px;">GUÍAS</span>
-          <a href="/info/guias/finde10.html" class="dropdown-item"><img src="/public/img/base/otros/endof10/10_main.png">Fin de 10</a>
-            <span style="font-size: 0.9rem; color: var(--text-color); background-color: var(--category-bg); padding: 0.2em 0.4em; border-radius: 10px;">INFORMACIÓN</span>
-          <a href="/info/otros/pc.html">¿Qué lleva mi PC?</a>
-        </div>
-      </div>
 
         <div class="dropdown-wrapper">
-          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'archive-dropdown')">PROYECTOS</a>
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'archive-dropdown')">
+            PROYECTOS
+          </a>
           <div class="dropdown-menu" id="archive-dropdown">
-            <span style="font-size: 0.9rem; color: var(--text-color); background-color: var(--category-bg); padding: 0.2em 0.4em; border-radius: 10px;">ACTIVOS</span>
-            <a href="/proyectos/fnkeys.html">fnKeys</a>
-            <span style="font-size: 0.9rem; color: var(--text-color); background-color: var(--category-bg); padding: 0.2em 0.4em; border-radius: 10px;">END OF LIFE</span>
-            <a href="/proyectos/DFXWinTweaks.html">DFX WinTweaks</a>
+            <div class="dropdown-column">
+              <span>ACTIVOS</span>
+              <a href="/proyectos/fnkeys.html">fnKeys</a>
+            </div>
+            <div class="dropdown-column">
+              <span>END OF LIFE</span>
+              <a href="/proyectos/DFXWinTweaks.html">DFX WinTweaks</a>
+            </div>
           </div>
         </div>
 
         <div class="dropdown-wrapper">
-          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'games-dropdown')">JUEGOS</a>
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'games-dropdown')">
+            JUEGOS
+          </a>
           <div class="dropdown-menu" id="games-dropdown">
-            <span style="font-size: 0.9rem; color: var(--text-color); background-color: var(--category-bg); padding: 0.2em 0.4em; border-radius: 10px;">DFX Originals</span>
-            <a href="/juegos/gift-frenzy.html">Gift Frenzy</a>
-            <span style="font-size: 0.9rem; color: var(--text-color); background-color: var(--category-bg); padding: 0.2em 0.4em; border-radius: 10px;">JUEGOS CLÁSICOS</span>
-            <a href="/juegos/cl-monsterswarm.html">CL: Monster Swarm</a>
+            <div class="dropdown-column">
+              <span>DFX Originals</span>
+              <a href="/juegos/gift-frenzy.html">Gift Frenzy</a>
+            </div>
+            <div class="dropdown-column">
+              <span>JUEGOS CLÁSICOS</span>
+              <a href="/juegos/cl-monsterswarm.html">CL: Monster Swarm</a>
+            </div>
           </div>
         </div>
 
         <div class="dropdown-wrapper">
-          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'multimedia-dropdown')">MULTIMEDIA</a>
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'multimedia-dropdown')">
+            MULTIMEDIA
+          </a>
           <div class="dropdown-menu" id="multimedia-dropdown">
-            <span style="font-size: 0.9rem; color: var(--text-color); background-color: var(--category-bg); padding: 0.2em 0.4em; border-radius: 10px;">DIRECTOS</span>
-            <a href="/directo">ivandfx</a>
-            <a href="/directo/kunexmedia.html">Kunex Media (KTV)</a>
-            <span style="font-size: 0.9rem; color: var(--text-color); background-color: var(--category-bg); padding: 0.2em 0.4em; border-radius: 10px;">VÍDEOS</span>
-            <a href="/youtube.html">YouTube</a>
-            <span style="font-size: 0.9rem; color: var(--text-color); background-color: var(--category-bg); padding: 0.2em 0.4em; border-radius: 10px;">MÚSICA</span>
-            <a href="/multimedia/contralasombra.html">Contra la Sombra</a>
-            <a href="/multimedia/gritosrotos.html">Gritos Rotos</a>
-            <a href="/multimedia/amorloco.html">Amor Loco</a>
+            <div class="dropdown-column">
+              <span>DIRECTOS</span>
+              <a href="/directo">ivandfx</a>
+              <a href="/directo/kunexmedia.html">Kunex Media (KTV)</a>
+            </div>
+            <div class="dropdown-column">
+              <span>VÍDEOS</span>
+              <a href="/youtube.html">YouTube</a>
+            </div>
+            <div class="dropdown-column">
+              <span>MÚSICA</span>
+              <a href="/multimedia/contralasombra.html">Contra la Sombra</a>
+              <a href="/multimedia/gritosrotos.html">Gritos Rotos</a>
+              <a href="/multimedia/amorloco.html">Amor Loco</a>
+            </div>
           </div>
         </div>
 
         <div class="social-icons mobile">
-        <a href="https://youtube.com/ivandfx" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://twitch.tv/ivandfx" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
-        <a href="https://x.com/ivandfx" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Bluesky"><i class="fab fa-bluesky"></i></a>
-          </div>
-          <div>
-        <div class="social-icons mobile">
-        <a href="https://instagram.com/ivandfx" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/ivandfx" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://gitlab.com/ivandfx" target="_blank" aria-label="GitLab"><i class="fa-brands fa-gitlab"></i></a>
-          </div>
+          <a href="https://youtube.com/ivandfx" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitch.tv/ivandfx" target="_blank"><i class="fab fa-twitch"></i></a>
+          <a href="https://x.com/ivandfx" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank"><i class="fab fa-bluesky"></i></a>
+          <a href="https://instagram.com/ivandfx" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/ivandfx" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://gitlab.com/ivandfx" target="_blank"><i class="fa-brands fa-gitlab"></i></a>
         </div>
       </nav>
+
       <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
-
     </div>
-<div class="social-area desktop">
-  <button class="social-toggle desktop" type="button"
-          aria-expanded="false"
-          aria-controls="socialDesktop"
-          onclick="toggleSocialDesktop(this)">
-    <i class="fa-solid fa-angles-left"></i>
-  </button>
-
-    <div class="social-icons desktop" id="socialDesktop">
-      <a href="https://youtube.com/ivandfx" target="_blank" aria-label="YouTube" title="Mi canal de YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://twitch.tv/ivandfx" target="_blank" aria-label="Twitch" title="Mi canal de Twitch"><i class="fab fa-twitch"></i></a>
-      <a href="https://x.com/ivandfx" target="_blank" aria-label="X" title="Sígueme en X"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Bluesky" title="Sígueme en Bluesky"><i class="fab fa-bluesky"></i></a>
-      <a href="https://instagram.com/ivandfx" target="_blank" aria-label="Instagram" title="Sígueme en Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://github.com/ivandfx" target="_blank" aria-label="GitHub" title="Mi GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://gitlab.com/ivandfx" target="_blank" aria-label="GitLab" title="Mi GitLab"><i class="fa-brands fa-gitlab"></i></a>
-    </div>
-
-    <div>
+    <div class="social-area desktop">
+      <button class="social-toggle desktop" onclick="toggleSocialDesktop(this)">
+        <i class="fa-solid fa-angles-left"></i>
+      </button>
+      <div class="social-icons desktop" id="socialDesktop">
+        <a href="https://youtube.com/ivandfx" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitch.tv/ivandfx" target="_blank"><i class="fab fa-twitch"></i></a>
+        <a href="https://x.com/ivandfx" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank"><i class="fab fa-bluesky"></i></a>
+        <a href="https://instagram.com/ivandfx" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/ivandfx" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://gitlab.com/ivandfx" target="_blank"><i class="fa-brands fa-gitlab"></i></a>
+      </div>
       <a href="/directo/index.html" class="toplive-btn">DIRECTO</a>
     </div>
-
   </div>
 </header>
