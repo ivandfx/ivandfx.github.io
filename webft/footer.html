@@ -164,7 +164,14 @@
       </div>
       
     </div>
-    <div class="footer-bottom">2022-2025 IVANDFX</div>
-  </footer>
+    <div class="footer-bottom">
+      2022–<span id="year"></span> IVANDFX
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("year").textContent = new Date().getFullYear();
+      });
+    </script>
 </body>
 </html>
