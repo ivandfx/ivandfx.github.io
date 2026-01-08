@@ -1,91 +1,124 @@
-<style>
-  .footer{
-    position: relative;
-    background: #1a1a1a;
-    font-family: Gabarito, sans-serif;
-    overflow: hidden;
-    border-top: 5px solid;
-    border-image: linear-gradient(135deg, #cab08d, #a56925, #b37f32) 1;
+  <style>
+    .footer {
+      background-color: #0f0f0f;
+      color: #fff;
+      padding: 20px 20px;
+      font-family: Gabarito, sans-serif;
+      border-top: 5px solid;
+      border-image: linear-gradient(135deg, #8dcaca, #2587a5, #45399e) 1;
+    }
+
+    .footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer .footer-col {
+      flex: 1 1 200px;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer .footer-col h4 {
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #ffffff50;
+      padding-bottom: 5px;
+    }
+
+    .footer .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer .footer-col ul li {
+      margin-bottom: 5px;
+    }
+
+    .footer .footer-col ul li a {
+      text-decoration: none !important;
+      transition: color 0.2s;
+    }
+
+    .footer .footer-col ul li a:hover {
+      color: var(--link-hover);
+    }
+
+    .footer .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .footer .social-icons a {
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.2s;
+    }
+
+    .social-icons a[href*="github.com"]:hover {
+      color: #64d8d8;
+    }
+
+    .social-icons a[href*="gitlab.com"]:hover {
+      color: #FC6D26;
+    }
+
+    .social-icons a[href*="x.com"]:hover,
+    .social-icons a[href*="twitter.com"]:hover {
+      color: #1DA1F2;
+    }
+
+    .social-icons a[href*="bsky.app"]:hover {
+      color: #0085FF;
+    }
+
+    .social-icons a[href*="instagram.com"]:hover {
+      color: #C13584;
+    }
+
+    .social-icons a[href*="youtube.com"]:hover {
+      color: #FF0000;
+    }
+
+    .social-icons a[href*="twitch.tv"]:hover {
+      color: #9146FF;
+    }
+
+    .footer .logo {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 16px;
+      color: #ffffff;
+      padding-bottom: 10px;
+    }
+
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .footer-inner{
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 20px 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap: 40px;
-    align-items: start
+  .footer .footer-col {
+    margin: -40px 0;
   }
 
-  .footer-col h4{
-    font-size: 16px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    color: #8dcaca
-  }
-
-  .footer-col h4::after{
-    content: "";
-    display: block;
-    width: 160px;
-    height: 4px;
-    margin: 5px 0 10px;
-    background: #ffffff50;
-    border-radius: 4px
-  }
-
-  .footer-col ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer-col ul li {margin-bottom:8px}
-
-  .footer-col a {
-    color: #ffffffcc;
-    text-decoration: none!important;
-    transition: color .25s ease
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap
-  }
-
-  .social-icons a {
-    font-size: 22px;
-    color: #ffffffaa;
-    transition: transform .25s ease,color .25s ease
-  }
-
-  .social-icons a:hover {
-    transform: scale(1.2)
-  }
-
-  .social-icons a[href*="youtube"]:hover{color:#ff0000 !important}
-  .social-icons a[href*="twitch"]:hover{color:#9146ff !important}
-  .social-icons a[href*="x.com"]:hover,
-  .social-icons a[href*="twitter"]:hover{color:#1da1f2 !important}
-  .social-icons a[href*="bsky"]:hover{color:#0085ff !important}
-  .social-icons a[href*="instagram"]:hover{color:#e1306c !important}
-  .social-icons a[href*="github"]:hover{color:#f5f5f5 !important}
-  .social-icons a[href*="gitlab"]:hover{color:#fc6d26 !important}
-
-  .footer-bottom {
+  .footer .logo {
     margin-top: 40px;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #ffffff15;
-    font-size: 16px;
+    margin-bottom: 10px;
   }
-
-  .footer .logo {margin: 20px 0 10px}
+}
 
   </style>
 <body>
@@ -93,46 +126,46 @@
 <br>
 <br>
 <br>
-<footer class="footer">
-  <div class="footer-curve"></div>
-
-  <div class="footer-inner">
+  <footer class="footer">
+    <div class="container">
+      
       <div class="footer-col">
         <div class="logo">
           <img src="/public/img/logo.png">
         </div>
       </div>
-
-    <div class="footer-col">
-      <h4>Info web</h4>
-      <ul>
-        <li><a href="/info/cookies.html">Política de cookies</a></li>
-        <li><a href="/info/atribuciones.html">Atribuciones</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Sígueme</h4>
-      <div class="social-icons">
-        <a href="https://youtube.com/ivandfx" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://twitch.tv/ivandfx" target="_blank"><i class="fab fa-twitch"></i></a>
-        <a href="https://x.com/ivandfx" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank"><i class="fab fa-bluesky"></i></a>
-        <a href="https://instagram.com/ivandfx" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/ivandfx" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://gitlab.com/ivandfx" target="_blank"><i class="fa-brands fa-gitlab"></i></a>
+      
+      <div class="footer-col">
+        <h4>info web</h4>
+        <ul>
+          <li><a href="/info/cookies.html">Política de cookies</a></li>
+          <li><a href="/info/creditos.html">Créditos</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>sígueme</h4>
+        <div class="social-icons">
+        <a href="https://youtube.com/ivandfx" target="_blank" aria-label="YouTube" title="Mi canal de YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitch.tv/ivandfx" target="_blank" aria-label="Twitch" title="Mi canal de Twitch"><i class="fab fa-twitch"></i></a>
+        <a href="https://x.com/ivandfx" target="_blank" aria-label="X" title="Sígueme en X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank" aria-label="Bluesky" title="Sígueme en Bluesky"><i class="fab fa-bluesky"></i></a>
+        <a href="https://instagram.com/ivandfx" target="_blank" aria-label="Instagram" title="Sígueme en Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/ivandfx" target="_blank" aria-label="GitHub" title="Mi GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://gitlab.com/ivandfx" target="_blank" aria-label="GitLab" title="Mi GitLab"><i class="fa-brands fa-gitlab"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>contacto</h4>
+        <ul>
+        <li><a href="mailto:dfxcontacto@proton.me">dfxcontacto@proton.me</a></li>
+        </ul>
       </div>
     </div>
-
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <ul>
-        <li><a href="mailto:dfxcontacto@proton.me">dfxcontacto@proton.me</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">2022-2026 IVANDFX</div>
-</footer>
+    <div class="footer-bottom">2022-2026 IVANDFX</div>
+  </footer>
 </body>
 </html>
+
 
