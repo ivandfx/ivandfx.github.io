@@ -1,23 +1,20 @@
 <header class="topnav">
+  <a href="/index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+    <img style="z-index: 1000000" src="/public/img/logo.png" alt="Logo" />
+    <span id="desarrollo" style="color: var(--text-color); background-color: var(--category-bg); padding: 2px 8px; border-radius: 10px; outline: 2px solid var(--link-hover); z-index: 1000000;">WEB</span>
+  </a>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
   <div class="container">
-    <a href="/index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-      <img style="z-index: 1000000" src="/public/img/logo.png" alt="Logo" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-      <span id="desarrollo" style="color: var(--text-color); background-color: var(--category-bg); padding: 0 6px; border-radius: 8px; outline: 2px solid var(--link-hover); z-index: 1000000;">WEB</span>
-    </a>
-
-    <div class="vertical-divider"></div>
     <div class="middle-section">
       <nav class="nav-links" id="navLinks">
 
         <div class="dropdown-wrapper">
-          <a href="/blog">BLOG</a>
+          <a href="/blog" title="Blog"><i class="fas fa-blog"></i></a>
         </div>
 
         <div class="dropdown-wrapper">
-          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'other-dropdown')">
-            GUÍAS | INFO
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'other-dropdown')" title="Guías e Información">
+            <i class="fas fa-book"></i>
           </a>
           <div class="dropdown-menu" id="other-dropdown">
             <div class="dropdown-column">
@@ -34,8 +31,8 @@
         </div>
 
         <div class="dropdown-wrapper">
-          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'archive-dropdown')">
-            PROYECTOS
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'archive-dropdown')" title="Proyectos">
+            <i class="fas fa-folder-open"></i>
           </a>
           <div class="dropdown-menu" id="archive-dropdown">
             <div class="dropdown-column">
@@ -50,13 +47,13 @@
         </div>
 
         <div class="dropdown-wrapper">
-          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'games-dropdown')">
-            JUEGOS
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'games-dropdown')" title="Juegos">
+            <i class="fas fa-gamepad"></i>
           </a>
           <div class="dropdown-menu" id="games-dropdown">
             <div class="dropdown-column">
               <span>DFX Originals</span>
-              <a href="/juegos/gift-frenzy.html" class="noti">Gift Frenzy</a>
+              <a style="cursor: not-allowed;">Gift Frenzy</a>
             </div>
             <div class="dropdown-column">
               <span>CLÁSICOS</span>
@@ -66,18 +63,18 @@
         </div>
 
         <div class="dropdown-wrapper">
-          <a href="#" class="dropdown"  onclick="toggleDropdown(event, this, 'multimedia-dropdown')">
-            MULTIMEDIA
+          <a href="#" class="dropdown"  onclick="toggleDropdown(event, this, 'multimedia-dropdown')" title="Multimedia">
+            <i class="fas fa-photo-video"></i>
           </a>
           <div class="dropdown-menu" id="multimedia-dropdown">
             <div class="dropdown-column">
               <span>DIRECTOS</span>
               <a href="/directo">ivandfx</a>
-              <a href="/directo/kmedia-live.html">Kunex TV</a>
+              <a href="/directo/kmedia-live.html">Kunex Media</a>
             </div>
             <div class="dropdown-column">
               <span>VÍDEOS</span>
-              <a href="/youtube.html">YouTube</a>
+              <a href="/youtube.html">ivandfx</a>
             </div>
             <div class="dropdown-column">
               <span>MÚSICA</span>
@@ -88,33 +85,30 @@
           </div>
         </div>
 
-        <div class="social-icons mobile">
-          <a href="https://youtube.com/ivandfx" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a href="https://twitch.tv/ivandfx" target="_blank"><i class="fab fa-twitch"></i></a>
-          <a href="https://x.com/ivandfx" target="_blank"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank"><i class="fab fa-bluesky"></i></a>
-          <a href="https://instagram.com/ivandfx" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://github.com/ivandfx" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://gitlab.com/ivandfx" target="_blank"><i class="fa-brands fa-gitlab"></i></a>
-        </div>
       </nav>
 
+    </div>
       <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
-    </div>
-    <div class="social-area desktop">
-      <button class="social-toggle desktop" onclick="toggleSocialDesktop(this)">
-        <i class="fa-solid fa-angles-left"></i>
-      </button>
-      <div class="social-icons desktop" id="socialDesktop">
-        <a href="https://youtube.com/ivandfx" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://twitch.tv/ivandfx" target="_blank"><i class="fab fa-twitch"></i></a>
-        <a href="https://x.com/ivandfx" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://bsky.app/profile/ivandfx.bsky.social" target="_blank"><i class="fab fa-bluesky"></i></a>
-        <a href="https://instagram.com/ivandfx" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/ivandfx" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://gitlab.com/ivandfx" target="_blank"><i class="fa-brands fa-gitlab"></i></a>
-      </div>
-      <a href="/directo/index.html" class="toplive-btn">DIRECTO</a>
-    </div>
+    <a href="/directo/index.html" class="toplive-btn" title="Directo"><i class="fas fa-broadcast-tower"></i></a>
   </div>
 </header>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+
+    nav.classList.toggle('open');
+    burger.classList.toggle('active');
+  }
+
+  function toggleDropdown(event, el, id) {
+    event.preventDefault();
+
+    if (window.innerWidth > 900) return;
+
+    const wrapper = el.closest('.dropdown-wrapper');
+    const menu = document.getElementById(id);
+
+    wrapper.classList.toggle('open');
+    el.classList.toggle('active');
+  }
+</script>
