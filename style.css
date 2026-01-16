@@ -6,8 +6,8 @@
   --bg-alt: #f8f8f8;
   --text-color: #ffffff;
   --link-hover: #8dcaca;
-  --link-hover2: #2587a5;
-  --link-hover3: #144c5e;
+  --link-hover2: #6eb2c7;
+  --link-hover3: #4a6872;
   --dropdown-bg: #1a1a1a;
   --category-bg: #2a2a2a;
   --side-text: #ffffff;
@@ -203,7 +203,7 @@ main {
 
 .dl-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(113, 233, 44, 0.4);
+  box-shadow: 0 2px 4px #71e92c66;
 }
 
 button {
