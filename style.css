@@ -6,8 +6,8 @@
   --bg-alt: #f8f8f8;
   --text-color: #ffffff;
   --link-hover: #8dcaca;
-  --link-hover2: #6eb2c7;
-  --link-hover3: #4a6872;
+  --link-hover2: #74a5b4;
+  --link-hover3: #5b7a85;
   --dropdown-bg: #1a1a1a;
   --category-bg: #2a2a2a;
   --side-text: #ffffff;
@@ -356,7 +356,7 @@ hr.separator {
 
 .side-button:hover {
   color: var(--text-color);
-  background: var(--link-big);
+  background: linear-gradient(135deg, var(--link-hover2), var(--link-hover3));
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 3px 12px rgba(0, 0, 0, 0.3);
   outline: 2px solid var(--sidebar-bd);
