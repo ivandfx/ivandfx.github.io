@@ -60,7 +60,7 @@ html {
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.400), rgba(0, 0, 0, 0.400)), url('/public/img/bg/dfxbg.png') center center / cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.500), rgba(0, 0, 0, 0.500)), url('/public/img/bg/dfxbg.png') center center / cover no-repeat fixed;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Gabarito';
