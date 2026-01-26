@@ -276,37 +276,35 @@ document.addEventListener("DOMContentLoaded", () => {
       position: fixed;
       z-index: 9998;
       pointer-events: all;
-      backdrop-filter: blur(20px);
     `;
 
     const cookieBanner = document.createElement("div");
     cookieBanner.id = "cookie-banner";
     cookieBanner.style.cssText = `
       position: fixed;
-      bottom: 10px;
+      bottom: 12px;
       left: 50%;
       transform: translateX(-50%);
       width: 80%;
-      max-width: 600px;
-      background: #1a1a1a;
-      color: var(--text-color);
+      max-width: 800px;
+      background-color: #1a1a1ab9;
+      backdrop-filter: blur(5px);  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
       padding: 16px 20px;
       border-radius: 20px 20px 20px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
-      font-size: 1rem;
       z-index: 9999;
-      border: 2px solid #ffffff1c;
+      border: 2px solid #67676760;
     `;
 
     const text = document.createElement("span");
     text.innerHTML = `Este sitio usa cookies para mejorar tu experiencia.<br>
-<a href="/info/cookies.html" target="_blank" style="color: var(--link-hover); font-weight: 300; text-decoration: none; cursor: pointer;"
-   onmouseenter="this.style.color='#54a7c0ff'" 
-   onmouseleave="this.style.color='var(--link-hover)'" >
-   Ver política de cookies
+<a href="/info/cookies.html" style="color: #8dcaca; font-weight: 600;"
+   onmouseenter="this.style.color='#ffffff'" 
+   onmouseleave="this.style.color='#8dcaca'" >
+   <i class="fas fa-link"></i> POLÍTICA DE COOKIES
 </a>`;
 
     const btnContainer = document.createElement("div");
@@ -320,14 +318,15 @@ document.addEventListener("DOMContentLoaded", () => {
       padding: 8px 20px;
       border: 2px solid #ffffff1e;
       border-radius: 12px;
-      font-weight: 300;
+      font-weight: 600;
+      font-size: 16px;
       font-family: 'Gabarito', sans-serif;
       transition: background-color 0.3s ease, color 0.3s ease;
       cursor: pointer;
     `;
 
     const btnYes = document.createElement("button");
-    btnYes.textContent = "Aceptar";
+    btnYes.textContent = "SOLO ESENCIALES";
     btnYes.style.cssText = baseBtnStyle + `
       background-color: #2587a5;
       color: var(--text-color);
@@ -340,22 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
       overlay.remove();
     };
 
-    const btnNo = document.createElement("button");
-    btnNo.textContent = "Rechazar";
-    btnNo.style.cssText = baseBtnStyle + `
-      background-color: #bb5151;
-      color: var(--text-color);
-    `;
-    btnNo.onmouseenter = () => { btnNo.style.backgroundColor = "#6e2727ff"; btnNo.style.color = "#fff"; };
-    btnNo.onmouseleave = () => { btnNo.style.backgroundColor = "#bb5151"; btnNo.style.color = "var(--text-color)"; };
-    btnNo.onclick = () => {
-      localStorage.setItem("cookiesAccepted", "false");
-      cookieBanner.remove();
-      overlay.remove();
-    };
-
     btnContainer.appendChild(btnYes);
-    btnContainer.appendChild(btnNo);
 
     cookieBanner.appendChild(text);
     cookieBanner.appendChild(btnContainer);
