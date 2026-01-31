@@ -1,74 +1,304 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kunex Media | Directo</title>
-  <link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunex TV DIRECTO</title>
 
-  <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --black: #1c1c1c;
+        --dark-gray: #3a3a3a;
+        --mid-gray: #bfbfbf;
+        --light-gray: #b3b3b3;
+        --red: #e60000;
+        --footer-gray: #2a2a2a;
+        --text-white: #ffffff;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Gabarito', sans-serif;
+    }
+
     body {
-      background: linear-gradient(#0000008e, #0000008e),
-        url('/public/img/bg/kmediabanner-bg.png') center center / cover no-repeat fixed;
+        min-height: 100vh;
+        color: var(--text-white);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background: #000;
     }
 
-    .live-layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("img/background.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -2;
     }
 
-    .page-wrapper,
+    /* Overlay oscuro para legibilidad */
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: -1;
+    }
+
+    header {
+        background: rgba(28, 28, 28, 0.95);
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .logo-main img {
+        height: 45px;
+        width: auto;
+        display: block;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    nav a {
+        color: var(--text-white);
+        text-decoration: none;
+    }
+
+    .logo-directo {
+        background: var(--red);
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+		border-radius: 4px;
+    }
+
+    .logo-directo img {
+        height: 40px;
+        width: auto;
+        display: block;
+    }
+
+    .info-bar {
+        background: rgba(28, 28, 28, 0.95);
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 15px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
     main {
-      overflow: visible;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        flex: 1;
     }
 
-    .live-card {
-      background: rgba(26, 26, 26, 0.8);
-      border-radius: 16px;
-      outline: 2px solid rgba(70, 70, 70, 0.400);
-      overflow: hidden;
-      box-shadow:
-        0 8px 32px rgba(0,0,0,0.4),
-        0 4px 16px rgba(0,0,0,0.2);
+    .player-container {
+        width: 75%;
+        max-width: 1200px;
     }
 
     .live-player {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 */
+        background: var(--light-gray);
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
 
     .live-player iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
     }
-  </style>
+
+    .programacion {
+        background: rgba(58, 58, 58, 0.95);
+        padding: 20px;
+    }
+
+    .programacion h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .lista-programas {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .programa {
+        background: #6b6b6b;
+        padding: 15px 20px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-weight: 500;
+		border-radius: 4px;
+    }
+
+    .hora {
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    footer {
+        background: rgba(42, 42, 42, 0.95);
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #cccccc;
+    }
+
+    footer a {
+        color: #cccccc;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    @media (max-width: 900px) {
+        .player-container {
+            width: 90%;
+        }
+
+        nav {
+            gap: 15px;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        header {
+            flex-wrap: wrap;
+            height: auto;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        nav {
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+	
+	.logo-main a,
+	.logo-directo {
+		text-decoration: none;
+	}
+
+</style>
 </head>
 
 <body>
-  <div id="topnav-container"></div>
-  <div class="page-wrapper">
-    <main>
 
-      <div class="title-row">
-        <h1><i class="fas fa-broadcast-tower"></i> Kunex TV</h1>
-        <h2>#ProbandoKunex</h2>
-      </div>
-      <div class="live-layout full-bleed">
-        <div class="live-card">
-          <div class="live-player">
-            <iframe src="https://player.livepush.io/live//emQhe77z2vm_CHw" allowFullScreen="1" frameBorder="0"></iframe>
-          </div>
+<header>
+	<div class="logo-main">
+		<a href="index.html">
+			<img src="img/logo-kunex-media.png">
+		</a>
+	</div>
+
+    <nav>
+        <a href="/novedades">Novedades</a>
+        <a href="/alacarta">A la carta</a>
+		<a href="directo.html" class="logo-directo">DIRECTO Kunex TV
+		</a>
+	</nav>
+</header>
+
+<div class="info-bar">
+    La emisión en audio/vídeo de Kunex FM ya no está disponible, tras el fin de emisiones de Kunex TV, la web KunexMedia.es cerrará.
+</div>
+
+<main>
+    <div class="player-container">
+        <div class="live-player">
+            <iframe 
+                src="https://player.livepush.io/live//emQhe77z2vm_CHw"
+                allowfullscreen="1"
+                frameborder="0">
+            </iframe>
         </div>
-      </div>
-    </main>
-  </div>
+    </div>
+</main>
 
-  <script src="/loader.js"></script>
+<section class="programacion">
+    <h2>PROGRAMACIÓN:</h2>
+    <div class="lista-programas" id="lista-programas">
+    </div>
+</section>
+
+
+<footer>
+    © 2017-2026 Kunex Media · Todos los derechos reservados  
+    <br>
+    <a href="/info/aviso-legal">Aviso legal</a> ·
+    <a href="/info/privacidad">Privacidad</a> ·
+    <a href="/info/contacto">Contacto</a> ·
+    <a href="/info/ubicaciones-gandia-y-cv">Ubicaciones</a>
+</footer>
+
 </body>
 </html>
+
+<script>
+fetch("https://active.kunexmedia.es/programacion-y-horario")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Error al cargar la programación");
+        }
+        return response.json();
+    })
+    .then(data => {
+        const contenedor = document.getElementById("lista-programas");
+        contenedor.innerHTML = "";
+
+        data.forEach(programa => {
+            const div = document.createElement("div");
+            div.className = "programa";
+
+            if (programa.hora) {
+                div.innerHTML = `
+                    <span>${programa.nombre}</span>
+                    <span class="hora">${programa.hora}</span>
+                `;
+            } else {
+                div.innerHTML = `<span>${programa.nombre}</span>`;
+            }
+
+            contenedor.appendChild(div);
+        });
+    })
+    .catch(error => {
+        console.error(error);
+        document.getElementById("lista-programas").innerHTML =
+            "<div class='programa'>Error al cargar la programación</div>";
+    });
+</script>
