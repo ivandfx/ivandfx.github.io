@@ -982,7 +982,7 @@ input[type="text"]:focus, textarea:focus {
 
 .fx-progress {
   height: 100%;
-  background: linear-gradient(90deg, var(--link-hover2) 0%, var(--link-hover) 100%);
+  background: linear-gradient(90deg, var(--link-hover3) 0%, var(--link-hover) 100%);
   width: 0%;
   transition: none;
   border-radius: 8px;
