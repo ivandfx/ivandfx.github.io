@@ -68,7 +68,7 @@ body {
   color: #1a1a1a;
 }
 
-br {
+br, img {
   user-select: none;
 }
 
