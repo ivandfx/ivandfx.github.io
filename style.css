@@ -68,6 +68,10 @@ body {
   color: #1a1a1a;
 }
 
+br {
+  user-select: none;
+}
+
 .title-row {
   display: flex;
   align-items: baseline;
