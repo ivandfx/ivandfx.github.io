@@ -11,29 +11,10 @@ window.addEventListener('popstate', () => {
     });
 });
 
-function setFavicon(url) {
-  let link = document.querySelector("link[rel='icon'], link[rel='shortcut icon']");
-  if (!link) {
-    link = document.createElement("link");
-    link.rel = "icon";
-    document.head.appendChild(link);
-  }
-  link.href = url;
-}
-
-function updateFaviconByTheme() {
-  const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  if (isDark) {
-    setFavicon("/public/img/favicon/favicon-white.png");
-  } else {
-    setFavicon("/public/img/favicon/favicon-dark.png");
-  }
-}
-
-updateFaviconByTheme();
-
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFaviconByTheme);
+const link = document.createElement('link');
+link.rel = 'icon';
+link.href = '/public/img/favicon/favicon-dfx.png';
+document.head.appendChild(link);
 
 // load topnav
 fetch('/webft/topnav.html')
