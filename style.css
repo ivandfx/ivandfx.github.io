@@ -541,6 +541,16 @@ input[type="text"]:focus, textarea:focus {
   filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
 }
 
+.logoft img {
+  margin-top: 24px;
+  height: 40px;
+  transition: filter 0.3s ease;
+}
+
+.logo:hover img {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+}
+
 .middle-section {
   display: flex;
   align-items: center;
@@ -932,7 +942,7 @@ input[type="text"]:focus, textarea:focus {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px 20px;
+  padding: 12px;
   width: 100%;
   max-width: 800px;
 } 
