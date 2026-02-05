@@ -544,10 +544,11 @@ input[type="text"]:focus, textarea:focus {
 .logoft img {
   margin-top: 24px;
   height: 40px;
+  width: auto;
   transition: filter 0.3s ease;
 }
 
-.logo:hover img {
+.logoft:hover img {
   filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
 }
 
