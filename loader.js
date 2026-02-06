@@ -13,7 +13,7 @@ window.addEventListener('popstate', () => {
 
 const link = document.createElement('link');
 link.rel = 'icon';
-link.href = '/public/img/favicon/favicon-dfx.png';
+link.href = '/public/img/favicon/favicon-dfx.webp';
 document.head.appendChild(link);
 
 // load topnav
