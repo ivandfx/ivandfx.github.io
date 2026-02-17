@@ -255,12 +255,6 @@ hr.separator {
   }
 }
 
-.icon-img {
-  width: 16px;
-  height: 16px;
-  filter: brightness(0) invert(1);
-}
-
 .twitter-btn {
   background: linear-gradient(135deg, #1DA1F2 0%, #0d8ddb 100%);
 }
@@ -279,6 +273,16 @@ hr.separator {
   background: linear-gradient(135deg, #146ecf 0%, #1C8EF9 100%);
   transform: translateY(-1px);
   box-shadow: 0 4px 16px rgba(28, 142, 249, 0.4);
+}
+
+.facebook-btn {
+  background: linear-gradient(135deg, #1877F2 0%, #145dbf 100%);
+}
+
+.facebook-btn:hover {
+  background: linear-gradient(135deg, #145dbf 0%, #1877F2 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(24, 119, 242, 0.4);
 }
 
 .github-icon {
