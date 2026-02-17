@@ -6,8 +6,8 @@
   --bg-alt: #f8f8f8;
   --text-color: #ffffff;
   --link-hover: #8dcaca;
-  --link-hover2: #74a5b4;
-  --link-hover3: #5b7a85;
+  --link-hover2: #1097b3;
+  --link-hover3: #187285;
   --dropdown-bg: #1a1a1a;
   --category-bg: #2a2a2a;
   --side-text: #ffffff;
@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.400), rgba(0, 0, 0, 0.400)), url('/public/img/bg/dfxbg.png') center center / cover no-repeat fixed;
+  background: linear-gradient(#00000066, #00000066), url('/public/img/bg/dfxbg.png') center center / cover no-repeat fixed;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Gabarito';
@@ -63,7 +63,7 @@ body {
 }
 
 ::selection {
-  background: var(--link-hover3);
+  background: var(--link-hover2);
 }
 
 br, img, .webtag {
