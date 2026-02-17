@@ -73,23 +73,6 @@
       .live-layout { grid-template-columns: 1fr; }
       .live-player, .live-chat { padding-bottom: 56.25%; }
     }
-    .brave-message {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-      padding: 32px;
-
-      color: #fff;
-      background: linear-gradient(180deg, #222222, #000);
-
-      font-weight: 600;
-      line-height: 1.4;
-
-      width: 100%;
-    }
   </style>
   <script>
     function twitchParent() {
@@ -144,26 +127,12 @@
       <h1><i class="fa-brands fa-twitch"></i> ivandfx</h1>
       <h2><a href="https://twitch.tv/ivandfx" class="text-url"target="_blank">twitch.tv/ivandfx</a></h2>
     </div>
-
     <div class="live-layout full-bleed">
       <div class="live-card">
         <div class="live-player" id="player-container">
-
-          <div id="brave-message" class="brave-message">
-            <h2>Directo no disponible</h2>
-            <p>Estás usando el navegador Brave, que bloquea el reproductor embebido de Twitch.</p>
-            <p>Puedes ver el directo en:<br>
-              <a href="https://twitch.tv/ivandfx" target="_blank">twitch.tv/ivandfx</a></p>
-            <p>O usa otro navegador para verlo en la web.</p>
-          </div>
-
-          <iframe
-            id="twitch-player"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-            style="display:none"
-          ></iframe>
+          <iframe id="twitch-player"allow="autoplay; fullscreen; picture-in-picture"allowfullscreen></iframe>
         </div>
+
       </div>
       <div class="live-card">
         <div class="live-chat">
@@ -171,62 +140,10 @@
         </div>
       </div>
     </div>
+<div style="margin:10px auto;padding:10px;background-color:#516e77;border-radius:16px;text-align:center;position:relative;z-index:2147483647;">¿Problemas para ver el directo? Visita la fuente original del directo usando el enlace que hay justo encima.</div>
   </main>
   </div>
 
 <script src="/loader.js"></script>
-<script>
-  function isBrave() {
-    return (
-      navigator.brave &&
-      typeof navigator.brave.isBrave === "function"
-    );
-  }
-
-  function getParentDomain() {
-    return location.hostname;
-  }
-
-  document.addEventListener("DOMContentLoaded", async () => {
-    const brave = isBrave();
-    const iframe = document.getElementById("twitch-player");
-    const message = document.getElementById("brave-message");
-
-    if (brave) {
-      iframe.remove();
-      message.style.display = "flex";
-      return;
-    }
-
-    const parent = encodeURIComponent(getParentDomain());
-    iframe.src = `https://player.twitch.tv/?channel=ivandfx&parent=${parent}&autoplay=true&muted=false`;
-    iframe.style.display = "block";
-    message.remove();
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const container = document.getElementById("player-container");
-      const iframe = document.getElementById("twitch-player");
-      const message = document.getElementById("brave-message");
-
-      const isBrave = navigator.brave && typeof navigator.brave.isBrave === "function";
-
-      if (isBrave()) {
-        container.style.paddingBottom = "0";
-        container.style.height = "auto";
-        container.style.minHeight = "320px";
-        container.style.position = "relative";
-
-        iframe.remove();
-        message.style.display = "flex";
-        return;
-      }
-
-      const parent = encodeURIComponent(location.hostname);
-      iframe.src = `https://player.twitch.tv/?channel=ivandfx&parent=${parent}&autoplay=true&muted=false`;
-      iframe.style.display = "block";
-      message.remove();
-    });
-  });
-</script>
 </body>
 </html>
