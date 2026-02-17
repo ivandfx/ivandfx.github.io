@@ -117,7 +117,6 @@ br, img, .webtag, .tab-button, .side-button, .nav-links {
 .tab-button.active {
   background: linear-gradient(135deg, var(--link-hover2) 0%, var(--link-hover3) 100%);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.500);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.500);
 }
 
 .tab-content {
@@ -145,9 +144,6 @@ main {
 main {
   top: 0px;
   padding: 10px;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
   }
 }
 
@@ -237,7 +233,7 @@ hr.separator {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .share-btn {
     display: flex;
     justify-content: center;
@@ -248,7 +244,7 @@ hr.separator {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 800px) {
   .share-btn {
     justify-content: center;
     pointer-events: auto;
@@ -469,7 +465,7 @@ hr.separator {
   border: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .page-wrapper { flex-direction: column; }
   .sidebar { display: none; }
 }
@@ -786,7 +782,7 @@ input[type="text"]:focus, textarea:focus {
 }
 
 .toplive-btn {
-  background: #cf3535;
+  background: #ce4848;
   font-family: 'Gabarito', sans-serif;
   padding: 8px 12px;
   border-radius: 12px;
@@ -794,7 +790,6 @@ input[type="text"]:focus, textarea:focus {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(207, 53, 53, 0.6);
   animation: topliveGlow 1.8s ease-in-out infinite alternate;
   color: var(--text-color);
   white-space: nowrap;
@@ -803,9 +798,9 @@ input[type="text"]:focus, textarea:focus {
 }
 
 @keyframes topliveGlow {
-  0% { box-shadow: 0 0 8px rgba(207, 53, 53, 0.6); background: #aa2b2b; }
-  50% { box-shadow: 0 0 10px rgba(255, 100, 100, 0.9); background: #d13939; }
-  100% { box-shadow: 0 0 10px rgba(207, 53, 53, 0.7); background: #aa2b2b; }
+  0% { box-shadow: none; }
+  50% { box-shadow: 0 0 3px rgba(255, 100, 100, 0.9); }
+  100% { box-shadow: 0 0 6px rgba(207, 53, 53, 0.7); background: #ff1f1f; }
 }
 
 .toplive-btn:hover {
@@ -813,7 +808,7 @@ input[type="text"]:focus, textarea:focus {
   color: var(--text-color) !important;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 800px) {
   .dropdown-menu {
     display: flex;
     gap: 16px;
@@ -906,7 +901,7 @@ input[type="text"]:focus, textarea:focus {
 }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .hamburger { 
     display: block; 
     z-index: 100000; 
