@@ -135,7 +135,7 @@ br, img, .webtag, .tab-button, .side-button, .nav-links {
 }
 
 main {
-  padding: 60px 50px;
+  padding: 30px 50px;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -328,7 +328,7 @@ hr.separator {
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding-top: 90px !important;
+  padding-top: 60px !important;
   gap: 15px;
   min-width: 120px;
   flex-shrink: 0;
