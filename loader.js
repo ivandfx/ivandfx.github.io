@@ -1,5 +1,25 @@
 console.log('Script loader.js iniciado');
 
+(function () {
+  const redirects = {
+    "/DFXTweaker": "/proyectos/DFXWinTweaks",
+    "/DFXWinTweaks": "/proyectos/DFXWinTweaks",
+    "/otros/gritosrotos": "/multimedia/gritosrotos",
+    "/otros/amorloco": "/multimedia/amorloco",
+  };
+
+  const currentPath = window.location.pathname.replace(/\/$/, "");
+
+  if (redirects[currentPath]) {
+    const newUrl =
+      redirects[currentPath] +
+      window.location.search +
+      window.location.hash;
+
+    window.location.replace(newUrl);
+  }})
+();
+
 window.addEventListener('popstate', () => {
   fetch(location.href)
     .then(res => res.text())
