@@ -234,15 +234,20 @@ function getUnifiedShareText() {
 
 function handleTwitterShare(event) {
   event.preventDefault();
-
   const twitterUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(getUnifiedShareText())}`;
   window.open(twitterUrl, '_blank');
 }
 
-function handleBlueskyShare(e) {
-  e.preventDefault();
-  const intent = `https://bsky.app/intent/compose?text=${encodeURIComponent(getUnifiedShareText())}`;
-  window.open(intent, '_blank');
+function handleBlueskyShare(event) {
+  event.preventDefault();
+  const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(getUnifiedShareText())}`;
+  window.open(blueskyUrl, '_blank');
+}
+
+function handleFacebookShare(event) {
+  event.preventDefault();
+  const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+  window.open(facebookUrl, '_blank');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -254,6 +259,15 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(html => {
       const container = document.getElementById('share-buttons-container');
       if (container) container.innerHTML = html;
+
+      const twitterBtn = container.querySelector('.twitter-btn');
+      if (twitterBtn) twitterBtn.addEventListener('click', handleTwitterShare);
+
+      const blueskyBtn = container.querySelector('.bluesky-btn');
+      if (blueskyBtn) blueskyBtn.addEventListener('click', handleBlueskyShare);
+
+      const facebookBtn = container.querySelector('.facebook-btn');
+      if (facebookBtn) facebookBtn.addEventListener('click', handleFacebookShare);
     })
     .catch(err => console.error('Error al cargar share.html:', err));
 });
