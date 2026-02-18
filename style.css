@@ -352,11 +352,10 @@ hr.separator {
 }
 
 .side-button:hover {
-  color: var(--text-color);
-  background: linear-gradient(135deg, var(--link-hover2), var(--link-hover3));
+  background: var(--link-big);
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 3px 12px rgba(0, 0, 0, 0.3);
-  outline: 2px solid var(--sidebar-bd);
+  outline: 2px solid var(--link-hover);
 }
 
 .side-button img {
