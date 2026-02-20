@@ -633,86 +633,57 @@ input[type="text"]:focus, textarea:focus {
   content: '';
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 100%;
   height: 20px;
   background: transparent;
-  z-index: 1000;
-}
-
-.dropdown-wrapper {
-  position: relative;
-  text-align: left;
-}
-
-.dropdown-wrapper:hover .dropdown-menu {
-  opacity: 1;
-  padding: 10px 20px;
-  pointer-events: auto;
-  transition-delay: 0s;
-  margin-top: 8px;
-}
-
-.dropdown-wrapper:hover .dropdown-menu:hover {
-  opacity: 1;
-  padding: 10px 20px;
-  pointer-events: auto;
-  margin-top: 8px;
 }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   right: 0;
-  left: auto;
-  transform: none;
-  background: var(--dropdown-bg);
-  margin-top: 5px;
-  border-radius: 16px;
+  z-index: 1001;
   min-width: 200px;
   max-width: min(95vw, 800px);
   max-height: 380px;
-  z-index: 1001;
+  margin-top: 5px;
+  padding: 10px 20px;
+  background: var(--dropdown-bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
+  outline: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0;
   pointer-events: none;
   overflow-y: auto;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
-  outline: 1px solid rgba(255, 255, 255, 0.1);
   scrollbar-width: none;
+  transition: all 0.3s ease;
 }
 
-.dropdown-menu:hover {
+.dropdown-wrapper:hover .dropdown-menu,
+.dropdown-menu:hover,
+.dropdown-menu.show {
   opacity: 1;
-  padding: 10px 20px;
   pointer-events: auto;
   margin-top: 8px;
 }
 
 .dropdown-menu.show {
-  opacity: 1;
-  padding: 10px 20px;
-  pointer-events: auto;
   outline: 2px solid var(--link-hover);
 }
 
 .dropdown-menu a {
-  color: var(--text-color);
-  text-decoration: none;
   display: block;
   padding: 5px 0;
-  text-align: center;
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  color: var(--text-color);
+  text-decoration: none;
   font-size: 1rem;
+  border-radius: 12px;
+  text-align: center;
 }
 
-.dropdown-menu a:hover { 
+.dropdown-menu a:hover {
   background: var(--link-big);
-  outline: none;
 }
 
 .dropdown-item {
