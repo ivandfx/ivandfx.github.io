@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | Contra la Sombra</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body oncontextmenu="return false;" style="background: url('/pbase/img/otros/bg-contralasombra.png') center center / cover no-repeat fixed;">
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+    <main>
+      <br>
+      <div style="padding:20px;">
+        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:30px; justify-content:center;">
+                    <div style="flex:1 1 300px; max-width:400px;">
+            <img src="/pbase/img/otros/ContralaSombraCover-RND.png" ondragstart="return false;" draggable="false" style="width:100%; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));">
+          </div>
+          <div style="flex:1 1 300px; max-width:500px;">
+            <h1 style="font-size:2.5em; margin-top:0;">Contra la Sombra</h1>
+            
+            <p><strong>Sinopsis:</strong><br>
+            Dos amigos inseparables enfrentan la oscuridad cuando su amiga es secuestrada por “la Sombra”.<br>
+            Atravesando bosques sombríos y ríos cristalinos, se enfrentan a peligros y pruebas que desafían su valentía y la fuerza de su amistad.<br>
+            Descubren que la verdadera victoria nace del coraje, la lealtad y el amor que los une, en una historia épica de superación y luz en medio de la oscuridad.
+
+              <br><br>
+              <a href="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/ContralaSombra.mp3" class="pb-button">Descargar MP3</a>
+              <span style="font-size: 0.8rem">¡Escúchalo desde tu dispositivo!</span>
+            </p>
+        </div>
+  </div>
+<div class="fx-player-wrapper">
+  <div class="fx-player">
+  <audio id="fx-audio" preload="metadata">
+    <source src="https://github.com/ivandfx/ivandfx.github.io/releases/download/webassets/ContralaSombra.mp3" type="audio/mpeg">
+    Tu navegador no puede reproducir esto.
+  </audio>
+
+  <div class="fx-controls">
+    <button id="fx-play" class="fx-play">
+      <i class="fas fa-play"></i>
+    </button>
+
+    <div class="fx-progress-container" id="fx-progress-container">
+      <div id="fx-progress" class="fx-progress"></div>
+    </div>
+
+    <div class="fx-time">
+      <span id="fx-current">0:00</span> / <span id="fx-duration">0:00</span>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  const audio = document.getElementById("fx-audio");
+  const playBtn = document.getElementById("fx-play");
+  const progress = document.getElementById("fx-progress");
+  const progressContainer = document.getElementById("fx-progress-container");
+  const currentTime = document.getElementById("fx-current");
+  const duration = document.getElementById("fx-duration");
+
+  const playIcon = '<i class="fas fa-play"></i>';
+  const pauseIcon = '<i class="fas fa-pause"></i>';
+  const repeatIcon = '<i class="fas fa-rotate-right"></i>';
+
+  let isDragging = false;
+
+  function formatTime(t) {
+    const min = Math.floor(t / 60);
+    const sec = Math.floor(t % 60).toString().padStart(2, "0");
+    return `${min}:${sec}`;
+  }
+
+  audio.addEventListener("loadedmetadata", () => {
+    duration.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    if (!isDragging) {
+      progress.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+      currentTime.textContent = formatTime(audio.currentTime);
+    }
+  });
+
+  audio.addEventListener("ended", () => {
+    playBtn.innerHTML = repeatIcon;
+  });
+
+  function setProgress(e) {
+    const rect = progressContainer.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const percentage = Math.min(Math.max(offsetX / rect.width, 0), 1);
+    progress.style.width = `${percentage * 100}%`;
+    audio.currentTime = percentage * audio.duration;
+    currentTime.textContent = formatTime(audio.currentTime);
+  }
+
+  progressContainer.addEventListener("click", (e) => {
+    setProgress(e);
+  });
+
+  progressContainer.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    setProgress(e);
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      setProgress(e);
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (isDragging) {
+      isDragging = false;
+    }
+  });
+
+  playBtn.addEventListener("click", () => {
+    if (audio.ended) {
+      audio.currentTime = 0;
+      audio.play();
+      playBtn.innerHTML = pauseIcon;
+      return;
+    }
+
+    if (audio.paused) {
+      audio.play();
+      playBtn.innerHTML = pauseIcon;
+    } else {
+      audio.pause();
+      playBtn.innerHTML = playIcon;
+    }
+  });
+</script>
+
+            <div>
+              <p>Exclusivo de:</p>
+              <img src="/pbase/img/logo.webp" ondragstart="return false;" draggable="false" alt="ivandfx web" style="height:30px; vertical-align:middle; margin-right:10px;">
+              <span id="desarrollo" style="color: var(--text-color); background-color: var(--category-bg); padding: 0 6px; border-radius: 8px; outline: 2px solid var(--link-hover); z-index: 1000000; vertical-align: middle;">WEB</span>
+        </div><br>
+        <span class="side-tag">Desde 13.12.2025</span>
+</div>
+<br>
+  <h1>Letra</h1>
+<p>Desde que eran dos niños, jugaban sin cesar,</p>
+<p>Lozano y Peluke, jurados a no soltar.</p>
+<p>Reían bajo cielos que hoy parecen lejanos,</p>
+<p>Ignorando el destino escrito entre sus manos.</p>
+<br>
+<p>El sol se fue apagando sin previo aviso,</p>
+<p>Los sueños de colores tornaron en gris sombrío.</p>
+<p>La inocencia dormía, el miedo empezó a crecer,</p>
+<p>Algo oscuro acechaba, listo para caer.</p>
+<br>
+<p>Un día apareció Pilar, temblando al hablar,</p>
+<p>Arrastrando el silencio de un horror sin final.</p>
+<p>Secuestrada por Antidoth, por la Sombra cruel,</p>
+<p>Que se alimenta del miedo y se oculta en la piel.</p>
+<br>
+<p>Nuestros héroes no dudaron, aunque ardía el terror,</p>
+<p>El pulso les temblaba, pero más fuerte era el amor.</p>
+<p>—No estás sola —juraron con voz quebrada—</p>
+<p>La noche no gana mientras quede esperanza.</p>
+<br>
+<p>Lozano y Peluke, valientes del corazón,</p>
+<p>Mano a mano enfrentan la oscuridad y la prisión.</p>
+<p>Criados en la risa, forjados en dolor,</p>
+<p>Aprendieron que la luz nace del valor.</p>
+<br>
+<p>Atravesaron bosques donde el sol no entra jamás,</p>
+<p>Ríos como espejos que reflejan algo más.</p>
+<p>Allí reía Antidoth, con su eco sepulcral,</p>
+<p>La Sombra los esperaba, paciente y visceral.</p>
+<br>
+<p>Promesas y recuerdos fueron su protección,</p>
+<p>Cada paso un desafío, cada golpe una lección.</p>
+<p>Porque la amistad sangra, pero no se rinde al mal,</p>
+<p>Y Lozano y Peluke no saben retroceder.</p>
+<br>
+<p>Pilar cayó de rodillas, libre al despertar,</p>
+<p>Con lágrimas pesadas que costó soltar.</p>
+<p>La noche retrocedía, herida al perder,</p>
+<p>Ante un lazo imposible de romper.</p>
+<br>
+<p>Y en el camino entendieron, marcados por la verdad,</p>
+<p>Que amar también es luchar, incluso en la oscuridad.</p>
+<p>Que no todo cuento nace limpio y en paz,</p>
+<p>Algunos se escriben sobreviviendo al final.</p>
+<br>
+<p>Lozano y Peluke, valientes del corazón,</p>
+<p>Mano a mano vencen la sombra y la prisión.</p>
+<p>Desde niños al abismo, sin mirar atrás,</p>
+<p>Y al final de la historia, se eligen una vez más.</p>
+<br>
+<p>Ríen bajo un sol que aprendieron a ganar,</p>
+<p>Con cicatrices que no buscan ocultar.</p>
+<p>De la aventura al amor, la leyenda dirá:</p>
+<p>Que incluso en la noche, juntos… siempre vencerán.</p>
+<br>
+<p>(Fin)</p>
+
+<script src="/loader.js"></script>
+
+</body>
+</html>
