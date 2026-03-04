@@ -271,14 +271,15 @@ hr.separator {
   }
 }
 
-.twitter-btn:hover, .bluesky-btn:hover, .facebook-btn:hover, .whatsapp-btn:hover {
+.copy-btn:hover, .twitter-btn:hover, .bluesky-btn:hover, .facebook-btn:hover, .whatsapp-btn:hover {
   outline: 2px solid var(--separator);
 }
 
 .twitter-btn i, .bluesky-btn i, .facebook-btn i, .whatsapp-btn i {
-  margin-right: 10px;
   font-size: 1.2rem;
 }
+
+.copy-btn { border-bottom: 4px solid #8dcaca; }
 
 .twitter-btn { border-bottom: 4px solid #ffffff; }
 
