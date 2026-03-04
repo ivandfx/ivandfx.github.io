@@ -237,6 +237,12 @@ function getUnifiedShareText() {
   return `${shareText}\n${decodedURL}`.trim();
 }
 
+function handleCopyShare(event) {
+  event.preventDefault();
+  const fullText = getUnifiedShareText();
+  navigator.clipboard.writeText(fullText);
+}
+
 function handleTwitterShare(event) {
   event.preventDefault();
   const twitterUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(getUnifiedShareText())}`;
