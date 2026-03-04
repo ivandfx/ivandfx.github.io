@@ -196,19 +196,15 @@ fetch('/blog/posts.json')
       })
     );
 
-    posts.forEach((post, index) => {
-      const a = document.createElement("a");
-      a.href = post.url;
-      a.className = "post-link";
-      a.innerHTML = `<i class="fa-solid fa-circle-right"></i> ${post.title} | ${post.dateStr}`;
-      container.appendChild(a);
-
-      if (index < posts.length - 1) {
-        const separator = document.createElement("div");
-        separator.className = "posts-separator";
-        container.appendChild(separator);
-      }
-    });
+posts.forEach((post) => {
+  const a = document.createElement("a");
+  a.href = post.url;
+  a.className = "post-card";
+  a.innerHTML = `
+    <span class="post-title-card">${post.title}</span>
+    <span class="post-date-card"><i class="fa-regular fa-calendar"></i> ${post.dateStr || 'Sin fecha'}</span>`;
+  container.appendChild(a);
+});
 
     if (posts.length > 0 && posts[0].dateStr) {
       const [dd, mm, yyyy] = posts[0].dateStr.split('-').map(Number);
