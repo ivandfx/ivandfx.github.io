@@ -1,0 +1,105 @@
+<header class="topnav">
+  <a href="/index" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+    <img style="z-index: 1000000" src="/pbase/img/logo.webp" alt="Logo" />
+    <span class="webtag">WEB</span>
+  </a>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <div class="container">
+    <div class="middle-section">
+      <nav class="nav-links" id="navLinks">
+
+        <div class="dropdown-wrapper">
+          <a href="/blog" title="Blog"><i class="fas fa-blog"></i></a>
+        </div>
+
+        <div class="dropdown-wrapper">
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'other-dropdown')" title="Guías e Información">
+            <i class="fas fa-book"></i>
+          </a>
+          <div class="dropdown-menu" id="other-dropdown">
+            <div class="dropdown-column">
+              <span>GUÍAS</span>
+              <a href="/info/guias/finde10" class="dropdown-item">
+                <img src="/pbase/img/base/otros/endof10/10_main.png"> Fin de 10
+              </a>
+            </div>
+            <div class="dropdown-column">
+              <span>INFORMACIÓN</span>
+              <a href="/info/otros/pc">¿Qué lleva mi PC?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown-wrapper">
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'archive-dropdown')" title="Proyectos">
+            <i class="fas fa-folder-open"></i>
+          </a>
+          <div class="dropdown-menu" id="archive-dropdown">
+            <div class="dropdown-column">
+              <span>ACTIVOS</span>
+              <a href="/proyectos/fnkeys">fnKeys</a>
+            </div>
+            <div class="dropdown-column">
+              <span>DESCONTINUADOS</span>
+              <a href="/proyectos/DFXWinTweaks">DFX WinTweaks</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown-wrapper">
+          <a href="#" class="dropdown" onclick="toggleDropdown(event, this, 'games-dropdown')" title="Juegos">
+            <i class="fas fa-gamepad"></i>
+          </a>
+          <div class="dropdown-menu" id="games-dropdown">
+            <div class="dropdown-column">
+              Esta sección ya no está disponible
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown-wrapper">
+          <a href="#" class="dropdown"  onclick="toggleDropdown(event, this, 'multimedia-dropdown')" title="Multimedia">
+            <i class="fas fa-photo-video"></i>
+          </a>
+          <div class="dropdown-menu" id="multimedia-dropdown">
+            <div class="dropdown-column">
+              <span>EN LA WEB</span>
+              <a href="/directo">En Directo</a>
+              <a href="/youtube">Vídeos YT</a>
+            </div>
+            <div class="dropdown-column">
+              <span>MÚSICA</span>
+              <a href="/multimedia/contralasombra">Contra la Sombra</a>
+              <a href="/multimedia/gritosrotos">Gritos Rotos</a>
+              <a href="/multimedia/amorloco">Amor Loco</a>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+
+    </div>
+      <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+    <a href="/directo/index" class="toplive-btn" title="Directo"><i class="fas fa-broadcast-tower"></i></a>
+  </div>
+</header>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+
+    nav.classList.toggle('open');
+    burger.classList.toggle('active');
+  }
+
+  function toggleDropdown(event, el, id) {
+    event.preventDefault();
+
+    if (window.innerWidth > 900) return;
+
+    const wrapper = el.closest('.dropdown-wrapper');
+    const menu = document.getElementById(id);
+
+    wrapper.classList.toggle('open');
+    el.classList.toggle('active');
+  }
+</script>

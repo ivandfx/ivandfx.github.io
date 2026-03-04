@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /blog/
+Allow: /blog/posts/
+
+Disallow: /pbase/
+Disallow: /style.css
+Disallow: /loader.js

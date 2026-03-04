@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>ivandfx | WEB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Esta es la web de ivandfx, aquí conocerás mis proyectos tan bien como leerás mi blog, guías, ¡y mucho más!">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="topnav-container"></div>
+
+  <div class="page-wrapper">
+    <div id="sidebar-container"></div>
+
+    <main>
+      <div class="tabs-container">
+        <button class="tab-button active" data-tab="inicio">INICIO</button>
+        <button class="tab-button" data-tab="sobremi">SOBRE MÍ</button>
+        <button class="tab-button" data-tab="hum">👀</button>
+      </div>
+      <section id="inicio" class="tab-content active">
+      <p>¡Bienvenid@ a mi web! Aquí podrás descubrir quién soy, qué hago por estos lares, qué publico y también podrás ver la evolución de la web en tiempo real ¡y siempre para mejor!</p>
+      <p><i class="fa-solid fa-circle-right"></i> Por ejemplo, 2026 empieza con un nuevo rediseño, más fuerte y consistente que nunca.</p>
+      <br>
+      <h1>¿Qué encontrarás en la web?</h1>
+      <h2><i class="fas fa-blog"></i> BLOG</h2>
+      <p>En el blog compartiré novedades sobre la web, sobre mí o sobre cualquier tema que considere interesante o importante.</p>
+      <p>Será un espacio donde escribiré libremente, y quien quiera leer o compartir algo, podrá hacerlo sin problema.</p>
+      <br>
+      <h2><i class="fas fa-folder-open"></i> PROYECTOS</h2>
+      <p>En la sección "PROYECTOS" encontrarás todos mis trabajos publicados en GitHub y algunos en GitLab. Puede que encuentres alguno marcado como "EOL" (End-Of-Life), indicando que ya no tiene soporte.</p>
+      <p>Y con esta web, eso me permite estar seguro de que la página de cada proyecto sea coherente y fácil de mantener.</p>
+      <br>
+      <h2><i class="fas fa-book"></i> GUÍAS | INFO</h2>
+      <p>En GUÍAS encontrarás guías y tutoriales de producción propia, como por ejemplo <a href="/info/guias/finde10.html" class="dropdown-item"><img src="/pbase/img/base/otros/endof10/10_main.png">Fin de 10</a>, una guía de ayuda para los usuarios de Windows 10 tras el fin de su soporte.</p>
+      <p>En INFO encontrarás información de la web y otras cosas de menor relevancia general, como <a href="/info/otros/pc.html" class="text-url">¿Qué lleva mi PC?</a>, una página donde se muestran los componentes de mi PC.</p>
+      <br>
+      <h2><i class="fas fa-gamepad"></i> JUEGOS</h2>
+      <p>Con la transición a GitLab, he aprovechado para descontinuar esta sección. Esto no tiene nada que ver con GitLab, sino con el nivel de soporte que yo podía darle a los juegos.</p>
+      <br>
+      <h2><i class="fas fa-photo-video"></i> MULTIMEDIA</h2>
+      <p>Aquí se encontrarán los últimos vídeos del canal de YouTube y mis directos, todo ello integrado perfectamente en la web.</p>
+      <p>También podrás escuchar canciones como <a href="/multimedia/amorloco.html" class="text-url">Amor Loco</a> y <a href="/multimedia/gritosrotos.html" class="text-url">Gritos Rotos</a> y cualquier otro que se añada más adelante.</p>
+      <p>Además, se creará contenido exclusivo para la web como <a href="/multimedia/contralasombra.html" class="text-url">Contra la Sombra</a>.</p>
+      <br>
+      <h2><i class="fas fa-star"></i> DESTACADOS</h2>
+      <p>Destacados (o "el panel lateral") se muestra únicamente en pantallas de tamaño estándar. En móviles verticales y resoluciones más bajas no aparecerá.</p>
+      <p>Este panel destacará un máximo de 6 páginas que yo considere que merecen mayor visibilidad y en algunas ocasiones irán en orden de qué tan recientes sean las páginas.</p>
+      <br>
+      <h3>¡Y eso es todo por ahora! Cualquier cambio importante se notificará en su debido momento.</h3>
+      </section>
+
+      <section id="sobremi" class="tab-content">
+        <div id="sobre-container" style="display: flex; gap: 20px;">
+          <div style="flex: 1;">
+            <p style="margin-top: 0;">¡Buenas! Me llamo Iván, y aunque en la actualidad se me conoce como <b>ivandfx</b>, puede que aún suenen mis anteriores nicks, <b>IvanPCER</b> (nuevamente presente en perfiles personales) e <b>IvanTerrible</b>.</p>
+            <p>Nací en Valencia, España, y actualmente tengo 20 años.</p>
+            <p>Actualmente resido en Gandía, capital de La Safor y parte de la provincia de Valencia. (no he filtrado nada, esto es información conocida públicamente 🫡)</p>
+            <br>
+            <h2>Esta página está en construcción</h2>
+            <span style="font-size: 0.9rem;">Probablemente la termine en 2026 xd</span>
+          </div>
+          <div style="flex-shrink: 1;">
+            <img src="/pbase/img/base/20240202_102848.jpg" alt="Iván" style="max-width: 300px; height: auto; border-radius: 20px; outline: 2px solid rgba(255, 255, 255, 0.1)"><br>
+            <span style="font-size: 0.9rem; display: flex">IMAGEN: Iván (2024)</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="hum" class="tab-content">
+        ¿Qué quieres ver? 👀
+      </section>
+
+        <style>
+          @media (max-width: 1000px) {
+            #sobre-container {
+              flex-direction: column;
+            }
+          }
+        </style>
+      </section>
+    </main>
+  </div>
+
+  <script src="/loader.js"></script>
+  <script>
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const target = tab.dataset.tab;
+        contents.forEach(c => {
+          c.classList.toggle('active', c.id === target);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
