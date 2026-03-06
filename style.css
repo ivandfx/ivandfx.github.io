@@ -701,6 +701,18 @@ input[type="text"]:focus, textarea:focus {
   margin-right: 3px;
 }
 
+#cusdis_thread {
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  outline: 2px solid var(--accent);
+}
+
+#cusdis_thread iframe {
+  min-height: 600px !important;
+}
+
 #post-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
