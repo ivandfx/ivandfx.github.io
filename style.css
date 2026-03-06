@@ -701,16 +701,30 @@ input[type="text"]:focus, textarea:focus {
   margin-right: 3px;
 }
 
-#cusdis_thread {
-  margin-top: 20px;
-  background: #ffffff;
+.giscus {
+  margin: 30px auto;
+  width: 100%;
+  background: #161b22 100%;
   border-radius: 20px;
-  padding: 40px;
+  padding: 30px;
   outline: 2px solid var(--accent);
+  box-shadow: 0 4px 8px #0000004d, 0 2px 8px #00000033;
+  box-sizing: border-box;
 }
 
-#cusdis_thread iframe {
-  min-height: 600px !important;
+.giscus-frame {
+  display: block;
+  margin: 0;
+  width: 100%;
+  border: none;
+}
+
+@media (max-width: 800px) {
+  .giscus {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 16px;
+  }
 }
 
 #post-list {
