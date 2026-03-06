@@ -182,7 +182,7 @@ function loadGiscus() {
     script.setAttribute('data-repo-id', "R_kgDOReWvvw");
     script.setAttribute('data-category', "BLOG");
     script.setAttribute('data-category-id', "DIC_kwDOReWvv84C318V");
-    script.setAttribute('data-mapping', "pathname");
+    script.setAttribute('data-mapping', "title");
     script.setAttribute('data-strict', "0");
     script.setAttribute('data-reactions-enabled', "0");
     script.setAttribute('data-emit-metadata', "0");
