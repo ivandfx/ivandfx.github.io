@@ -172,6 +172,31 @@ function loadComponent(id, url) {
 
 loadComponent("sidebar-container", "/webft/sidebar.html");
 
+function loadGiscus() {
+  const giscusContainer = document.getElementById('giscus-container');
+  
+  if (giscusContainer) {
+    const script = document.createElement('script');
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute('data-repo', "ivandfx/ivandfx.github.io");
+    script.setAttribute('data-repo-id', "R_kgDOReWvvw");
+    script.setAttribute('data-category', "BLOG");
+    script.setAttribute('data-category-id', "DIC_kwDOReWvv84C318V");
+    script.setAttribute('data-mapping', "pathname");
+    script.setAttribute('data-strict', "0");
+    script.setAttribute('data-reactions-enabled', "0");
+    script.setAttribute('data-emit-metadata', "0");
+    script.setAttribute('data-input-position', "top");
+    script.setAttribute('data-theme', "preferred_color_scheme");
+    script.setAttribute('data-lang', "es");
+    script.setAttribute('crossorigin', "anonymous");
+    script.async = true;
+
+    giscusContainer.appendChild(script);
+  }
+}
+document.addEventListener('DOMContentLoaded', loadGiscus);
+
 fetch('/blog/posts.json')
   .then(res => res.json())
   .then(async urls => {
