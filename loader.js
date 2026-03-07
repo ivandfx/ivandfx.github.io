@@ -197,6 +197,10 @@ function loadGiscus() {
 }
 document.addEventListener('DOMContentLoaded', loadGiscus);
 
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector('.post-date').innerHTML = `<i class="fa-regular fa-calendar"></i> ${document.querySelector('meta[name="date"]').content}`;
+});
+
 fetch('/blog/posts.json')
   .then(res => res.json())
   .then(async urls => {
@@ -245,6 +249,30 @@ posts.forEach((post) => {
       }
     }
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const metaDate = document.querySelector('meta[name="date"]');
+    const postDateElem = document.querySelector('.post-date');
+    if (metaDate && postDateElem) {
+        postDateElem.innerHTML = `<i class="fa-regular fa-calendar"></i> ${metaDate.content}`;
+    }
+
+    const shareContainer = document.getElementById('share-container');
+    if (shareContainer) {
+        fetch('/blog/share.html')
+            .then(res => res.text())
+            .then(html => { shareContainer.innerHTML = html; });
+    }
+
+    const subtitle = document.querySelector('meta[name="post-subtitle"]')?.content;
+    if (subtitle) {
+        const url = window.location.href;
+        document.getElementById('meta-url')?.setAttribute('content', url);
+        document.getElementById('meta-desc')?.setAttribute('content', subtitle);
+        document.getElementById('tw-desc')?.setAttribute('content', subtitle);
+    }
+});
+
 const metaSubtitle = document.querySelector('meta[name="post-subtitle"]');
 const postSubtitle = metaSubtitle ? metaSubtitle.content.trim() : '';
 const shareText = postSubtitle;

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOBRE EL USO DE LA IA</title>
-  <meta name="date" content="01-08-2025">
+  <meta name="date" content="22-07-2025">
   <meta name="post-subtitle" content="¿Fue la web de IVANDFX hecha por una IA?">
   <meta property="og:title" content="SOBRE EL USO DE LA IA">
   <meta property="og:type" content="article">
@@ -24,7 +24,7 @@
         <div class="title-row">
           <h1 class="post-title">SOBRE EL USO DE LA IA</h1>
             </div>
-          <h2 class="post-date"><i class="fa-regular fa-calendar"></i> 22-07-2025</h2>
+          <h2 class="post-date"><i class="fa-regular fa-calendar"></i> </h2>
     <p>Seamos honestos, no he hecho esta web al 100%, pero antes de que te alarmes, sigue leyendo.</p>
     <p>He usado la IA para hacer una buena parte del JavaScript de la web, que en resumen, es la parte que se encarga de la funcionalidad avanzada de la web, como compartir posts a Twitter o Bluesky, el aviso de cookies, entre otras cosas internas.</p>
     <p>Y, ¿por qué? Muy sencillo, porque no tengo mucha idea de JavaScript, y sin embargo requería del mismo sí o sí.</p>
@@ -45,24 +45,5 @@
 
 </main>
 <script src="/loader.js"></script>
-<script>
-fetch('/blog/share.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('share-container').innerHTML = html;
-  });
-</script>
-<script>
-  (function() {
-    const url = window.location.href;
-    const subtitle = document.querySelector('meta[name="post-subtitle"]')?.content;
-
-    if (subtitle) {
-      document.getElementById('meta-url')?.setAttribute('content', url);
-      document.getElementById('meta-desc')?.setAttribute('content', subtitle);
-            document.getElementById('tw-desc')?.setAttribute('content', subtitle);
-    }
-  })();
-</script>
 </body>
 </html>
