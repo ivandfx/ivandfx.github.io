@@ -187,7 +187,7 @@ function loadGiscus() {
     script.setAttribute('data-reactions-enabled', "0");
     script.setAttribute('data-emit-metadata', "0");
     script.setAttribute('data-input-position', "top");
-    script.setAttribute('data-theme', "preferred_color_scheme");
+    script.setAttribute('data-theme', "noborder_gray");
     script.setAttribute('data-lang', "es");
     script.setAttribute('crossorigin', "anonymous");
     script.async = true;

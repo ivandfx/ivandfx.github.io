@@ -704,7 +704,7 @@ input[type="text"]:focus, textarea:focus {
 .giscus {
   margin: 30px auto;
   width: 100%;
-  background: #161b22 100%;
+  background: #1e1e20;
   border-radius: 20px;
   padding: 30px;
   outline: 2px solid var(--accent);
