@@ -316,6 +316,12 @@ function handleWhatsappShare(event) {
   window.open(whatsappUrl, '_blank');
 }
 
+function handleTelegramShare(event) {
+  event.preventDefault();
+  const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(shareText)}`;
+  window.open(telegramUrl, '_blank');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   fetch('/blog/share.html')
     .then(res => {
@@ -337,6 +343,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const whatsappBtn = container.querySelector('.whatsapp-btn');
       if (whatsappBtn) whatsappBtn.addEventListener('click', handleWhatsappShare);
+
+      const telegramBtn = container.querySelector('.telegram-btn');
+      if (telegramBtn) telegramBtn.addEventListener('click', handleTelegramShare);
     })
 });
 
