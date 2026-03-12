@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  background: linear-gradient(#00000066, #00000066), url('/pbase/img/bg/dfxbg.png') center center / cover no-repeat fixed;
+  background: linear-gradient(#000000ad, #000000ad), url('/pbase/img/bg/dfxbg.png') center center / cover no-repeat fixed;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Gabarito';
