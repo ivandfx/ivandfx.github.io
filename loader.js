@@ -1,15 +1,3 @@
-(function() {
-    const faviconUrl = '/pbase/img/favicon/favicon-dfx.png';
-    let link = document.querySelector("link[rel*='icon']");
-    if (!link) {
-        link = document.createElement('link');
-        document.head.appendChild(link);
-    }
-    link.type = 'image/png';
-    link.rel = 'shortcut icon';
-    link.href = faviconUrl;
-})();
-
 (function () {
   const redirects = {
     "/DFXTweaker": "/proyectos/DFXWinTweaks",
