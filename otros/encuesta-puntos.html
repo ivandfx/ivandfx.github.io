@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ivandfx | YouTube</title>
+  <link rel="stylesheet" href="/style.css">
+<style>
+.anon-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    #1a1a1a80 0%,
+    #00000080 100%
+  );
+  backdrop-filter: blur(6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  outline: 2px solid var(--accent);
+}
+
+.anon-form h2 {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.anon-form textarea {
+  width: 100%;
+  min-height: 180px;
+  font-family: 'Gabarito', sans-serif;
+  font-size: 1rem;
+  color: var(--text-color);
+  background: linear-gradient(
+    135deg,
+    var(--dropdown-bg) 0%,
+    rgba(26, 26, 26, 0.95) 100%
+  );
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 14px 16px;
+  resize: vertical;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.anon-form textarea:focus {
+  border-color: var(--link-hover);
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.anon-form button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  font-family: 'Gabarito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  background: linear-gradient(
+    135deg,
+    var(--link-hover2) 0%,
+    var(--link-hover3) 100%
+  );
+  border-radius: 16px;
+  outline: 2px solid var(--accent);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.anon-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+  outline-color: var(--link-hover);
+}
+
+.anon-form button:active {
+  transform: translateY(0);
+}
+
+.form-status {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    #1a1a1a80 0%,
+    #00000080 100%
+  );
+  outline: 1px solid var(--accent);
+  color: var(--text-color);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+  </style>
+</head>
+<body>
+  <div id="topnav-container"></div>
+  <div class="page-wrapper">
+  <div id="sidebar-container"></div>
+    <main>
+    <h1>Lluvia de ideas de la comunidad</h1>
+    <h3>Puedes aportar una idea para el nombre de los nuevos puntos del canal. ¡Sé creativo!</h3>
+    <br>
+<form
+  id="anon-form"
+  action="https://formspree.io/f/mlgwdwjy"
+  method="POST"
+  class="anon-form"
+>
+  <h2>Mensaje anónimo</h2>
+
+  <textarea
+    name="mensaje"
+    placeholder="Escribe lo que quieras…"
+    required
+  ></textarea>
+
+  <button type="submit">Enviar</button>
+
+  <p class="form-status" hidden></p>
+</form>
+  </main>
+
+<script src="/loader.js"></script>
+<script>
+  const form = document.getElementById('anon-form');
+  const status = form.querySelector('.form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.textContent = 'Mensaje enviado. Gracias.';
+        status.hidden = false;
+      } else {
+        status.textContent = 'Error al enviar. Intenta de nuevo.';
+        status.hidden = false;
+      }
+    } catch (error) {
+      status.textContent = 'Error de conexión.';
+      status.hidden = false;
+    }
+  });
+</script>
+</body>
+</html>
