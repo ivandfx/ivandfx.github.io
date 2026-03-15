@@ -67,6 +67,32 @@ fetch('/webft/topnav.html')
       lastScroll = currentScroll;
     });
 
+    let lastScrollTop = 0;
+    const topnav = document.querySelector('.topnav');
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop && scrollTop > 300) {
+        topnav.classList.add('nav-hidden');
+        
+        if (navLinks) navLinks.classList.remove('active');
+        if (hamburger) hamburger.classList.remove('active');
+
+        const activeDropdowns = document.querySelectorAll('.dropdown-menu.show');
+        activeDropdowns.forEach(dropdown => {
+          dropdown.classList.remove('show');
+        });
+
+      } else {
+        topnav.classList.remove('nav-hidden');
+      }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, false);
+
     // load footer
     fetch('/webft/footer.html')
       .then(res => res.text())

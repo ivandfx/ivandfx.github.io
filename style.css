@@ -554,6 +554,14 @@ input[type="text"]:focus, textarea:focus {
   transition: border-radius 0.3s ease, top 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
+.topnav.nav-hidden {
+  top: -100px;
+}
+
+.topnav {
+  transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1), left 0.4s ease;
+}
+
 .logo img {
   pointer-events: all;
   height: 40px;
@@ -679,7 +687,6 @@ input[type="text"]:focus, textarea:focus {
 .dropdown-menu.show {
   opacity: 1;
   pointer-events: auto;
-  margin-top: 8px;
 }
 
 .dropdown-menu.show {
